@@ -8,3 +8,8 @@ vendor/
 Gemfile.lock
 vendor/
 _site/
+
+# Docket intake staging
+_inbox/
+reports/
+node_modules/
