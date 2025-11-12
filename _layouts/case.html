@@ -42,8 +42,9 @@ layout: default
   <section class="docket">
     <h2>Docket</h2>
     {% assign slug = page.url | split:'/' | last | default: page.slug %}
-    {% assign docket = site.data.docket[slug] | sort: "date" | reverse %}
-    {% if docket %}
+    {% assign docket_data = site.data.docket[slug] %}
+    {% if docket_data %}
+      {% assign docket = docket_data | sort: "date" | reverse %}
       <ul class="docket-list">
         {% for d in docket %}
           <li>
