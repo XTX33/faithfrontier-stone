@@ -9,7 +9,7 @@ layout: default
     </p>
     <h1 class="case-title">{{ page.title }}</h1>
     <p class="case-subtitle">
-      {{ page.short_title }} · Docket {{ page.primary_docket | default: page.dockets | join: ", " }}
+      {{ page.short_title }} · Docket {{ page.primary_docket | default: page.docket | default: page.dockets | join: ", " }}
     </p>
     <dl class="case-meta">
       <div>
