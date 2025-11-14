@@ -3,10 +3,13 @@
 ====================================== */
 
 :root {
-  --ff-ink: #e5e7eb;      /* light text on dark backgrounds */
+  --ff-ink: #f9fafb;      /* light text on dark backgrounds */
   --ff-muted: #9ca3af;    /* secondary text */
-  --ff-surface: #020617;  /* page background */
-  --ff-accent: #facc15;   /* accent color (brass / gold) */
+  --ff-surface: #0f172a;  /* page background (neutral dark) */
+  --ff-primary: #0f766e;  /* emerald - primary brand color */
+  --ff-secondary: #b08968; /* brass - secondary brand color */
+  --ff-accent: #b08968;   /* brass accent for highlights */
+  --ff-emerald: #0f766e;  /* emerald for emphasis */
 }
 
 /* Global reset / base */
@@ -26,7 +29,7 @@ body {
 body {
   background: var(--ff-surface);
   color: var(--ff-ink);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
   line-height: 1.6;
 }
 
@@ -39,6 +42,29 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+/* Headings */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Manrope', 'Inter', system-ui, sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
 }
 
 /* Layout containers */

@@ -1,17 +1,22 @@
 ---
 layout: listing
-title: Essays & Commentary
+title: Essays & Reflections
 permalink: /essays/
 body_class: page-essays
+description: "Reflections on faith, covenant, sovereignty, and the tension between personal identity and global systems — memoir fused with spiritual and civic manifesto."
 ---
 
 <section aria-labelledby="essays-heading" class="essays-index shell">
-  <header class="page-header">
-    <h1 id="essays-heading">Essays & Commentary</h1>
-    <p>Reflections on law as covenant, due process, and public trust.</p>
+  <header class="page-header" style="max-width: 60rem; margin: 0 auto 2rem;">
+    <h1 id="essays-heading">Essays & Reflections</h1>
+    <p style="font-size: 1.1rem; line-height: 1.7; color: var(--ff-muted);">
+      Reflections on faith, covenant, sovereignty, and the tension between personal identity and 
+      global systems. These essays weave memoir with spiritual and civic manifesto — honest, 
+      reflective, grounded, and searching.
+    </p>
   </header>
 
-  <div class="essays-list">
+  <div class="essays-list" style="max-width: 60rem; margin: 0 auto;">
     {% assign sorted_essays = site.essays | sort: "date" | reverse %}
     {% for essay in sorted_essays %}
       <article class="essay-card">
