@@ -17,11 +17,11 @@ dockets:
 primary_docket: "ATL-24-001934"
 
 status: "Active — IFP granted; record assembly and transcripts pending"
-filed: 2024-05-04
+filed_date: 2024-05-04
 judge: "Per Curiam Panel (TBD)"
 track: "PCR and Appellate Review"
 
-assets_path: "/cases/a-000313-25/"
+assets_dir: "/cases/a-000313-25/"
 
 summary: >
   Unified record covering the 2024 street-crossing incident (ATL-24-001934)

@@ -18,7 +18,10 @@ collections:
     permalink: /cases/:name/
   essays:
     output: true
-    permalink: /essays/:name/
+    permalink: /faith/:name/
+  docs:
+    output: true
+    permalink: /docs/:name/
 
 # Defaults
 defaults:
@@ -26,6 +29,8 @@ defaults:
     values: { layout: "case" }
   - scope: { path: "", type: "essays" }
     values: { layout: "essay" }
+  - scope: { path: "", type: "docs" }
+    values: { layout: "doc" }
   - scope: { path: "", type: "pages" }
     values: { layout: "default" }
   - scope: { path: "", type: "posts" }
