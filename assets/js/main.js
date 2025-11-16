@@ -12,12 +12,34 @@
       return;
     }
 
+    // Create backdrop element
+    var backdrop = document.createElement('div');
+    backdrop.className = 'nav-backdrop';
+    document.body.appendChild(backdrop);
+
     // Start closed
     toggle.setAttribute('aria-expanded', 'false');
 
+    // Toggle menu
     toggle.addEventListener('click', function () {
       var isOpen = nav.classList.toggle('is-open');
       toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      backdrop.classList.toggle('is-visible', isOpen);
+      
+      // Prevent body scroll when menu is open
+      if (isOpen) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Close menu when backdrop is clicked
+    backdrop.addEventListener('click', function () {
+      nav.classList.remove('is-open');
+      backdrop.classList.remove('is-visible');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
     });
 
     // Close menu when a link is tapped (mobile UX)
@@ -26,7 +48,23 @@
       if (!link) return;
       if (!nav.classList.contains('is-open')) return;
       nav.classList.remove('is-open');
+      backdrop.classList.remove('is-visible');
       toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+
+    // Close menu on window resize to desktop
+    var resizeTimer;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () {
+        if (window.innerWidth >= 768) {
+          nav.classList.remove('is-open');
+          backdrop.classList.remove('is-visible');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        }
+      }, 250);
     });
   });
 })();
