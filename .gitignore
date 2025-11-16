@@ -13,3 +13,4 @@ _site/
 _inbox/
 reports/
 node_modules/
+*.bak

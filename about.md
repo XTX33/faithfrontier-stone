@@ -1,84 +1,201 @@
 ---
 layout: default
-title: "About Faith Frontier"
+title: "About Devon Tyler & Faith Frontier"
 permalink: /about/
-description: "Learn about the Faith Frontier Ecclesiastical Trust, its mission, and the work of Devon Tyler Barber."
+description: "The story of Devon Tyler: raised between two houses, shaped by structure and distance, awakened in a world of institutional pressure and societal collapse."
 body_class: page-about
 ---
 
-<section class="section-intro">
-  <h1>About Faith Frontier</h1>
+<section class="section-intro" style="max-width: 60rem; margin: 0 auto 3rem;">
+  <h1>The Man Behind Faith Frontier</h1>
   <p class="lead">
-    Faith Frontier is an ecclesiastical record and commentary project stewarded by
-    <strong>Devon Tyler Barber</strong>, a tradesman and pro se litigant who believes that law,
-    conscience, and covenant are meant to walk together.
+    This is the story of Devon Tyler — a man raised between two houses in a world breaking
+    between two eras. It is a story of seeking clarity in confusion, identity in pressure,
+    and meaning in a time when institutions are collapsing and local communities are being forgotten.
   </p>
 </section>
 
-<section class="section-content">
-  <h2>Mission</h2>
+<section class="section-content" style="max-width: 60rem; margin: 0 auto 3rem;">
+  
+  <h2>Two Houses</h2>
   <p>
-    Faith Frontier exists to document <strong>case records, filings, and covenant-based legal commentary</strong>
-    with care and integrity. The goal is simple but demanding: to bear true witness in matters of
-    law and public record, and to help ordinary people see how their rights, obligations, and
-    spiritual convictions intersect.
+    Devon grew up between two worlds. He lived in a stable, structured home with his mother
+    and stepfather — a place of order, responsibility, and clear expectations. But once or
+    twice a year, he would visit his biological father, a man who remained distant but not
+    harmful, unfamiliar but not threatening.
   </p>
   <p>
-    This work is not a replacement for professional legal representation. It is a <em>witness and archive</em>:
-    a place where pleadings, decisions, and arguments can be read in full context, alongside
-    reflections grounded in faith and plain-language explanation.
+    This duality shaped him early. It wasn't trauma, but it was confusion — a sense of being
+    rooted in one place while connected to another he barely knew. Structure in one house,
+    unfamiliarity in the other. Two fathers, two identities, two ways of seeing the world.
   </p>
+
+  <h2>The Father Who Raised Me</h2>
+  <p>
+    Devon's stepfather instilled discipline, structure, and expectation. He taught the value
+    of work, the importance of showing up, and the necessity of following through. It wasn't
+    malice — it was preparation. Devon learned early that the world requires order, and that
+    responsibility is not optional.
+  </p>
+  <p>
+    But beneath the structure, Devon sensed something else: rituals without meaning, traditions
+    without depth, holidays observed but not understood. He began to ask questions — not out
+    of rebellion, but out of sincerity. <em>Why do we do this? What does it mean? Is there
+    something deeper?</em>
+  </p>
+
+  <h2>Growing Inside the Lines</h2>
+  <p>
+    Devon was a child who colored inside the lines. He followed rules, met expectations, and
+    kept his questions mostly to himself. But the questions never left. He searched beneath
+    the surface of traditions and rituals, looking for the meaning that felt just out of reach.
+  </p>
+  <p>
+    His spiritual questioning was not rebellion — it was curiosity. It was a desire to understand
+    the world not just as it appeared, but as it <em>was</em>. And that search would define him.
+  </p>
+
+  <h2>When the World Shifted</h2>
+  <p>
+    Then came the pandemic era — a time of fear, polarization, and institutional pressure unlike
+    anything Devon's generation had seen. Families fractured over ideological lines. Communities
+    divided. The institutions people once trusted began to demand conformity, and dissent was
+    treated as danger.
+  </p>
+  <p>
+    Devon found himself on the outside — not because he sought it, but because he refused to
+    surrender his conscience. Misunderstandings became accusations. Questions became threats.
+    What began as ideological clash became exile.
+  </p>
+  <p>
+    And in that exile, something awakened.
+  </p>
+
+  <h2>Isolation and Awakening</h2>
+  <p>
+    Isolation is a strange teacher. It strips away noise, distraction, and the comfort of
+    belonging. In the silence, Devon had no choice but to face himself — his identity, his
+    beliefs, his place in a world that seemed to be collapsing around him.
+  </p>
+  <p>
+    He turned to Scripture, to history, to the great questions of meaning and sovereignty.
+    He examined the systems that had shaped his life — the centralization of power, the
+    erosion of local community, the weakening of family bonds, the consolidation of control
+    in distant, impersonal institutions.
+  </p>
+  <p>
+    And he realized: the world was not just changing. It was breaking between two eras.
+  </p>
+
+  <h2>The Birth of Faith Frontier</h2>
+  <p>
+    Faith Frontier was born in that moment — not as a project, but as a necessity. It is
+    Devon's answer to a world that demands conformity but offers no meaning. It is his
+    declaration of identity in an age of institutional pressure. It is his commitment to
+    rebuild meaning, community, and faith at human scale.
+  </p>
+  <p>
+    It is not a rejection of the world, but a reclamation of what matters within it:
+    <strong>truth, search, identity, belonging, sovereignty, and local connection</strong>.
+  </p>
+  <p style="font-weight: 600; color: var(--ff-primary); margin-top: 2rem;">
+    Faith Frontier is the work of being <em>in the world, but not of it</em>.
+  </p>
+
 </section>
 
-<section class="section-content">
-  <h2>About Devon Tyler Barber</h2>
+<section class="section-content" style="max-width: 60rem; margin: 3rem auto; padding: 2.5rem; background: rgba(15, 118, 110, 0.1); border-radius: 0.75rem; border-left: 4px solid var(--ff-primary);">
+  <h2 style="margin-top: 0;">The Era We're Living In</h2>
   <p>
-    I’m <strong>Devon Tyler Barber</strong>—a builder at heart who values faith, honesty, and hard work.
-    I trust that good things take time, and that real love and real justice are chosen through
-    patience, truth, and spiritual covenant.
+    Devon's story is not just personal — it's a reflection of the times. We live in an era of:
   </p>
-  <p>
-    My background is in the trades: tiling, building, and remodeling. Alongside that, I serve as a
-    <strong>pro se litigant</strong> in New Jersey courts, pressing into questions of due process,
-    constitutional limits, and administrative overreach. Faith Frontier is where those worlds meet:
-    the practical, the legal, and the spiritual.
-  </p>
-</section>
-
-<section class="section-content">
-  <h2>What You’ll Find Here</h2>
-  <ul>
-    <li>
-      <strong>Case Records:</strong> Active and historical proceedings, including docket details,
-      key filings, and plain-language summaries where appropriate.
-    </li>
-    <li>
-      <strong>Essays &amp; Commentary:</strong> Reflections on law, policy, scripture, and the moral
-      weight of state power—written in clear English, with citations when possible.
-    </li>
-    <li>
-      <strong>Templates &amp; Filings:</strong> Select motions, certifications, and pleadings that may help
-      others learn how to speak for themselves in court with greater clarity and courage.
-    </li>
+  <ul style="line-height: 1.8;">
+    <li><strong>Accelerating centralization</strong> — digital, political, economic, bureaucratic, and ideological.</li>
+    <li><strong>Weakening local communities</strong> — the erosion of family bonds, neighborhood ties, and grounded institutions.</li>
+    <li><strong>Institutional pressure</strong> — systems that demand conformity, punish dissent, and erase personal truth.</li>
+    <li><strong>Global overreach</strong> — power consolidating in distant, unaccountable systems while local voices are silenced.</li>
   </ul>
-</section>
-
-<section class="section-content">
-  <h2>Commitments</h2>
-  <ul>
-    <li><strong>Truthfulness:</strong> No deliberate misrepresentation of fact, record, or law.</li>
-    <li><strong>Respect:</strong> Courts, judges, and agencies are addressed firmly but honorably.</li>
-    <li><strong>Faith:</strong> Scripture and spiritual principles are acknowledged openly, not hidden.</li>
-    <li><strong>Conscience:</strong> The aim is not just to “win” cases, but to act in a way that honors God and neighbor.</li>
-  </ul>
-</section>
-
-<section class="section-content">
-  <h2>Not Legal Advice</h2>
   <p>
-    Nothing on Faith Frontier is legal advice. Reading a case record, essay, or template does not
-    create an attorney–client relationship. Laws and court rules change, and every situation is
-    different. If you are facing a legal problem, you should consider consulting a licensed attorney
-    in your jurisdiction.
+    Faith Frontier stands as a response: a declaration that personal sovereignty, local connection,
+    and grounded truth must be protected. That meaning cannot be dictated from above. That identity
+    cannot be erased by systems.
   </p>
+</section>
+
+<section class="section-content" style="max-width: 60rem; margin: 3rem auto;">
+  <h2>What Devon Stands For</h2>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+    
+    <article style="padding: 1.5rem; background: rgba(15, 23, 42, 0.4); border-radius: 0.5rem;">
+      <h3 style="margin-top: 0; color: var(--ff-primary);">Truth Over Systems</h3>
+      <p style="margin-bottom: 0;">
+        Personal truth and lived experience matter more than institutional narratives.
+      </p>
+    </article>
+
+    <article style="padding: 1.5rem; background: rgba(15, 23, 42, 0.4); border-radius: 0.5rem;">
+      <h3 style="margin-top: 0; color: var(--ff-primary);">Identity Over Bureaucracy</h3>
+      <p style="margin-bottom: 0;">
+        Human identity cannot be reduced to data, categories, or institutional labels.
+      </p>
+    </article>
+
+    <article style="padding: 1.5rem; background: rgba(15, 23, 42, 0.4); border-radius: 0.5rem;">
+      <h3 style="margin-top: 0; color: var(--ff-primary);">Spirit Over Machinery</h3>
+      <p style="margin-bottom: 0;">
+        Spiritual searching and grounded faith transcend the mechanical processes of modern systems.
+      </p>
+    </article>
+
+    <article style="padding: 1.5rem; background: rgba(15, 23, 42, 0.4); border-radius: 0.5rem;">
+      <h3 style="margin-top: 0; color: var(--ff-primary);">Local Over Global</h3>
+      <p style="margin-bottom: 0;">
+        Community is rebuilt at human scale, not through distant, impersonal institutions.
+      </p>
+    </article>
+
+    <article style="padding: 1.5rem; background: rgba(15, 23, 42, 0.4); border-radius: 0.5rem;">
+      <h3 style="margin-top: 0; color: var(--ff-primary);">Clarity Over Fear</h3>
+      <p style="margin-bottom: 0;">
+        Truth is named calmly and clearly, without fearmongering or dogmatic certainty.
+      </p>
+    </article>
+
+    <article style="padding: 1.5rem; background: rgba(15, 23, 42, 0.4); border-radius: 0.5rem;">
+      <h3 style="margin-top: 0; color: var(--ff-primary);">Sovereignty Over Control</h3>
+      <p style="margin-bottom: 0;">
+        Personal and local sovereignty must be protected against centralized control.
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<section class="section-content" style="max-width: 60rem; margin: 3rem auto;">
+  <h2>The Journey Continues</h2>
+  <p>
+    Devon's story is not finished. It is still being written — in essays, in reflections,
+    in lived experience, and in the ongoing work of rebuilding meaning in a fractured world.
+  </p>
+  <p>
+    Faith Frontier is not a destination. It is a frontier — a boundary, a threshold, a place
+    where wilderness meets settlement, where exile becomes return, where the man Devon was
+    becomes the man he is meant to be.
+  </p>
+  <p style="font-size: 1.1rem; font-weight: 500; margin-top: 2rem;">
+    This is the work of being <em>in the world, but not of it</em>. And it is work that continues,
+    one day, one word, one step at a time.
+  </p>
+</section>
+
+<section style="max-width: 60rem; margin: 4rem auto; padding: 3rem 2rem; text-align: center; background: rgba(176, 137, 104, 0.1); border-radius: 1rem; border: 1px solid var(--ff-secondary);">
+  <h2 style="margin-top: 0;">Walk This Frontier With Us</h2>
+  <p style="font-size: 1.05rem; line-height: 1.7;">
+    If Devon's story resonates with you — if you too feel caught between worlds, searching for
+    meaning in a time of collapse, or rebuilding identity at human scale — you are welcome here.
+  </p>
+  <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+    <a class="btn" href="{{ '/essays/' | relative_url }}">Read Essays</a>
+    <a class="btn-ghost" href="{{ '/contact/' | relative_url }}">Get in Touch</a>
+  </div>
 </section>

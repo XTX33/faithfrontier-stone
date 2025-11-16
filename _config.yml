@@ -1,10 +1,11 @@
 # Site settings
-title: Faith Frontier Ecclesiastical Trust
-description: "Case records, filings, and covenant-based legal commentary by Devon Tyler Barber."
+title: Faith Frontier
+description: "The story of a man raised between two houses in a world breaking between two eras. A declaration of identity over bureaucracy, spirit over systems, meaning over machinery."
 url: https://faithfrontier.org
 baseurl: ""  # apex domain
 lang: en
 timezone: America/New_York
+author: Devon Tyler Barber
 
 # Build settings
 markdown: kramdown

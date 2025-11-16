@@ -3,10 +3,13 @@
 ====================================== */
 
 :root {
-  --ff-ink: #e5e7eb;      /* light text on dark backgrounds */
+  --ff-ink: #f9fafb;      /* light text on dark backgrounds */
   --ff-muted: #9ca3af;    /* secondary text */
-  --ff-surface: #020617;  /* page background */
-  --ff-accent: #facc15;   /* accent color (brass / gold) */
+  --ff-surface: #0f172a;  /* page background (neutral dark) */
+  --ff-primary: #0f766e;  /* emerald - primary brand color */
+  --ff-secondary: #b08968; /* brass - secondary brand color */
+  --ff-accent: #b08968;   /* brass accent for highlights */
+  --ff-emerald: #0f766e;  /* emerald for emphasis */
 }
 
 /* Global reset / base */
@@ -26,7 +29,7 @@ body {
 body {
   background: var(--ff-surface);
   color: var(--ff-ink);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
   line-height: 1.6;
 }
 
@@ -39,6 +42,29 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+/* Headings */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Manrope', 'Inter', system-ui, sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
 }
 
 /* Layout containers */
@@ -128,12 +154,14 @@ a:hover {
 
 .site-nav a {
   opacity: 0.9;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
 .site-nav a:hover {
   opacity: 1;
-  color: var(--ff-accent);
+  color: var(--ff-primary);
   text-decoration: none;
 }
 
@@ -141,6 +169,27 @@ a:hover {
 
 .site-nav.is-open {
   display: block;
+  position: fixed;
+  top: 70px;
+  right: 0;
+  left: 0;
+  background: rgba(15, 23, 42, 0.98);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem 1.25rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.3);
+  z-index: 999;
+  animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Desktop layout */
@@ -153,11 +202,20 @@ a:hover {
   .site-nav {
     display: flex;
     align-items: center;
+    position: static;
+    background: transparent;
+    backdrop-filter: none;
+    padding: 0;
+    border: none;
   }
 
   .site-nav ul {
     flex-direction: row;
-    gap: 1.25rem;
+    gap: 1.5rem;
+  }
+
+  .site-nav a {
+    font-size: 0.95rem;
   }
 
   .nav-toggle {
