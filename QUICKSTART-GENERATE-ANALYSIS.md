@@ -153,4 +153,4 @@ If you encounter issues:
 
 ---
 
-**Quick Action:** Go to [Actions → Case Analysis with OpenAI → Run workflow](../../actions/workflows/case-analysis.yml) to start now!
+**Quick Action:** Go to [Actions → Case Analysis with OpenAI → Run workflow](https://github.com/FaithFrontier/faithfrontier/actions/workflows/case-analysis.yml) to start now!
