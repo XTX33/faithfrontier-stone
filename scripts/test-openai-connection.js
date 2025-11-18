@@ -57,7 +57,7 @@ async function testConnection() {
     console.log('   Rate limits (free tier): 3 requests/minute, 100,000 tokens/minute');
     console.log('   Check usage at: https://platform.openai.com/usage');
     console.log('');
-    console.log('🎉 You\'re ready to generate case analysis!');
+    console.log('🎉 You\'re ready to analyze cases!');
     console.log('   Run: node scripts/analyze-cases.js');
     
   } catch (error) {
