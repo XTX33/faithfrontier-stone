@@ -15,14 +15,14 @@ filed_date: 2025-09-09
 judge:
 tags:
   - federal
-assets_dir: "/cases/usdj-1-25-cv-15641/"
+assets_dir: "/cases/usdj-1-25-cv-15641/filings/"
 documents:
   - label: "Complaint"
-    path: "2025-09-09_complaint.pdf"
+    path: "2025-09-09-complaint.pdf"
   - label: "Demurrer and Abatement"
-    path: "2025-09-09_demurrer-and-abatement.pdf"
+    path: "2025-09-09-demurrer-and-abatement.pdf"
   - label: "Envelope"
-    path: "2025-09-09_envelope.pdf"
+    path: "2025-09-09-envelope.pdf"
 ---
 
 Federal filing capturing the complaint and initial motions challenging jurisdiction and procedure. Entries below track the filings submitted to initiate the action.

@@ -22,23 +22,25 @@ collections:
     permalink: /cases/:path/
   essays:
     output: true
-    permalink: /essays/:slug/
-  docs:
+    permalink: /essays/:title/
+  articles:
     output: true
-    permalink: /docs/:name/
+    permalink: /articles/:title/
+  posts:
+    output: true
 
 # Defaults
 defaults:
-  - scope: { path: "_pages", type: "pages" }
-    values: { layout: "default" }
+  - scope: { path: "_pages" }
+    values: { layout: "default", order: 0, title: "" }
   - scope: { path: "_cases", type: "cases" }
-    values: { layout: "case" }
-  - scope: { path: "", type: "essays" }
-    values: { layout: "essay" }
-  - scope: { path: "", type: "docs" }
-    values: { layout: "doc" }
-  - scope: { path: "", type: "posts" }
-    values: { layout: "post" }
+    values: { layout: "case", order: 0, title: "" }
+  - scope: { path: "_essays", type: "essays" }
+    values: { layout: "essay", order: 0, title: "" }
+  - scope: { path: "_articles", type: "articles" }
+    values: { layout: "article", order: 0, title: "" }
+  - scope: { path: "_posts", type: "posts" }
+    values: { layout: "post", order: 0, title: "" }
 
 # Plugins
 plugins:

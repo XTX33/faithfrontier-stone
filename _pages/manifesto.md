@@ -9,15 +9,15 @@ body_class: page-manifesto
 <section style="max-width: 60rem; margin: 0 auto;">
   
   <header style="text-align: center; margin-bottom: 3rem;">
-    <h1 style="font-size: clamp(2.5rem, 5.5vw, 4rem); margin-bottom: 1rem; color: var(--ff-cream);">The Faith Frontier Manifesto</h1>
-    <p style="font-size: 1.25rem; color: var(--ff-vintage-gold); font-style: italic; font-family: 'Crimson Text', serif;">
+    <h1 style="font-size: clamp(2.5rem, 5.5vw, 4rem); margin-bottom: 1rem; color: var(--color-highlight);">The Faith Frontier Manifesto</h1>
+    <p style="font-size: 1.25rem; color: var(--accent-brass); font-style: italic; font-family: 'Crimson Text', serif;">
       In the World, But Not of It
     </p>
   </header>
 
   <article style="line-height: 1.9; font-size: 1.05rem;">
     
-    <div style="padding: 2.5rem; background: linear-gradient(135deg, rgba(15, 118, 110, 0.12) 0%, rgba(212, 165, 116, 0.08) 100%); border-radius: 12px; border-left: 4px solid var(--ff-vintage-gold); margin-bottom: 3rem; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);">
+    <div style="padding: 2.5rem; background: linear-gradient(135deg, rgba(15, 118, 110, 0.12) 0%, rgba(212, 165, 116, 0.08) 100%); border-radius: 12px; border-left: 4px solid var(--accent-brass); margin-bottom: 3rem; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);">
       <p style="font-size: 1.15rem; font-weight: 500; margin: 0;">
         Faith Frontier is the story of a man raised between two houses in a world breaking
         between two eras. It is a home for those who feel the weight of global systems yet
@@ -77,15 +77,15 @@ body_class: page-manifesto
       his commitment to rebuild meaning, community, and faith at human scale.
     </p>
 
-    <div style="margin: 2.5rem 0; padding: 1.75rem; border-radius: 0.75rem; border: 1px solid var(--ff-primary); background: rgba(15, 118, 110, 0.12); box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);">
-      <p style="margin: 0; font-size: 1.1rem; line-height: 1.8; font-style: italic; color: var(--ff-cream);">
+    <div style="margin: 2.5rem 0; padding: 1.75rem; border-radius: 0.75rem; border: 1px solid var(--accent-emerald); background: rgba(15, 118, 110, 0.12); box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);">
+      <p style="margin: 0; font-size: 1.1rem; line-height: 1.8; font-style: italic; color: var(--color-highlight);">
         <strong>Guiding Charge:</strong> Obey the law where it protects peace,
         challenge the law where it violates justice,
         and walk in clarity, not confusion.
       </p>
     </div>
     
-    <div style="padding: 2rem; background: rgba(176, 137, 104, 0.1); border-radius: 0.75rem; margin: 2rem 0; border: 1px solid var(--ff-secondary);">
+    <div style="padding: 2rem; background: rgba(176, 137, 104, 0.1); border-radius: 0.75rem; margin: 2rem 0; border: 1px solid var(--accent-brass);">
       <p style="margin: 0; font-size: 1.1rem; line-height: 1.8;">
         <strong>It honors the past without blaming it.</strong><br>
         <strong>It names the present without fearing it.</strong><br>
@@ -93,7 +93,7 @@ body_class: page-manifesto
       </p>
     </div>
 
-    <p style="font-size: 1.2rem; font-weight: 600; color: var(--ff-primary); text-align: center; margin: 2rem 0;">
+    <p style="font-size: 1.2rem; font-weight: 600; color: var(--accent-emerald); text-align: center; margin: 2rem 0;">
       Faith Frontier is the work of being <em>in the world, but not of it</em>.
     </p>
 
@@ -101,48 +101,48 @@ body_class: page-manifesto
     
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
       
-      <article style="padding: 1.75rem; background: rgba(15, 23, 42, 0.4); border-radius: 0.5rem; border-top: 3px solid var(--ff-primary);">
-        <h3 style="margin-top: 0; color: var(--ff-primary);">Truth Over Systems</h3>
+      <article style="padding: 1.75rem; background: rgba(15, 23, 42, 0.4); border-radius: 0.5rem; border-top: 3px solid var(--accent-emerald);">
+        <h3 style="margin-top: 0; color: var(--accent-emerald);">Truth Over Systems</h3>
         <p style="margin-bottom: 0;">
           Personal truth and lived experience matter more than institutional narratives.
           We refuse to let systems define reality for us.
         </p>
       </article>
 
-      <article style="padding: 1.75rem; background: rgba(15, 23, 42, 0.4); border-radius: 0.5rem; border-top: 3px solid var(--ff-primary);">
-        <h3 style="margin-top: 0; color: var(--ff-primary);">Identity Over Bureaucracy</h3>
+      <article style="padding: 1.75rem; background: rgba(15, 23, 42, 0.4); border-radius: 0.5rem; border-top: 3px solid var(--accent-emerald);">
+        <h3 style="margin-top: 0; color: var(--accent-emerald);">Identity Over Bureaucracy</h3>
         <p style="margin-bottom: 0;">
           Human identity cannot be reduced to data, categories, or institutional labels.
           We are more than numbers in a database.
         </p>
       </article>
 
-      <article style="padding: 1.75rem; background: rgba(15, 23, 42, 0.4); border-radius: 0.5rem; border-top: 3px solid var(--ff-primary);">
-        <h3 style="margin-top: 0; color: var(--ff-primary);">Spirit Over Machinery</h3>
+      <article style="padding: 1.75rem; background: rgba(15, 23, 42, 0.4); border-radius: 0.5rem; border-top: 3px solid var(--accent-emerald);">
+        <h3 style="margin-top: 0; color: var(--accent-emerald);">Spirit Over Machinery</h3>
         <p style="margin-bottom: 0;">
           Spiritual searching and grounded faith transcend the mechanical processes of
           modern systems. We are spirit, not machine.
         </p>
       </article>
 
-      <article style="padding: 1.75rem; background: rgba(15, 23, 42, 0.4); border-radius: 0.5rem; border-top: 3px solid var(--ff-secondary);">
-        <h3 style="margin-top: 0; color: var(--ff-secondary);">Local Over Global</h3>
+      <article style="padding: 1.75rem; background: rgba(15, 23, 42, 0.4); border-radius: 0.5rem; border-top: 3px solid var(--accent-brass);">
+        <h3 style="margin-top: 0; color: var(--accent-brass);">Local Over Global</h3>
         <p style="margin-bottom: 0;">
           Community is rebuilt at human scale, not through distant, impersonal institutions.
           We protect the local against global overreach.
         </p>
       </article>
 
-      <article style="padding: 1.75rem; background: rgba(15, 23, 42, 0.4); border-radius: 0.5rem; border-top: 3px solid var(--ff-secondary);">
-        <h3 style="margin-top: 0; color: var(--ff-secondary);">Clarity Over Fear</h3>
+      <article style="padding: 1.75rem; background: rgba(15, 23, 42, 0.4); border-radius: 0.5rem; border-top: 3px solid var(--accent-brass);">
+        <h3 style="margin-top: 0; color: var(--accent-brass);">Clarity Over Fear</h3>
         <p style="margin-bottom: 0;">
           Truth is named calmly and clearly, without fearmongering or dogmatic certainty.
           We refuse to be governed by fear.
         </p>
       </article>
 
-      <article style="padding: 1.75rem; background: rgba(15, 23, 42, 0.4); border-radius: 0.5rem; border-top: 3px solid var(--ff-secondary);">
-        <h3 style="margin-top: 0; color: var(--ff-secondary);">Sovereignty Over Control</h3>
+      <article style="padding: 1.75rem; background: rgba(15, 23, 42, 0.4); border-radius: 0.5rem; border-top: 3px solid var(--accent-brass);">
+        <h3 style="margin-top: 0; color: var(--accent-brass);">Sovereignty Over Control</h3>
         <p style="margin-bottom: 0;">
           Personal and local sovereignty must be protected against centralized control.
           We defend the right to self-determination.
@@ -180,7 +180,7 @@ body_class: page-manifesto
 
   </article>
 
-  <section style="margin: 4rem auto; padding: 3rem 2rem; text-align: center; background: rgba(15, 118, 110, 0.15); border-radius: 1rem; border: 2px solid var(--ff-primary);">
+  <section style="margin: 4rem auto; padding: 3rem 2rem; text-align: center; background: rgba(15, 118, 110, 0.15); border-radius: 1rem; border: 2px solid var(--accent-emerald);">
     <h2 style="margin-top: 0;">Walk This Frontier</h2>
     <p style="font-size: 1.1rem; line-height: 1.8; max-width: 40rem; margin: 0 auto 2rem;">
       Faith Frontier is not a destination. It is a journey, a threshold, a place where

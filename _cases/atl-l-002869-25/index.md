@@ -17,16 +17,16 @@ judge:
 tags:
   - civil
   - declaratory
-assets_dir: "/cases/atl-l-002869-25/"
+assets_dir: "/cases/atl-l-002869-25/filings/"
 documents:
   - label: "Verified Complaint"
-    path: "2025-10-14_verified-complaint-declaration-of-ownership.pdf"
+    path: "2025-10-14-verified-complaint-declaration-of-ownership.pdf"
   - label: "Affidavit of Indigency"
-    path: "2025-10-14_affidavit-of-indigency.pdf"
+    path: "2025-10-14-affidavit-of-indigency.pdf"
   - label: "Track Assignment"
-    path: "2025-10-17_track-assignment.pdf"
+    path: "2025-10-17-track-assignment.pdf"
   - label: "Amended Complaint"
-    path: "2025-10-29_amended-complaint.pdf"
+    path: "2025-10-29-amended-complaint.pdf"
 ---
 
 Action seeking declaratory relief related to vehicle ownership. The record below traces the verified complaint, indigency affidavit, track assignment, and amended pleading.
