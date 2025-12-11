@@ -17,7 +17,7 @@ description: "Faith Frontier Ecclesiastical Trust builds a faith-rooted public t
 <h1 class="hero-title">
   <span>A Faithful Public</span>
   <span>Trust</span>
-  <span><strong>for</strong> <u>New Jersey</u></span>
+  <span><u>for New Jersey</u></span>
 </h1>
 <style> .hero-eyebrow span,
 .hero-title span {
