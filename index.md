@@ -9,8 +9,21 @@ description: "Faith Frontier Ecclesiastical Trust builds a faith-rooted public t
 
 <section class="hero hero--home">
   <div class="container">
-    <p class="hero-eyebrow">Faith Frontier Ecclesiastical Trust</p>
-    <h1>Building a faithful public trust for New Jersey</h1>
+<p class="hero-eyebrow">
+  <span>Faith Frontier</span>
+  <span>Ecclesiastical Trust</span>
+</p>
+
+<h1 class="hero-title">
+  <span>A Faithful Public</span>
+  <span>Trust</span>
+  <span><strong>for</strong> <u>New Jersey</u></span>
+</h1>
+<style> .hero-eyebrow span,
+.hero-title span {
+  display: block;
+}
+</style>
     <p class="hero-lead">
       Faith-rooted public trust work at the intersection of law, equity, and community. We help New Jersey residents
       understand their rights, seek fair treatment, and build pathways to restoration across courts, agencies, housing,
