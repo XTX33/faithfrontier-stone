@@ -1,14 +1,29 @@
 <footer class="site-footer" role="contentinfo" itemscope itemtype="https://schema.org/Organization">
   <div class="footer-inner container">
 
+    {% assign ff_footer_mark_svg = site.logo_mark | default: '/assets/img/faithfrontier-mark.svg' %}
+    {% assign ff_footer_mark_png = site.logo_png_mark_512 | default: '/assets/img/faithfrontier-logo-mark-512.png' %}
+
     <!-- Brand / Logo -->
     <div class="footer-brand">
       <a href="{{ '/' | relative_url }}" class="footer-logo-link" itemprop="url" aria-label="Faith Frontier Ecclesiastical Trust home">
         <div class="ff-footer-brand">
-          <img src="{{ site.logo_mark | default: '/assets/img/faithfrontier-mark.svg' | relative_url }}"
+          {% if site.logo_mark %}
+          <img src="{{ ff_footer_mark_svg | relative_url }}"
                alt="Faith Frontier Ecclesiastical Trust"
-               class="ff-logo ff-logo--footer"
+               class="ff-logo ff-logo--footer ff-logo--dark"
                itemprop="logo">
+          {% elsif site.brand_png %}
+          <img src="{{ ff_footer_mark_png | relative_url }}"
+               alt="Faith Frontier Ecclesiastical Trust"
+               class="ff-logo ff-logo--footer ff-logo--responsive ff-logo--dark"
+               itemprop="logo">
+          {% else %}
+          <img src="{{ ff_footer_mark_svg | relative_url }}"
+               alt="Faith Frontier Ecclesiastical Trust"
+               class="ff-logo ff-logo--footer ff-logo--dark"
+               itemprop="logo">
+          {% endif %}
         </div>
         <span class="footer-name" itemprop="name">Faith Frontier</span>
       </a>
