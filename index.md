@@ -12,29 +12,27 @@ description: "Faith Frontier Ecclesiastical Trust builds a faith-rooted public t
     <div class="hero-main">
       <p class="hero-eyebrow">Faith Frontier Ecclesiastical Trust</p>
       <h1>
-        Faithful civic stewardship for New Jersey neighbors
+        Faithful Stewardship for New Jersey
       </h1>
       <p class="hero-lead">
-        Faith Frontier builds a sacred public trust so New Jersey residents can defend due process, honor conscience,
-        and seek restoration. We document hard cases, stand with families inside complex systems, and keep every action
-        submitted to Yeshua the Messiah so that justice is both legal and holy.
+        Faith Frontier exists to uphold a sacred public trust—giving New Jersey residents the clarity, courage, and tools to defend due process, honor conscience, and pursue real restoration. We document hard cases with precision, stand beside families as they navigate complex systems, and keep every action surrendered to Yeshua the Messiah, so that justice is not only lawful, but holy.
       </p>
       <div class="hero-highlights">
         <article class="hero-highlight">
           <span class="hero-highlight__label">Due process clarity</span>
-          <p>Plain-language case journals illuminate courts, agencies, landlords, and contractors.</p>
+          <p>We translate legal systems into human language. Case journals document what really happens — in courts, agencies, housing, and everyday disputes — so ordinary people aren’t lost in procedures designed to confuse them. Clarity is protection. Truth is due process.</p>
         </article>
         <article class="hero-highlight">
           <span class="hero-highlight__label">Sanctuary stewardship</span>
-          <p>We design faith-rooted pathways toward housing, work, and safe community sanctuaries.</p>
+          <p>People deserve safe places to live, work, and rebuild. FaithFrontier seeks to help chart practical, faith-rooted pathways toward housing stability, lawful work, and community sanctuaries — especially for those navigating hardship, homelessness, or unfair systems. Stewardship means we take care of each other as image-bearers, not case numbers.</p>
         </article>
         <article class="hero-highlight">
-          <span class="hero-highlight__label">Community equity</span>
-          <p>Shared documentation, charters, and covenantal accountability keep service dignified.</p>
+          <span class="hero-highlight__label">Covenant Equity</span>
+          <p>We create shared documentation, transparent records, and covenant-level accountability so neighbors, landlords, contractors, and agencies operate with dignity and fairness. Equity here isn’t politics — it’s righteousness, responsibility, and honest workmanship.</p>
         </article>
         <article class="hero-highlight">
-          <span class="hero-highlight__label">Global revelation</span>
-          <p>Christ-centered testimony connects New Jersey matters to a worldwide witness of justice and mercy.</p>
+          <span class="hero-highlight__label">Witness Beyond Borders</span>
+          <p>Local New Jersey struggles carry global meaning. Every case journal, restored life, and repaired home becomes testimony — a small but real witness of Christ’s justice, patience, and mercy reaching beyond our state lines. Faith Frontier is local in place, universal in purpose.</p>
         </article>
       </div>
       <div class="hero-actions">
@@ -53,11 +51,11 @@ description: "Faith Frontier Ecclesiastical Trust builds a faith-rooted public t
         <span class="dv-note" style="display:block; font-size: 0.85rem; opacity: 0.8; margin-top: 0.35rem;">Updated daily (New Jersey)</span>
       </div>
       <div class="hero-panel__stat">
-        <span class="hero-panel__number">12+</span>
+        <span class="hero-panel__number">8+</span>
         <span class="hero-panel__label">active case narratives</span>
       </div>
       <div class="hero-panel__stat">
-        <span class="hero-panel__number">7</span>
+        <span class="hero-panel__number">10</span>
         <span class="hero-panel__label">sanctuary initiatives in motion</span>
       </div>
       <ul class="hero-checklist">
@@ -69,6 +67,12 @@ description: "Faith Frontier Ecclesiastical Trust builds a faith-rooted public t
         Anchored in daily prayer to Yeshua the Messiah, the Trust keeps every filing, affidavit, and negotiation under
         His authority so mercy and truth walk together.
       </div>
+      <div class="hero-panel__clarity">
+  <p>
+    The cases shared here are my own—offered as public witness so others can see the patterns, burdens, 
+    and due-process gaps many New Jersey residents face every day.
+  </p>
+</div>
     </div>
   </div>
 </section>

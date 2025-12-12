@@ -1,126 +1,95 @@
-# FaithFrontier — A Public Trust for Justice, Faith, & Civic Integrity  
-### Repository for **faithfrontier.org**  
-**© 2025 Faith Frontier Ecclesiastical Trust & Devon Tyler Barber. All rights reserved.**
+# FaithFrontier - A Public Trust for Justice, Faith, and Civic Integrity
+### Repository for **faithfrontier.org**
+Copyright (c) 2025 Faith Frontier Ecclesiastical Trust & Devon Tyler Barber. All rights reserved.
 
-FaithFrontier is a faith-guided public trust dedicated to integrity, transparency, and civic accountability.  
-This repository contains the source code powering the website, along with structured case records, essays, and civic educational material.
-
----
-
-## ⚖️ Intellectual Property & Content Protection
-
-This repository contains **two categories of material**:
-
-### **1. Source Code — MIT Licensed (open use)**
-All source code is open for learning, adaptation, and reuse under `/LICENSE`.
-
-### **2. Content — Restricted (NOT open-source)**
-All original essays, case summaries, analyses, theological writings, metadata structures, branding, and narrative content are protected under the **FaithFrontier Ecclesiastical Content License** (`/CONTENT_LICENSE.md`).
-
-You may not reproduce, redistribute, sell, or create derivative works of the protected content.
+FaithFrontier is a faith-guided public trust dedicated to integrity, transparency, and civic accountability. This repository powers the public site, case archives, and oversight tooling while preserving protected ecclesiastical content.
 
 ---
 
-## 📁 Repository Structure
+## Mission & Scope
+- Maintain transparent public-interest case records.
+- Publish essays and civic commentary rooted in theology and ethics.
+- Provide carefully governed automation for intake, verification, and analysis workflows.
 
+---
+
+## Repository Structure
+```
+_cases/              # Case summaries and metadata (Markdown)
+cases/               # Normalized public-facing case folders with filings
+assets/cases/        # Binary filings, exhibits, envelopes, media
+_essays/             # Protected essays and narratives
+_articles/, articles/ # Long-form content and features
+_layouts/, _includes/ # Jekyll templates (MIT-licensed code)
+assets/css/, assets/js/ # Stylesheets and scripts (MIT-licensed code)
+assets/images/       # Logos, seals, diagrams (trademark governed)
+scripts/             # Automation utilities (MIT-licensed code)
 ```
 
-├── _cases/              # Case summaries, metadata (Markdown only)
-├── assets/cases/        # PDFs and exhibits for public cases
-├── _essays/             # Theological, civic, and analytical writings
-├── _layouts/            # Jekyll layouts
-├── _includes/           # Reusable template components
-├── assets/css/          # Stylesheets
-├── assets/js/           # Scripts
-├── assets/images/       # Logos, diagrams, graphics
-└── _config.yml          # Site configuration
-
-````
-
 ---
 
-## 🛠 Development
-
+## Local Development
 ```bash
 bundle install
 bundle exec jekyll serve
 # Visit http://localhost:4000
-````
+```
 
 Production build:
-
 ```bash
 JEKYLL_ENV=production bundle exec jekyll build
 ```
 
 ---
 
-## 🌐 Deployment (GitHub Pages)
-
-* Automatic deployment from `main`
-* Domain: **faithfrontier.org**
-* DNS:
-
-  * CNAME → `xtx33.github.io`
-  * Optional A-records for GitHub Pages
-
-Repo Settings → Pages → Deploy from Branch → **main**.
+## Deployment
+- GitHub Pages deploys from the `main` branch.
+- Domain: **faithfrontier.org** (CNAME -> `xtx33.github.io`).
+- Ensure DNS A-records follow GitHub's guidance if apex hosting is required.
 
 ---
 
-## 🤖 AI-Assisted Case Analysis (Optional)
+## Legal & Trust Framework
+FaithFrontier content falls into two distinct categories:
 
-The repo includes optional analysis tools using OpenAI APIs.
-See:
+1. **Source Code - Open use under the MIT License**  
+   Templates, CSS/JS, workflows, and automation scripts fall under [`LICENSE`](./LICENSE).
 
-* `QUICKSTART-GENERATE-ANALYSIS.md`
-* `ANALYSIS-SYSTEM.md`
-* `.github/SETUP-OPENAI.md`
+2. **Creative, legal, and theological content - Restricted use**  
+   Essays, metadata, branding, and case narratives are protected under [`CONTENT_LICENSE.md`](./CONTENT_LICENSE.md), [`TRADEMARK_NOTICE.md`](./TRADEMARK_NOTICE.md), and [`DISCLAIMER.md`](./DISCLAIMER.md).
 
----
+### Required Legal References
+- [`LICENSE`](./LICENSE): MIT license for code only.
+- [`CONTENT_LICENSE.md`](./CONTENT_LICENSE.md): Ecclesiastical license for all non-code works.
+- [`TRADEMARK_NOTICE.md`](./TRADEMARK_NOTICE.md): Protection for FaithFrontier marks, logos, seals, and visual theology.
+- [`DISCLAIMER.md`](./DISCLAIMER.md): Reliance, liability, and public-trust usage boundaries.
 
-## ⚠️ Legal Disclaimer
-
-See `/DISCLAIMER.md` for the complete statement.
-
-Nothing in this repository constitutes legal advice.
-
----
-
-## 🤝 Contributions
-
-Code contributions are welcome.
-
-Content changes are restricted to preserve accuracy, trust, and institutional integrity.
-
-Questions or permissions:
-**[info@tillerstead.com](mailto:info@tillerstead.com)**
+Every contribution must preserve these boundaries. Do **not** treat essays, case records, metadata, or imagery as open-source material; obtain written approval before republishing any protected work.
 
 ---
 
-````
+## Directory-Level Enforcement
+- `_cases/`, `_articles/`, `_essays/`, `_manifesto/`, `_pages/`, `_posts/`, `_trust/`: Markdown narratives governed by `CONTENT_LICENSE.md`.
+- `cases/`, `assets/cases/`: Filings and exhibits. Public-record PDFs remain public domain, but FaithFrontier's summaries and organization remain protected.
+- `assets/images/`: Logos and artwork subject to `TRADEMARK_NOTICE.md`.
+- `_layouts/`, `_includes/`, `assets/css/`, `assets/js/`, `scripts/`, workflows: MIT-licensed code covered by `LICENSE`.
+
+When adding new material, identify whether it is code or content, apply the appropriate license, and reference the governing document where necessary.
 
 ---
 
-# ✅ **2. LICENSE (MIT License for Code Only)**
-
-```markdown
-MIT License
-
-Copyright (c) 2025 
-Devon Tyler Barber / Faith Frontier Ecclesiastical Trust  
-
-Permission is hereby granted, free of charge, to any person obtaining a copy  
-of this software and associated documentation files (the "Software"), to deal  
-in the Software without restriction, including without limitation the rights  
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell  
-copies of the Software, and to permit persons to whom the Software is  
-furnished to do so, subject to the following conditions:
-
-(…standard MIT text unchanged…)
-
-For inquiries regarding licensing, permissions, or commercial use, contact:  
-**info@tillerstead.com**
-````
+## AI-Assisted Analysis
+Optional tooling in `scripts/` leverages OpenAI APIs. Configure credentials via `.github/SETUP-OPENAI.md` and review `QUICKSTART-GENERATE-ANALYSIS.md` plus `ANALYSIS-SYSTEM.md` before running any automation. Outputs remain subject to the disclaimer and content-license rules.
 
 ---
+
+## Disclaimer
+Nothing in this repository constitutes legal advice. Review [`DISCLAIMER.md`](./DISCLAIMER.md) for the full statement before relying on any analysis or narrative.
+
+---
+
+## Contributions
+- Code contributions are welcome; keep them MIT-compatible.
+- Content updates require approval to preserve accuracy, privacy, and ecclesiastical governance.
+
+Questions, permissions, or coordination requests: **[info@tillerstead.com](mailto:info@tillerstead.com)**

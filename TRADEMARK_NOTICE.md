@@ -1,25 +1,19 @@
-# FaithFrontier Trademark Notice  
+# FaithFrontier Trademark Notice
 ### Ecclesiastical Mark & Identity Protection
 
-The following are trademarks and protected marks of the  
-**Faith Frontier Ecclesiastical Trust**:
+The following are trademarks and protected marks of the Faith Frontier Ecclesiastical Trust:
 
-- “FaithFrontier”  
-- “Faith Frontier”  
-- FaithFrontier logos, seals, crests, and visual theology  
-- Unique case-indexing frameworks and branded structures  
-- FaithFrontier’s ecclesiastical design elements  
+- "FaithFrontier" and "Faith Frontier"
+- Logos, seals, crests, typography, and visual theology elements
+- Unique case-indexing frameworks, narrative layouts, and branded structures
+- Ecclesiastical design elements referenced throughout the site
 
-These marks may NOT be used:
+These marks and trade dress may not be used:
+- To imply endorsement, partnership, or sponsorship
+- In other branding, products, domains, or campaigns
+- For commercial or promotional purposes
+- To create derivative spiritual, civic, or analytical organizations
 
-- To imply endorsement or partnership  
-- In your own branding, projects, or domains  
-- For commercial or promotional purposes  
-- To create derivative spiritual or civic organizations  
+Fair-use references for news reporting, criticism, or academic citation are allowed when clearly attributed. All other usage requires written permission.
 
-Fair Use (news reporting, criticism, academic citation) is allowed.
-
-Questions: **info@tillerstead.com**
-```
-
----
+For questions, contact **info@tillerstead.com**. See [`CONTENT_LICENSE.md`](./CONTENT_LICENSE.md) for creative-work restrictions and [`LICENSE`](./LICENSE) for code-specific terms.
