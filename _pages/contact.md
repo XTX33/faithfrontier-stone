@@ -20,7 +20,7 @@ body_class: page-contact
     For inquiries, dialogue, or collaboration, write to:
   </p>
   <p>
-    <a href="mailto:Tylerstead@protonmail.com" style="color: var(--accent-emerald); font-weight: 600;">Tylerstead@ProtonMail.com</a>
+    <a href="mailto:tylerstead@protonmail.com" style="color: var(--accent-emerald); font-weight: 600;">tylerstead@protonmail.com</a>
   </p>
   <p>
     Please include a clear subject line that reflects your purpose — whether it's about

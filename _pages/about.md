@@ -6,6 +6,8 @@ description: "Faith Frontier Ecclesiastical Trust is a faith-based public-trust 
 body_class: page-about
 ---
 
+<!-- markdownlint-disable MD033 -->
+
 <section class="section-intro" style="max-width: 60rem; margin: 0 auto 3rem;">
   <h1>About Faith Frontier Ecclesiastical Trust</h1>
   <p class="lead">

@@ -45,23 +45,31 @@ show_breadcrumbs: true
           {% endif %}
           {% if case.documents and case.documents.size > 0 %}
             {% assign last_doc = case.documents | last %}
-            {% assign doc_path = last_doc.path %}
-            {% assign first_char = doc_path | slice: 0, 1 %}
-            {% if doc_path contains '://' %}
-              {% assign doc_url = doc_path %}
-            {% elsif first_char == '/' %}
-              {% assign doc_url = doc_path %}
-            {% else %}
-              {% assign doc_url = case.assets_dir | append: doc_path %}
-            {% endif %}
-            <p class="case-latest">
-              <strong>Latest filing:</strong>
-              {% if doc_url contains '://' %}
-                <a href="{{ doc_url }}" target="_blank" rel="noopener">{{ last_doc.label }}</a>
+            {% assign doc_path = last_doc.path | default: '' %}
+            {% if doc_path != '' %}
+              {% assign first_char = doc_path | slice: 0, 1 %}
+              {% if doc_path contains '://' %}
+                {% assign doc_url = doc_path %}
+              {% elsif first_char == '/' %}
+                {% assign doc_url = doc_path %}
               {% else %}
-                <a href="{{ doc_url | relative_url }}">{{ last_doc.label }}</a>
+                {% assign assets_dir = case.assets_dir | default: '' | append: '/' | replace: '//', '/' %}
+                {% if assets_dir == '' %}
+                  {% assign doc_url = doc_path %}
+                {% else %}
+                  {% assign doc_url = assets_dir | append: doc_path %}
+                {% endif %}
               {% endif %}
-            </p>
+              <p class="case-latest">
+                <strong>Latest filing:</strong>
+                {% assign label = last_doc.label | default: last_doc.path | default: 'Document' %}
+                {% if doc_url contains '://' %}
+                  <a href="{{ doc_url }}" target="_blank" rel="noopener">{{ label }}</a>
+                {% else %}
+                  <a href="{{ doc_url | relative_url }}">{{ label }}</a>
+                {% endif %}
+              </p>
+            {% endif %}
           {% endif %}
           <footer>
             <a class="btn btn-ghost" href="{{ case.url | relative_url }}">View full record</a>
