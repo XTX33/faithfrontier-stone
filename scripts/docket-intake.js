@@ -1,4 +1,4 @@
-node scripts/docket-intake.js// Minimal, Pages-safe intake: rename/move PDFs, update docket YAML, stage changes
+// Minimal, Pages-safe intake: rename/move PDFs, update docket YAML, stage changes
 import fs from 'fs';
 import path from 'path';
 import yaml from 'js-yaml';
@@ -19,16 +19,49 @@ const slugifyFile = name => {
   return slug || 'document';
 };
 
-const caseFiles = fs.existsSync('_cases') ? fs.readdirSync('_cases').filter(f=>f.endsWith('.md')) : [];
+// Find all case markdown files (handles both direct .md files and subdirectory index.md files)
+const findCaseFiles = () => {
+  const files = [];
+  if (!fs.existsSync('_cases')) return files;
+  
+  const entries = fs.readdirSync('_cases');
+  for (const entry of entries) {
+    const fullPath = path.join('_cases', entry);
+    const stat = fs.statSync(fullPath);
+    
+    if (stat.isFile() && entry.endsWith('.md') && entry !== '_TEMPLATE.md') {
+      files.push(entry);
+    } else if (stat.isDirectory()) {
+      const indexPath = path.join(fullPath, 'index.md');
+      if (fs.existsSync(indexPath)) {
+        files.push(path.join(entry, 'index.md'));
+      }
+    }
+  }
+  return files;
+};
+
+const caseFiles = findCaseFiles();
 
 // Bootstrap cases-map.yml from case front matter if missing/empty
 let casesMap = readYml(MAP_FILE) || {};
 const bootstrapMapFromCases = () => {
   const map = {};
+  
+  // Parse all case files and collect docket info
+  const caseData = [];
   for (const f of caseFiles) {
     const txt = fs.readFileSync(path.join('_cases', f), 'utf8');
     const fm = (txt.match(/^---\n([\s\S]*?)\n---/)||[])[1]||'';
-    const slug = (fm.match(/permalink:\s*\/cases\/([a-z0-9-]+)\//i)||[])[1] || f.replace(/\.md$/,'');
+    
+    // Extract slug from permalink or use directory name for subdirectories
+    let slug = (fm.match(/permalink:\s*\/cases\/([a-z0-9-]+)\//i)||[])[1];
+    if (!slug) {
+      // If f is like "dirname/index.md", use dirname as slug
+      const parts = f.split(path.sep);
+      slug = parts.length > 1 ? parts[0] : f.replace(/\.md$/,'');
+    }
+    
     // collect tokens from dockets[] and primary_docket
     const arr = [];
     
@@ -52,9 +85,24 @@ const bootstrapMapFromCases = () => {
     // Handle primary_docket field
     const mPrimary = fm.match(/primary_docket:\s*["']?([A-Za-z0-9:\-]+)["']?/);
     if (mPrimary) arr.push(mPrimary[1]);
-
-    arr.filter(Boolean).forEach(tok => { if (!map[tok]) map[tok] = slug; });
+    
+    const dockets = arr.filter(Boolean);
+    if (dockets.length > 0) {
+      caseData.push({ slug, dockets });
+    }
   }
+  
+  // Sort by number of dockets descending - process consolidated cases first
+  // This ensures multi-docket cases take priority over single-docket pages
+  caseData.sort((a, b) => b.dockets.length - a.dockets.length);
+  
+  // Build the map
+  for (const { slug, dockets } of caseData) {
+    dockets.forEach(tok => { 
+      if (!map[tok]) map[tok] = slug; 
+    });
+  }
+  
   return map;
 };
 
@@ -68,13 +116,19 @@ if (Object.keys(casesMap).length === 0) {
 // Build reverse index: token->slug from case front matter + map file
 const slugFromDocket = token => {
   if (casesMap[token]) return casesMap[token];
-  // Try filename inference (last segment of permalink or filename)
+  // Try filename inference (last segment of permalink or directory name)
   for (const f of caseFiles) {
     const txt = fs.readFileSync(path.join('_cases', f), 'utf8');
     const fm = (txt.match(/^---\n([\s\S]*?)\n---/)||[])[1]||'';
     const m = fm.match(/dockets:\s*\[([^\]]+)\]/) || fm.match(/dockets:\s*-\s*(.+)/);
-    const slug = (fm.match(/permalink:\s*\/cases\/([a-z0-9-]+)\//i)||[])[1] ||
-                 f.replace(/\.md$/,'');
+    
+    let slug = (fm.match(/permalink:\s*\/cases\/([a-z0-9-]+)\//i)||[])[1];
+    if (!slug) {
+      // If f is like "dirname/index.md", use dirname as slug
+      const parts = f.split(path.sep);
+      slug = parts.length > 1 ? parts[0] : f.replace(/\.md$/,'');
+    }
+    
     if (m && m[0].includes(token)) return slug;
   }
   return null;
