@@ -67,11 +67,12 @@ layout: default
   </section>
   {% endif %}
 
+
+  {% assign slug = page.url | split:'/' | last | default: page.slug %}
+  {% assign docket_data = site.data.docket[slug] %}
+  {% if docket_data and docket_data.size > 0 %}
   <section class="docket">
     <h2>Docket</h2>
-    {% assign slug = page.url | split:'/' | last | default: page.slug %}
-    {% assign docket_data = site.data.docket[slug] %}
-    {% if docket_data %}
       {% assign docket = docket_data | sort: "date" | reverse %}
       <ul class="docket-list">
         {% for d in docket %}
@@ -82,14 +83,13 @@ layout: default
           </li>
         {% endfor %}
       </ul>
-    {% else %}
-      <p>No docket entries yet.</p>
-    {% endif %}
   </section>
+  {% endif %}
 
-  {% if page.assets_dir and page.documents %}
+
+  {% if page.assets_dir and page.documents and page.documents.size > 0 %}
   <section class="case-files">
-    <h2>Key Filings &amp; Exhibits</h2>
+    <h2>Documents</h2>
     <ul>
       {% for doc in page.documents %}
       <li>
@@ -110,7 +110,8 @@ layout: default
   </section>
   {% endif %}
 
-  {% if page.related_dockets %}
+
+  {% if page.related_dockets and page.related_dockets.size > 0 %}
   <section class="case-related">
     <h2>Related Matters</h2>
     <ul>

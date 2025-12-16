@@ -8,6 +8,58 @@ description: "Faith Frontier Ecclesiastical Trust builds a faith-rooted public t
 ---
 
 <!-- markdownlint-disable MD033 -->
+<style>
+  :root{
+    --max-width:1200px;
+    --container-pad:clamp(1rem, 2.5vw, 2.5rem);
+    --gutter:clamp(0.75rem, 2vw, 1.5rem);
+    --muted: #6b7280;
+    --accent: #0b1220;
+    --card-bg: rgba(10,12,16,0.03);
+  }
+
+  html{box-sizing:border-box;font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;}
+  *,*::before,*::after{box-sizing:inherit}
+  body{margin:0;line-height:1.5;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;color:var(--accent);background:#fff}
+  .container{max-width:var(--max-width);padding:0 var(--container-pad);margin:0 auto}
+
+  /* responsive type scale */
+  h1{font-size:clamp(1.6rem, 4.5vw, 3rem);line-height:1.06;margin:.35em 0}
+  h2{font-size:clamp(1.25rem, 3.2vw, 2rem);margin:.4em 0}
+  h3{font-size:clamp(1rem, 2.2vw, 1.125rem);margin:.35em 0}
+  p{margin:.5em 0;color:var(--muted);max-width:70ch}
+
+  /* Hero layout improvements */
+  .hero-grid{display:grid;grid-template-columns:1fr minmax(260px,360px);gap:var(--gutter);align-items:start;align-content:start}
+  .hero-main{min-width:0}
+  .hero-side-panel{background:transparent;display:flex;flex-direction:column;gap:clamp(.5rem,1.5vw,1rem);align-items:flex-start}
+  .hero-brand-visual img{max-width:100%;height:auto;display:block}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:0.75rem}
+  .hero-actions .btn{min-width:120px;padding:.6rem 1rem}
+
+  .hero-highlights{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:clamp(.5rem,1vw,.9rem);margin-top:1rem}
+  .hero-highlight{background:var(--card-bg);padding:.75rem;border-radius:8px}
+
+  /* side stats */
+  .hero-panel__stat{display:flex;flex-direction:column;gap:.15rem}
+  .hero-panel__number{font-weight:700;font-size:1.25rem}
+
+  /* general section spacing */
+  section{padding:clamp(1rem,3vw,2.5rem) 0}
+  .section-divider{margin:0}
+
+  /* responsive adjustments */
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-side-panel{order:2}
+    .hero-actions .btn{flex:1}
+    .hero-highlights{grid-template-columns:1fr}
+  }
+
+  /* accessibility & performance */
+  img{max-width:100%;height:auto;display:block}
+  @media (prefers-reduced-motion:reduce){*{animation-duration:0.001ms!important;transition-duration:0.001ms!important}}
+</style>
 
 <section class="hero hero--home hero-home--revival">
   <div class="container hero-grid">
@@ -47,7 +99,9 @@ description: "Faith Frontier Ecclesiastical Trust builds a faith-rooted public t
     <div class="hero-side-panel">
       <div class="hero-brand-visual">
         <!-- Placeholder for brand image or motif -->
-        <img src="/assets/img/faithfrontier-mark.svg" alt="Faith Frontier Crest" style="max-width: 100%; height: auto; margin-bottom: 1.5rem;" />
+        <!-- Preload hero visual for faster first-paint, use modern image attributes to reduce layout shift -->
+        <link rel="preload" href="/assets/img/faithfrontier-mark.svg" as="image">
+        <img src="/assets/img/faithfrontier-mark.svg" alt="Faith Frontier Crest" width="360" height="360" decoding="async" fetchpriority="high" style="max-width: 100%; height: auto; margin-bottom: 1.5rem;" />
       </div>
       <p class="hero-badge">In the world, but not of it</p>
       <!-- Daily Verse placed in side panel -->
