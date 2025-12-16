@@ -7,6 +7,8 @@ show_breadcrumbs: false
 description: "Faith Frontier Ecclesiastical Trust builds a faith-rooted public trust for New Jersey residents, focusing on due process, equity, and restoration."
 ---
 
+<!-- markdownlint-disable MD033 -->
+
 <section class="hero hero--home hero-home--revival">
   <div class="container hero-grid">
     <div class="hero-main">
@@ -52,25 +54,10 @@ description: "Faith Frontier Ecclesiastical Trust builds a faith-rooted public t
       <div id="daily-verse" class="hero-scripture" style="margin: 0.5rem 0 1rem; color: var(--color-muted);">
         <span class="dv-text">Loading daily verse…</span>
         <span class="dv-ref" style="display:block; font-size: 0.95rem;"></span>
-        <span class="dv-note" style="display:block; font-size: 0.85rem; opacity: 0.8; margin-top: 0.35rem;">Updated daily (New Jersey)</span>
+        <span class="dv-note" style="display:block; font-size: 0.85rem; opacity: 0.8; margin-top: 0.35rem;">Updated daily from Atlantic County, New Jersey</span>
       </div>
-      <div class="hero-panel__stat">
-        <span class="hero-panel__number">8+</span>
-        <span class="hero-panel__label">active case narratives</span>
-      </div>
-      <div class="hero-panel__stat">
-        <span class="hero-panel__number">10</span>
-        <span class="hero-panel__label">sanctuary initiatives in motion</span>
-      </div>
-
+    
     <div class="hero-side-panel">
-      <p class="hero-badge">In the world, but not of it</p>
-      <!-- Daily Verse placed in side panel -->
-      <div id="daily-verse" class="hero-scripture" style="margin: 0.5rem 0 1rem; color: var(--color-muted);">
-        <span class="dv-text">Loading daily verse…</span>
-        <span class="dv-ref" style="display:block; font-size: 0.95rem;"></span>
-        <span class="dv-note" style="display:block; font-size: 0.85rem; opacity: 0.8; margin-top: 0.35rem;">Updated daily (New Jersey)</span>
-      </div>
       <div class="hero-panel__stat">
         <span class="hero-panel__number">8+</span>
         <span class="hero-panel__label">active case narratives</span>
@@ -90,7 +77,7 @@ description: "Faith Frontier Ecclesiastical Trust builds a faith-rooted public t
       </div>
       <div class="hero-panel__clarity">
   <p>
-    The cases shared here are my own—offered as public witness so others can see the patterns, burdens, 
+    The cases shared here are my own—offered as public witness so others can see the patterns, burdens,
     and due-process gaps many New Jersey residents face every day.
   </p>
 </div>
