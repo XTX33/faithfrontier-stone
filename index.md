@@ -75,12 +75,13 @@ description: "Faith Frontier Ecclesiastical Trust builds a faith-rooted public t
         Anchored in daily prayer to Yeshua the Messiah, the Trust keeps every filing, affidavit, and negotiation under
         His authority so mercy and truth walk together.
       </div>
+
       <div class="hero-panel__clarity">
-  <p>
-    The cases shared here are my own—offered as public witness so others can see the patterns, burdens,
-    and due-process gaps many New Jersey residents face every day.
-  </p>
-</div>
+        <p>
+          The cases shared here are my own—offered as public witness so others can see the patterns, burdens,
+          and due-process gaps many New Jersey residents face every day.
+        </p>
+      </div>
     </div>
   </div>
 </section>
