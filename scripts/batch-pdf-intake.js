@@ -31,24 +31,6 @@ function parseFilename(filename) {
   return { complete: false };
 }
 
-function extractMetaFromText(text) {
-  const lines = text.split(/\r?\n/).slice(0, 20);
-  let date = null, type = null, short = null;
-  for (const line of lines) {
-    if (!date) {
-      const d = line.match(/(\d{4}-\d{2}-\d{2})/);
-      if (d) date = d[1];
-    }
-    if (!type && /order|motion|complaint|notice|filing|judgment|appearance|petition|application/i.test(line)) {
-      type = line.trim().split(' ')[0];
-    }
-    if (!short && line.length > 10 && line.length < 80) {
-      short = line.trim();
-    }
-  }
-  return { date, type, short };
-}
-
 function buildFilename(meta) {
   let date = meta.date || 'unknown';
   let type = meta.type ? meta.type.replace(/\s+/g, '-') : 'Document';

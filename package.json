@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "lint": "eslint \"assets/js/**/*.js\" \"worker/**/*.js\" \"scripts/verify-frontend-js.js\" \"eslint.config.js\"",
+    "lint:fix": "eslint \"assets/js/**/*.js\" \"worker/**/*.js\" \"scripts/verify-frontend-js.js\" \"eslint.config.js\" --fix",
+    "format": "prettier \"assets/js/**/*.js\" \"scripts/verify-frontend-js.js\" \"eslint.config.js\" --write",
+    "format:check": "prettier \"assets/js/**/*.js\" \"scripts/verify-frontend-js.js\" \"eslint.config.js\" --check",
+    "verify:frontend": "node scripts/verify-frontend-js.js",
+
     "analyze": "node scripts/analyze-cases.js",
     "docket:intake": "node scripts/docket-intake.js",
     "checksums": "node scripts/generate-checksums.js",
@@ -15,5 +21,10 @@
     "multer": "^2.0.2",
     "openai": "^6.9.0",
     "pdf-parse": "^2.4.5"
+  },
+  "devDependencies": {
+    "eslint": "^9.20.0",
+    "globals": "^15.14.0",
+    "prettier": "^3.4.2"
   }
 }

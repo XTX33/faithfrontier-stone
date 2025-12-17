@@ -126,7 +126,12 @@ app.get('/', (req, res) => {
       const list = document.getElementById('review-list');
       list.innerHTML = '';
       data.forEach(item => {
-        list.innerHTML += `<div class='review-item'><b>${item.file}</b><br>Meta: ${JSON.stringify(item.meta)}</div>`;
+        list.innerHTML +=
+          "<div class='review-item'><b>" +
+          String(item.file) +
+          "</b><br>Meta: " +
+          JSON.stringify(item.meta) +
+          "</div>";
       });
     }
     loadReview();
