@@ -1,80 +1,13 @@
 ---
 layout: default
 title: "Faith Frontier"
-hero_panel: true
 hide_hero: true
 show_breadcrumbs: false
 description: "Faith Frontier Ecclesiastical Trust builds a faith-rooted public trust for New Jersey residents, focusing on due process, equity, and restoration."
 ---
 
 <!-- markdownlint-disable MD033 -->
-<style>
-  :root {
-    --color-surface: var(--ff-surface, #0f172a);
-    --color-surface-alt: var(--ts-navy-soft, #0a1b32);
-    --color-text: var(--ff-ink, #f9fafb);
-    --color-muted: var(--ff-muted, #a8a29e);
-    --color-highlight: var(--ff-cream, #fef3c7);
-    --accent-emerald: var(--ts-emerald, #018a6a);
-    --accent-emerald-light: var(--ts-emerald-light, #24b58a);
-    --accent-brass: var(--ts-brass, #b88a39);
-    --accent-brass-muted: var(--ts-brass-muted, #a07a32);
-    /* compatibility aliases and sensible defaults */
-    --accent: var(--color-text);
-    --muted: var(--color-muted);
-    --card-bg: var(--color-surface-alt);
 
-    /* layout tokens (provide sensible fallbacks if not declared globally) */
-    --gutter: 1.5rem;
-    --max-width: 1200px;
-    --container-pad: 1rem;
-    --radius-base: var(--radius-md, 16px);
-    --shadow-base: var(--shadow-mid, 0 16px 40px rgba(0, 0, 0, 0.35));
-    --space-section: var(--space-2xl, 3rem);
-  }
-
-  html{box-sizing:border-box;font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;}
-  *,*::before,*::after{box-sizing:inherit}
-  body{margin:0;line-height:1.5;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;color:var(--accent);background:#fff}
-  .container{max-width:var(--max-width);padding:0 var(--container-pad);margin:0 auto}
-
-  /* responsive type scale */
-  h1{font-size:clamp(1.6rem, 4.5vw, 3rem);line-height:1.06;margin:.35em 0}
-  h2{font-size:clamp(1.25rem, 3.2vw, 2rem);margin:.4em 0}
-  h3{font-size:clamp(1rem, 2.2vw, 1.125rem);margin:.35em 0}
-  p{margin:.5em 0;color:var(--muted);max-width:70ch}
-
-  /* Hero layout improvements */
-  .hero-grid{display:grid;grid-template-columns:1fr minmax(260px,360px);gap:var(--gutter);align-items:start;align-content:start}
-  .hero-main{min-width:0}
-  .hero-side-panel{background:transparent;display:flex;flex-direction:column;gap:clamp(.5rem,1.5vw,1rem);align-items:flex-start}
-  .hero-brand-visual img{max-width:100%;height:auto;display:block}
-  .hero-actions{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:0.75rem}
-  .hero-actions .btn{min-width:120px;padding:.6rem 1rem}
-
-  .hero-highlights{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:clamp(.5rem,1vw,.9rem);margin-top:1rem}
-  .hero-highlight{background:var(--card-bg);padding:.75rem;border-radius:8px}
-
-  /* side stats */
-  .hero-panel__stat{display:flex;flex-direction:column;gap:.15rem}
-  .hero-panel__number{font-weight:700;font-size:1.25rem}
-
-  /* general section spacing */
-  section{padding:clamp(1rem,3vw,2.5rem) 0}
-  .section-divider{margin:0}
-
-  /* responsive adjustments */
-  @media (max-width:900px){
-    .hero-grid{grid-template-columns:1fr;}
-    .hero-side-panel{order:2}
-    .hero-actions .btn{flex:1}
-    .hero-highlights{grid-template-columns:1fr}
-  }
-
-  /* accessibility & performance */
-  img{max-width:100%;height:auto;display:block}
-  @media (prefers-reduced-motion:reduce){*{animation-duration:0.001ms!important;transition-duration:0.001ms!important}}
-</style>
 
 <section class="hero hero--home hero-home--revival">
   <div class="container hero-grid">
