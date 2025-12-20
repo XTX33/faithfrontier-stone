@@ -264,6 +264,11 @@ layout: default
   {% endif %}
 
   {%- comment -%}
+    CASE RESOURCES - Notes and evidence (only shown when present)
+  {%- endcomment -%}
+  {% include case-resources.html %}
+
+  {%- comment -%}
     AI-GENERATED ANALYSIS - Optional AI insights
   {%- endcomment -%}
   {% include case-analysis.html %}

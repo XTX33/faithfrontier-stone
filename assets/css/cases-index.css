@@ -1,0 +1,388 @@
+/**
+ * CASES INDEX PAGE STYLES
+ * 
+ * Comprehensive styling for /cases/ - the legal archive landing page.
+ * Includes hero section, case statistics, filters, and case cards.
+ * 
+ * Sections:
+ * - Hero banner with gradient and stats
+ * - Filter controls
+ * - Case card grid
+ * - Empty states
+ */
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.cases-hero {
+  background: linear-gradient(135deg, rgba(16, 92, 74, 0.95) 0%, rgba(28, 27, 25, 0.98) 100%);
+  color: white;
+  padding: 3rem 1.5rem;
+  margin-bottom: 3rem;
+  border-radius: 12px;
+}
+
+.cases-hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.cases-hero-lead {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  max-width: 800px;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+/* Case Statistics */
+.cases-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.case-stat {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.case-stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--accent-brass, #d4a574);
+  margin-bottom: 0.25rem;
+  line-height: 1;
+}
+
+.case-stat-label {
+  display: block;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  color: white;
+}
+
+/* Hero Actions */
+.cases-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.btn-cases {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s;
+  display: inline-block;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background: var(--accent-brass, #d4a574);
+  color: #0f172a;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.btn-cases:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary:hover {
+  background: #c49564;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================
+   FILTER CONTROLS
+   ============================================ */
+
+.case-filters {
+  background: var(--color-surface-alt, #2a2826);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 1px solid var(--color-border, #3a3835);
+}
+
+.filter-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-secondary, #d1cec9);
+}
+
+.filter-select,
+.filter-input {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  background: var(--color-surface, #1c1b19);
+  border: 1px solid var(--color-border, #3a3835);
+  border-radius: 6px;
+  color: var(--color-text, #f9fafb);
+  font-size: 0.9375rem;
+}
+
+.filter-select:focus,
+.filter-input:focus {
+  outline: none;
+  border-color: var(--accent-brass, #d4a574);
+  box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+}
+
+/* ============================================
+   CASE CARDS
+   ============================================ */
+
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.case-card {
+  background: var(--color-surface-alt, #2a2826);
+  border: 1px solid var(--color-border, #3a3835);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.case-card:hover {
+  border-color: var(--accent-brass, #d4a574);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.case-card-header {
+  margin-bottom: 1rem;
+}
+
+.case-card-status {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.case-status--active {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+}
+
+.case-status--pending {
+  background: rgba(251, 146, 60, 0.15);
+  color: #fb923c;
+}
+
+.case-status--closed {
+  background: rgba(156, 163, 175, 0.15);
+  color: #9ca3af;
+}
+
+.case-card-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+  color: var(--color-text, #f9fafb);
+}
+
+.case-card-docket {
+  font-size: 0.875rem;
+  color: var(--color-muted, #a8a39e);
+  font-family: 'Courier New', monospace;
+}
+
+.case-meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin: 1rem 0;
+  padding: 1rem 0;
+  border-top: 1px solid var(--color-border, #3a3835);
+  border-bottom: 1px solid var(--color-border, #3a3835);
+}
+
+.case-meta-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.case-meta-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-muted, #a8a39e);
+  margin-bottom: 0.25rem;
+}
+
+.case-meta-value {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary, #d1cec9);
+  font-weight: 500;
+}
+
+.case-card-description {
+  flex: 1;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary, #d1cec9);
+  margin-bottom: 1rem;
+}
+
+.case-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.case-tag {
+  padding: 0.25rem 0.75rem;
+  background: rgba(212, 165, 116, 0.15);
+  border-radius: 20px;
+  font-size: 0.8125rem;
+  color: var(--accent-brass, #d4a574);
+  font-weight: 500;
+}
+
+.view-case-btn {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 0.625rem 1.25rem;
+  background: var(--accent-brass, #d4a574);
+  color: #0f172a;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition: all 0.2s;
+  margin-top: auto;
+}
+
+.view-case-btn:hover {
+  background: #c49564;
+  transform: translateX(2px);
+}
+
+/* ============================================
+   EMPTY STATES
+   ============================================ */
+
+.no-results {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--color-muted, #a8a39e);
+}
+
+.no-results-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.3;
+}
+
+.no-results-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-secondary, #d1cec9);
+}
+
+.no-results-text {
+  font-size: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+  .cases-hero {
+    padding: 2rem 1rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    border-radius: 0;
+  }
+  
+  .cases-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .filter-row {
+    flex-direction: column;
+  }
+  
+  .filter-group {
+    width: 100%;
+  }
+  
+  .cases-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .case-meta {
+    grid-template-columns: 1fr;
+  }
+  
+  .cases-actions {
+    flex-direction: column;
+  }
+  
+  .btn-cases {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .cases-hero h1 {
+    font-size: 1.75rem;
+  }
+  
+  .cases-hero-lead {
+    font-size: 1rem;
+  }
+  
+  .case-stat-number {
+    font-size: 2rem;
+  }
+}

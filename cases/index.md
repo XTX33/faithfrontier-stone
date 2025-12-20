@@ -3,252 +3,26 @@ layout: default
 title: "Case Records & Legal Archive"
 permalink: /cases/
 description: "Complete archive of Faith Frontier's legal proceedings—documenting competence, transparency, and constitutional literacy through public court records."
+stylesheet: /assets/css/cases-index.css
 ---
 
-<style>
-  .cases-hero {
-    background: linear-gradient(135deg, rgba(16, 92, 74, 0.95) 0%, rgba(28, 27, 25, 0.98) 100%);
-    color: white;
-    padding: 3rem 1.5rem;
-    margin-bottom: 3rem;
-    border-radius: 12px;
-  }
-  
-  .cases-hero h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
-    margin-bottom: 1rem;
-    color: white;
-  }
-  
-  .cases-hero-lead {
-    font-size: 1.2rem;
-    line-height: 1.7;
-    max-width: 800px;
-    margin-bottom: 2rem;
-    opacity: 0.95;
-  }
-  
-  .cases-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
-  }
-  
-  .case-stat {
-    text-align: center;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-  }
-  
-  .case-stat-number {
-    display: block;
-    font-size: 2.5rem;
-    font-weight: 900;
-    color: var(--accent-brass, #d4a574);
-    margin-bottom: 0.25rem;
-  }
-  
-  .case-stat-label {
-    display: block;
-    font-size: 0.9rem;
-    opacity: 0.9;
-  }
-  
-  .cases-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-  }
-  
-  .btn-cases {
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.2s;
-    display: inline-block;
-  }
-  
-  .btn-primary {
-    background: var(--accent-brass, #d4a574);
-    color: #0f172a;
-  }
-  
-  .btn-secondary {
-    background: transparent;
-    border: 2px solid white;
-    color: white;
-  }
-  
-  .btn-cases:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  }
-  
-  .case-filters {
-    background: var(--color-surface-alt, #2a2826);
-    padding: 1.5rem;
-    border-radius: 12px;
-    margin-bottom: 2rem;
-  }
-  
-  .filter-row {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  
-  .filter-group {
-    flex: 1;
-    min-width: 200px;
-  }
-  
-  .filter-group label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--accent-brass, #d4a574);
-  }
-  
-  .filter-input,
-  .filter-select {
-    width: 100%;
-    padding: 0.75rem;
-    font-size: 1rem;
-    border-radius: 8px;
-    border: 2px solid rgba(212, 165, 116, 0.3);
-    background: var(--color-surface, #1a1918);
-    color: var(--color-text, #e5e3df);
-  }
-  
-  .filter-input:focus,
-  .filter-select:focus {
-    outline: none;
-    border-color: var(--accent-brass, #d4a574);
-  }
-  
-  .case-list {
-    display: grid;
-    gap: 1.5rem;
-  }
-  
-  .case-card {
-    background: var(--color-surface-alt, #2a2826);
-    padding: 1.5rem;
-    border-radius: 12px;
-    border: 2px solid rgba(212, 165, 116, 0.2);
-    transition: all 0.3s;
-  }
-  
-  .case-card:hover {
-    border-color: rgba(212, 165, 116, 0.5);
-    transform: translateY(-2px);
-  }
-  
-  .case-card h2 {
-    margin-top: 0;
-    font-size: 1.5rem;
-  }
-  
-  .case-card h2 a {
-    color: var(--color-highlight, #d4a574);
-    text-decoration: none;
-  }
-  
-  .case-meta {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 0.75rem;
-    margin: 1rem 0;
-    font-size: 0.95rem;
-    color: var(--color-muted, #a8a39e);
-  }
-  
-  .case-meta strong {
-    color: var(--accent-brass, #d4a574);
-  }
-  
-  .status-active {
-    color: var(--accent-emerald-light, #10b981) !important;
-    font-weight: 600;
-  }
-  
-  .status-pending {
-    color: var(--accent-brass, #d4a574) !important;
-    font-weight: 600;
-  }
-  
-  .status-closed {
-    color: var(--color-muted, #a8a39e) !important;
-  }
-  
-  .case-overview {
-    margin: 1rem 0;
-    line-height: 1.6;
-    color: var(--color-text, #e5e3df);
-  }
-  
-  .case-tags {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    margin: 1rem 0;
-  }
-  
-  .case-tag {
-    padding: 0.25rem 0.75rem;
-    background: rgba(212, 165, 116, 0.15);
-    border-radius: 20px;
-    font-size: 0.85rem;
-    color: var(--accent-brass, #d4a574);
-  }
-  
-  .view-case-btn {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.5rem 1.25rem;
-    background: var(--accent-brass, #d4a574);
-    color: #0f172a;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 600;
-    transition: all 0.2s;
-  }
-  
-  .view-case-btn:hover {
-    background: #c49564;
-    transform: translateX(4px);
-  }
-  
-  .no-results {
-    text-align: center;
-    padding: 3rem 1rem;
-    color: var(--color-muted, #a8a39e);
-  }
-  
-  @media (max-width: 768px) {
-    .cases-hero {
-      padding: 2rem 1rem;
-    }
-    
-    .cases-stats {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .filter-row {
-      flex-direction: column;
-    }
-    
-    .case-meta {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
+{%- comment -%}
+==============================================================================
+FAITH FRONTIER CASE RECORDS INDEX
+==============================================================================
 
+This page displays the complete legal archive with:
+- Hero section with case statistics
+- Filter controls for status, court, and search
+- Responsive card grid of all published cases
+- Smart resource display (notes/evidence only when present)
+
+Styling: /assets/css/cases-index.css
+Case Layout: _layouts/case-enhanced.html
+Resources Include: _includes/case-resources.html
+{%- endcomment -%}
+
+<!-- ==================== HERO SECTION ==================== -->
 <div class="cases-hero">
   <div class="container" style="max-width: 1100px; margin: 0 auto;">
     <h1>Case Records & Legal Archive</h1>
@@ -257,11 +31,12 @@ description: "Complete archive of Faith Frontier's legal proceedings—documenti
       <strong>constitutional literacy</strong>, and <strong>transparent accountability</strong>—the foundation of trust for government partnerships and community stewardship.
     </p>
     
+    <!-- Case Statistics -->
     <div class="cases-stats">
-      {% assign total_cases = site.cases | size %}
-      {% assign active_cases = site.cases | where: "status", "active" | size %}
-      {% assign pending_cases = site.cases | where: "status", "pending" | size %}
-      {% assign closed_cases = site.cases | where: "status", "closed" | size %}
+      {% assign total_cases = site.cases | where_exp: "case", "case.published != false" | size %}
+      {% assign active_cases = site.cases | where: "status", "active" | where_exp: "case", "case.published != false" | size %}
+      {% assign pending_cases = site.cases | where: "status", "pending" | where_exp: "case", "case.published != false" | size %}
+      {% assign closed_cases = site.cases | where: "status", "closed" | where_exp: "case", "case.published != false" | size %}
       
       <div class="case-stat">
         <span class="case-stat-number">{{ total_cases }}</span>
@@ -281,195 +56,199 @@ description: "Complete archive of Faith Frontier's legal proceedings—documenti
       </div>
     </div>
     
+    <!-- Call-to-Action Buttons -->
     <div class="cases-actions">
       <a href="/stewardship/" class="btn-cases btn-primary">Join the Stewardship Journey</a>
       <a href="/government-partnerships/" class="btn-cases btn-secondary">Municipal Partnerships</a>
-      <a href="/cases/active/" class="btn-cases btn-secondary">Active Case Digest</a>
+      <a href="#active-cases" class="btn-cases btn-secondary">Active Case Digest</a>
     </div>
   </div>
 </div>
 
+<!-- ==================== MAIN CONTENT ==================== -->
 <div class="container" style="max-width: 1100px; margin: 0 auto; padding: 0 1.5rem;">
   
-  <!-- Why This Matters -->
+  <!-- ==================== WHY THIS MATTERS ==================== -->
   <section style="margin-bottom: 3rem;">
-    <h2 style="font-size: 1.75rem; margin-bottom: 1rem;">Why This Archive Matters</h2>
+    <h2 style="font-size: 1.75rem; margin-bottom: 1.5rem; color: var(--color-text, #f9fafb);">Why This Archive Matters</h2>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-      <div style="padding: 1.25rem; background: var(--color-surface-alt, #2a2826); border-radius: 8px; border-left: 4px solid var(--accent-brass, #d4a574);">
-        <h3 style="margin-top: 0; color: var(--accent-brass, #d4a574);">For Government Partners</h3>
-        <p style="margin-bottom: 0;">Documented track record of procedural competence, constitutional knowledge, and ability to navigate complex legal systems—essential for emergency housing contracts and reentry partnerships.</p>
+      
+      <!-- For Government Partners -->
+      <div style="padding: 1.5rem; background: var(--color-surface-alt, #2a2826); border-radius: 8px; border-left: 4px solid var(--accent-brass, #d4a574);">
+        <h3 style="margin-top: 0; color: var(--accent-brass, #d4a574); font-size: 1.125rem;">For Government Partners</h3>
+        <p style="margin-bottom: 0; line-height: 1.6; font-size: 0.9375rem;">
+          Documented track record of procedural competence, constitutional knowledge, and ability to navigate complex legal systems—essential for emergency housing contracts and reentry partnerships.
+        </p>
       </div>
-      <div style="padding: 1.25rem; background: var(--color-surface-alt, #2a2826); border-radius: 8px; border-left: 4px solid var(--accent-brass, #d4a574);">
-        <h3 style="margin-top: 0; color: var(--accent-brass, #d4a574);">For Community Members</h3>
-        <p style="margin-bottom: 0;">Real-world civics education showing how ordinary people can advocate for their rights, follow proper procedures, and hold institutions accountable through lawful process.</p>
+      
+      <!-- For Community Members -->
+      <div style="padding: 1.5rem; background: var(--color-surface-alt, #2a2826); border-radius: 8px; border-left: 4px solid var(--accent-brass, #d4a574);">
+        <h3 style="margin-top: 0; color: var(--accent-brass, #d4a574); font-size: 1.125rem;">For Community Members</h3>
+        <p style="margin-bottom: 0; line-height: 1.6; font-size: 0.9375rem;">
+          Real-world proof that Faith Frontier operates with transparency, humility, and respect for due process—building trust through verifiable actions, not empty promises.
+        </p>
       </div>
-      <div style="padding: 1.25rem; background: var(--color-surface-alt, #2a2826); border-radius: 8px; border-left: 4px solid var(--accent-brass, #d4a574);">
-        <h3 style="margin-top: 0; color: var(--accent-brass, #d4a574);">For Future Stewards</h3>
-        <p style="margin-bottom: 0;">This is transparency in action—see how Faith Frontier operates, makes decisions, and handles conflict. No hidden agendas. No secret dealings. Everything documented.</p>
+      
+      <!-- For Legal Researchers -->
+      <div style="padding: 1.5rem; background: var(--color-surface-alt, #2a2826); border-radius: 8px; border-left: 4px solid var(--accent-brass, #d4a574);">
+        <h3 style="margin-top: 0; color: var(--accent-brass, #d4a574); font-size: 1.125rem;">For Legal Researchers</h3>
+        <p style="margin-bottom: 0; line-height: 1.6; font-size: 0.9375rem;">
+          Comprehensive docket entries, filings, and procedural history demonstrating constitutional issues, procedural challenges, and the evolution of legal strategy over time.
+        </p>
       </div>
     </div>
   </section>
   
-  <!-- Filters -->
-  <div class="case-filters">
+  <!-- ==================== FILTER CONTROLS ==================== -->
+  <div class="case-filters" id="case-filters">
     <div class="filter-row">
       <div class="filter-group">
-        <label for="case-search">Search Cases</label>
-        <input 
-          type="search" 
-          id="case-search" 
-          class="filter-input"
-          placeholder="Search by title, docket, court, or keywords..."
-        >
-      </div>
-      
-      <div class="filter-group" style="max-width: 200px;">
-        <label for="status-filter">Status</label>
-        <select id="status-filter" class="filter-select">
-          <option value="all">All Statuses</option>
+        <label for="filter-status">Status</label>
+        <select id="filter-status" class="filter-select">
+          <option value="">All Statuses</option>
           <option value="active">Active</option>
           <option value="pending">Pending</option>
           <option value="closed">Closed</option>
         </select>
       </div>
       
-      <div class="filter-group" style="max-width: 200px;">
-        <label for="court-filter">Court</label>
-        <select id="court-filter" class="filter-select">
-          <option value="all">All Courts</option>
-          <option value="superior">NJ Superior Court</option>
-          <option value="appellate">NJ Appellate Division</option>
-          <option value="federal">Federal District</option>
+      <div class="filter-group">
+        <label for="filter-court">Court</label>
+        <select id="filter-court" class="filter-select">
+          <option value="">All Courts</option>
+          {% assign all_courts = site.cases | where_exp: "case", "case.published != false" | map: "court" | uniq | sort %}
+          {% for court in all_courts %}
+            {% if court and court != "" %}
+            <option value="{{ court }}">{{ court }}</option>
+            {% endif %}
+          {% endfor %}
         </select>
       </div>
+      
+      <div class="filter-group" style="flex: 2;">
+        <label for="filter-search">Search</label>
+        <input type="text" id="filter-search" class="filter-input" placeholder="Search by title, docket, or description...">
+      </div>
     </div>
-  </div>
+  </section>
   
-  <!-- Case List -->
-  <div class="case-list" id="case-list">
-    {% assign cases = site.cases | sort: "filed_date" | reverse %}
-    {% if cases.size == 0 %}
-    <div class="no-results" style="display: block;">
-      <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">No cases found in collection.</p>
-      <p>Ensure Jekyll has properly loaded the _cases collection.</p>
+  <!-- ==================== ACTIVE CASES ==================== -->
+  <section id="active-cases" style="margin-bottom: 3rem;">
+    <h2 style="font-size: 1.75rem; margin-bottom: 1.5rem; color: var(--color-text, #f9fafb);">Active Cases</h2>
+    <div class="cases-grid" id="active-cases-grid">
+      {% assign active = site.cases | where: "status", "active" | where_exp: "case", "case.published != false" | sort: "filed_date" | reverse %}
+      {% if active.size > 0 %}
+        {% for case in active %}
+          {% include case-card.html case=case %}
+        {% endfor %}
+      {% else %}
+        <div class="no-results">
+          <div class="no-results-icon">⚖️</div>
+          <h3 class="no-results-title">No Active Cases</h3>
+          <p class="no-results-text">There are currently no active cases in the system.</p>
+        </div>
+      {% endif %}
     </div>
-    {% endif %}
-    {% for case in cases %}
-      <article 
-        class="case-card" 
-        data-status="{{ case.status }}" 
-        data-court="{{ case.court | downcase }}"
-        data-search="{{ case.title | downcase }} {{ case.short_title | downcase }} {{ case.dockets | join: ' ' | downcase }} {{ case.primary_docket | downcase }} {{ case.court | downcase }} {{ case.overview | downcase }} {{ case.tags | join: ' ' | downcase }}"
-      >
-        <h2>
-          <a href="{{ case.url | relative_url }}">
-            {{ case.short_title | default: case.title }}
-          </a>
-        </h2>
-        
-        <div class="case-meta">
-          <div><strong>Court:</strong> {{ case.court }}</div>
-          <div><strong>Docket:</strong> {{ case.primary_docket | default: case.docket | default: case.dockets | join: ", " }}</div>
-          <div>
-            <strong>Status:</strong> 
-            <span class="status-{{ case.status }}">{{ case.status | capitalize }}</span>
-          </div>
-          {% if case.filed_date %}
-          <div><strong>Filed:</strong> {{ case.filed_date | date: "%B %-d, %Y" }}</div>
-          {% endif %}
-        </div>
-        
-        {% if case.tags and case.tags.size > 0 %}
-        <div class="case-tags">
-          {% for tag in case.tags %}
-          <span class="case-tag">{{ tag }}</span>
-          {% endfor %}
-        </div>
-        {% endif %}
-        
-        {% if case.overview %}
-        <p class="case-overview">{{ case.overview }}</p>
-        {% endif %}
-        
-        <a href="{{ case.url | relative_url }}" class="view-case-btn">
-          View Full Case Record →
-        </a>
-      </article>
-    {% endfor %}
-  </div>
+  </section>
   
-  <div class="no-results" id="no-results" style="display: none;">
-    <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">No cases match your search.</p>
-    <p style="margin-bottom: 0;">Try adjusting your filters or search terms.</p>
-  </div>
+  <!-- ==================== PENDING CASES ==================== -->
+  {% assign pending = site.cases | where: "status", "pending" | where_exp: "case", "case.published != false" | sort: "filed_date" | reverse %}
+  {% if pending.size > 0 %}
+  <section style="margin-bottom: 3rem;">
+    <h2 style="font-size: 1.75rem; margin-bottom: 1.5rem; color: var(--color-text, #f9fafb);">Pending Decisions</h2>
+    <div class="cases-grid">
+      {% for case in pending %}
+        {% include case-card.html case=case %}
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
   
-  <!-- Bottom CTA -->
-  <section style="margin: 4rem 0; padding: 2.5rem; background: var(--color-surface-alt, #2a2826); border-radius: 12px; text-align: center;">
-    <h2 style="font-size: 1.75rem; margin-bottom: 1rem;">See Transparency, Build Trust</h2>
-    <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto 1.5rem; line-height: 1.7;">
-      These cases aren't just legal battles—they're proof that Faith Frontier operates with integrity, follows proper procedures, 
-      and documents everything. This is the foundation for government partnerships and community stewardship.
+  <!-- ==================== CLOSED CASES ==================== -->
+  {% assign closed = site.cases | where: "status", "closed" | where_exp: "case", "case.published != false" | sort: "filed_date" | reverse %}
+  {% if closed.size > 0 %}
+  <section style="margin-bottom: 3rem;">
+    <h2 style="font-size: 1.75rem; margin-bottom: 1.5rem; color: var(--color-text, #f9fafb);">Closed Cases</h2>
+    <div class="cases-grid">
+      {% for case in closed %}
+        {% include case-card.html case=case %}
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+  
+  <!-- ==================== TRANSPARENCY STATEMENT ==================== -->
+  <section style="margin: 4rem 0; padding: 2rem; background: var(--color-surface-alt, #2a2826); border-radius: 12px; border: 1px solid var(--color-border, #3a3835);">
+    <h2 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--accent-brass, #d4a574);">Our Commitment to Transparency</h2>
+    <p style="line-height: 1.7; margin-bottom: 1rem; font-size: 0.9375rem;">
+      Every case listed here is backed by public court records. We publish filings, dockets, and procedural history to demonstrate:
     </p>
-    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-      <a href="/government-partnerships/" class="btn-cases btn-primary">Explore Partnerships</a>
-      <a href="/stewardship/" class="btn-cases btn-secondary" style="color: var(--color-text, #e5e3df);">Begin Your Journey</a>
-    </div>
+    <ul style="line-height: 1.7; margin-bottom: 1rem; padding-left: 1.5rem;">
+      <li><strong>Constitutional literacy:</strong> Understanding of due process, rights, and legal procedure</li>
+      <li><strong>Procedural competence:</strong> Ability to navigate court systems and administrative processes</li>
+      <li><strong>Accountability:</strong> Nothing hidden, everything verifiable through official records</li>
+      <li><strong>Educational value:</strong> Real-world examples of civic engagement and legal advocacy</li>
+    </ul>
+    <p style="line-height: 1.7; margin-bottom: 0; font-size: 0.9375rem;">
+      This archive exists to build trust through transparency and to demonstrate that Faith Frontier operates with integrity, humility, and respect for lawful processes.
+    </p>
   </section>
   
 </div>
 
+<!-- ==================== CLIENT-SIDE FILTERING ==================== -->
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const searchInput = document.getElementById('case-search');
-  const statusFilter = document.getElementById('status-filter');
-  const courtFilter = document.getElementById('court-filter');
-  const caseCards = document.querySelectorAll('.case-card');
-  const noResults = document.getElementById('no-results');
+(function() {
+  'use strict';
   
-  function filterCases() {
-    const searchTerm = searchInput.value.toLowerCase();
-    const statusValue = statusFilter.value;
-    const courtValue = courtFilter.value;
+  const filterStatus = document.getElementById('filter-status');
+  const filterCourt = document.getElementById('filter-court');
+  const filterSearch = document.getElementById('filter-search');
+  const casesGrids = document.querySelectorAll('.cases-grid');
+  
+  if (!filterStatus || !filterCourt || !filterSearch) return;
+  
+  function applyFilters() {
+    const statusValue = filterStatus.value.toLowerCase();
+    const courtValue = filterCourt.value.toLowerCase();
+    const searchValue = filterSearch.value.toLowerCase();
     
-    let visibleCount = 0;
-    
-    caseCards.forEach(card => {
-      const searchData = card.dataset.search || '';
-      const status = card.dataset.status || '';
-      const court = card.dataset.court || '';
+    casesGrids.forEach(function(grid) {
+      const cards = grid.querySelectorAll('.case-card');
+      let visibleCount = 0;
       
-      // Check search match
-      const matchesSearch = !searchTerm || searchData.includes(searchTerm);
+      cards.forEach(function(card) {
+        const cardStatus = (card.dataset.status || '').toLowerCase();
+        const cardCourt = (card.dataset.court || '').toLowerCase();
+        const cardText = card.textContent.toLowerCase();
+        
+        const matchesStatus = !statusValue || cardStatus === statusValue;
+        const matchesCourt = !courtValue || cardCourt.includes(courtValue);
+        const matchesSearch = !searchValue || cardText.includes(searchValue);
+        
+        if (matchesStatus && matchesCourt && matchesSearch) {
+          card.style.display = '';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
       
-      // Check status filter
-      const matchesStatus = statusValue === 'all' || status === statusValue;
-      
-      // Check court filter
-      let matchesCourt = true;
-      if (courtValue === 'superior') {
-        matchesCourt = court.includes('superior') || court.includes('law division') || court.includes('special civil');
-      } else if (courtValue === 'appellate') {
-        matchesCourt = court.includes('appellate');
-      } else if (courtValue === 'federal') {
-        matchesCourt = court.includes('district') || court.includes('sdny') || court.includes('federal');
-      }
-      
-      // Show or hide card
-      if (matchesSearch && matchesStatus && matchesCourt) {
-        card.style.display = 'block';
-        visibleCount++;
-      } else {
-        card.style.display = 'none';
+      // Show/hide no results message
+      let noResults = grid.querySelector('.no-results');
+      if (visibleCount === 0 && !noResults) {
+        noResults = document.createElement('div');
+        noResults.className = 'no-results';
+        noResults.innerHTML = '<div class="no-results-icon">🔍</div><h3 class="no-results-title">No Cases Found</h3><p class="no-results-text">Try adjusting your filters or search terms.</p>';
+        grid.appendChild(noResults);
+      } else if (visibleCount > 0 && noResults) {
+        noResults.remove();
       }
     });
-    
-    // Show/hide no results message
-    noResults.style.display = visibleCount === 0 ? 'block' : 'none';
   }
   
-  // Attach event listeners
-  searchInput.addEventListener('input', filterCases);
-  statusFilter.addEventListener('change', filterCases);
-  courtFilter.addEventListener('change', filterCases);
-});
+  filterStatus.addEventListener('change', applyFilters);
+  filterCourt.addEventListener('change', applyFilters);
+  filterSearch.addEventListener('input', applyFilters);
+})();
 </script>

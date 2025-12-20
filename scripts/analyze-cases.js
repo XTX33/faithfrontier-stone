@@ -13,10 +13,16 @@ dotenv.config();
 
 // Check for API key before initializing OpenAI
 if (!process.env.OPENAI_API_KEY) {
-  console.error('Error: OPENAI_API_KEY environment variable is not set.');
-  console.error('Please set it in a .env file or as an environment variable.');
-  console.error('See _docs/ANALYSIS-SYSTEM.md for setup instructions.');
-  process.exit(1);
+  console.log('⏭️  OpenAI API key not found - skipping analysis');
+  console.log('');
+  console.log('To enable AI-powered case analysis:');
+  console.log('  1. Get an API key from https://platform.openai.com/api-keys');
+  console.log('  2. Add it to .env file: OPENAI_API_KEY=sk-...');
+  console.log('  3. Or set as environment variable');
+  console.log('');
+  console.log('See _docs/ANALYSIS-SYSTEM.md for complete setup instructions.');
+  console.log('');
+  process.exit(0); // Exit gracefully - this is not an error condition
 }
 
 // Initialize OpenAI client

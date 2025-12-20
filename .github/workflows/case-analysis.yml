@@ -32,24 +32,58 @@ jobs:
       - name: Install dependencies
         run: npm install
         
-      - name: Validate OpenAI API Key
+      - name: Check API Key Availability
+        id: check-key
         run: |
           if [ -z "${{ secrets.OPENAI_API_KEY }}" ]; then
             echo "::warning::OPENAI_API_KEY secret is not set. Analysis will be skipped."
-            echo "See _docs/ANALYSIS-SYSTEM.md for setup instructions"
+            echo "::notice::To enable AI analysis, add OPENAI_API_KEY to repository secrets"
+            echo "::notice::See _docs/ANALYSIS-SYSTEM.md for setup instructions"
+            echo "has_key=false" >> $GITHUB_OUTPUT
           else
-            echo "::notice::OpenAI API Key is configured"
+            echo "::notice::OpenAI API Key is configured - running analysis"
+            echo "has_key=true" >> $GITHUB_OUTPUT
           fi
         
       - name: Run case analysis
-        continue-on-error: true
+        if: steps.check-key.outputs.has_key == 'true'
+        id: analysis
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: node scripts/analyze-cases.js
+        run: |
+          echo "::group::Case Analysis Output"
+          node scripts/analyze-cases.js
+          ANALYSIS_STATUS=$?
+          echo "::endgroup::"
+          
+          if [ $ANALYSIS_STATUS -eq 0 ]; then
+            echo "analysis_success=true" >> $GITHUB_OUTPUT
+          else
+            echo "::warning::Analysis completed with warnings or errors"
+            echo "analysis_success=false" >> $GITHUB_OUTPUT
+          fi
+          
+          exit $ANALYSIS_STATUS
+        continue-on-error: true
+        
+      - name: Check for changes
+        if: steps.check-key.outputs.has_key == 'true'
+        id: check-changes
+        run: |
+          git diff --quiet _data/analysis/ || echo "has_changes=true" >> $GITHUB_OUTPUT
+          if [ -z "$(git status --porcelain _data/analysis/)" ]; then
+            echo "::notice::No analysis changes to commit"
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "::notice::Analysis generated new or updated files"
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
         
       - name: Create Pull Request
+        if: steps.check-key.outputs.has_key == 'true' && steps.check-changes.outputs.has_changes == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "feat(analysis): AI-generated case analysis"
           title: "AI Analysis: Case Records and Dockets"
           body: |
@@ -64,7 +98,56 @@ jobs:
             ### Files Changed:
             - Analysis files in `_data/analysis/`
             
+            ### Analysis Status:
+            - ✅ Successfully completed
+            - 📊 Generated: ${{ github.event.head_commit.timestamp }}
+            - 🔗 Triggered by: ${{ github.event.head_commit.message }}
+            
             **Note**: Please review the analysis for accuracy and appropriateness before merging.
+            
+            ---
+            
+            <details>
+            <summary>About AI Analysis</summary>
+            
+            This analysis is generated using OpenAI GPT-4 with carefully crafted prompts that focus on:
+            - Due process and constitutional compliance
+            - Individual rights and government accountability
+            - Public interest and transparency
+            - Factual, neutral presentation
+            
+            The analysis is meant to assist human review, not replace it. Always verify claims and assess appropriateness before publication.
+            </details>
           branch: "ai-analysis/case-updates"
           delete-branch: true
-          labels: "automated, analysis"
+          labels: "automated, analysis, ai-generated"
+          
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Workflow Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ steps.check-key.outputs.has_key }}" == "true" ]; then
+            echo "✅ OpenAI API Key: Configured" >> $GITHUB_STEP_SUMMARY
+            
+            if [ "${{ steps.analysis.outputs.analysis_success }}" == "true" ]; then
+              echo "✅ Analysis: Completed successfully" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "⚠️ Analysis: Completed with warnings" >> $GITHUB_STEP_SUMMARY
+            fi
+            
+            if [ "${{ steps.check-changes.outputs.has_changes }}" == "true" ]; then
+              echo "✅ Changes: Generated and committed" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "ℹ️ Changes: No new analysis generated" >> $GITHUB_STEP_SUMMARY
+            fi
+          else
+            echo "⏭️ OpenAI API Key: Not configured (analysis skipped)" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### To Enable AI Analysis:" >> $GITHUB_STEP_SUMMARY
+            echo "1. Get an OpenAI API key from https://platform.openai.com/api-keys" >> $GITHUB_STEP_SUMMARY
+            echo "2. Add it to GitHub: Settings → Secrets → Actions → New secret" >> $GITHUB_STEP_SUMMARY
+            echo "3. Name: \`OPENAI_API_KEY\`" >> $GITHUB_STEP_SUMMARY
+            echo "4. See [_docs/ANALYSIS-SYSTEM.md](/_docs/ANALYSIS-SYSTEM.md) for details" >> $GITHUB_STEP_SUMMARY
+          fi
