@@ -171,36 +171,41 @@ layout: default
   </section>
 
   {%- comment -%}
-    KEY FILINGS - Important documents and exhibits
+    KEY FILINGS - Only show if no docket system is in use
+    Hidden when docket data exists to avoid redundancy
   {%- endcomment -%}
-  {% if page.assets_dir and page.documents %}
-  <section class="case-section case-files">
-    <h2>Key Filings &amp; Exhibits</h2>
-    <ul class="filings-list">
-      {% for doc in page.documents %}
-      <li class="filing-item">
-        <a href="{{ page.assets_dir | append: doc.path }}" target="_blank" rel="noopener" class="filing-link">
-          {{ doc.label }}
-        </a>
-        {% assign cs_slug = page.slug | default: slug %}
-        {% assign checksums = site.data.checksums[cs_slug] %}
-        {% if checksums and checksums[doc.path] %}
-        <span class="checksum" title="SHA256 checksum for integrity verification">
-          <abbr title="SHA256 checksum">SHA256:</abbr> 
-          <code>{{ checksums[doc.path] | slice: 0, 16 }}…</code>
-        </span>
-        {% endif %}
-        {% if doc.note %}
-        <span class="filing-note">{{ doc.note }}</span>
-        {% endif %}
-        {% if doc.date %}
-        <time datetime="{{ doc.date }}" class="filing-date">{{ doc.date | date: "%B %-d, %Y" }}</time>
-        {% endif %}
-      </li>
-      {% endfor %}
-    </ul>
-  </section>
-  {% endif %}
+  {% assign slug = page.url | split:'/' | last | default: page.slug %}
+  {% assign docket_data = site.data.docket[slug] %}
+  {% unless docket_data and docket_data.size > 0 %}
+    {% if page.assets_dir and page.documents %}
+    <section class="case-section case-files">
+      <h2>Key Filings &amp; Exhibits</h2>
+      <ul class="filings-list">
+        {% for doc in page.documents %}
+        <li class="filing-item">
+          <a href="{{ page.assets_dir | append: doc.path }}" target="_blank" rel="noopener" class="filing-link">
+            {{ doc.label }}
+          </a>
+          {% assign cs_slug = page.slug | default: slug %}
+          {% assign checksums = site.data.checksums[cs_slug] %}
+          {% if checksums and checksums[doc.path] %}
+          <span class="checksum" title="SHA256 checksum for integrity verification">
+            <abbr title="SHA256 checksum">SHA256:</abbr> 
+            <code>{{ checksums[doc.path] | slice: 0, 16 }}…</code>
+          </span>
+          {% endif %}
+          {% if doc.note %}
+          <span class="filing-note">{{ doc.note }}</span>
+          {% endif %}
+          {% if doc.date %}
+          <time datetime="{{ doc.date }}" class="filing-date">{{ doc.date | date: "%B %-d, %Y" }}</time>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+  {% endunless %}
 
   {%- comment -%}
     RELATED MATTERS - Connected cases or dockets

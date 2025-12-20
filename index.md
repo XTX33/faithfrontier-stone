@@ -9,45 +9,9 @@ stylesheet: /assets/css/home.css
 
 <!-- markdownlint-disable MD033 -->
 
-<style>
-  /* ==========================
-     Faith Frontier Home (scoped)
-     Prevents collisions with global theme CSS
-  ========================== */
-  .ff-home {
-    --stone-50: rgba(220, 217, 210, 1);
-    --stone-100: rgba(200, 197, 190, 1);
-    --stone-200: rgba(189, 182, 170, 1);
-    --ink-900: rgba(28, 27, 25, 1);
-    --ink-700: rgba(58, 56, 52, 1);
-    --emerald-600: rgba(16, 92, 74, 1);
-    --shadow-soft: rgba(120, 116, 108, 0.28);
-
-    --radius-lg: 16px;
-    --container: 1140px;
-    --section-pad-y: clamp(48px, 7vw, 96px);
-    --card-pad: clamp(22px, 2.5vw, 32px);
-    --gutter: clamp(24px, 3.5vw, 40px);
-
-    background: var(--stone-100);
-    color: var(--ink-900);
-  }
-
-  .ff-home a {
-    color: var(--emerald-600);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-    text-decoration-thickness: 1px;
-  }
-  .ff-home a:hover,
-  .ff-home a:focus { text-decoration-thickness: 2px; }
-
-  .ff-home .container {
-    max-width: var(--container);
-    padding-inline: clamp(16px, 4vw, 28px);
-    margin: 0 auto;
-    width: 100%;
-  }
+<div class="ff-home light-mode">
+  <section class="section hero hero--home hero-home--revival">
+    <div class="container hero-grid">
 
   .ff-home .section { padding-block: var(--section-pad-y); }
 

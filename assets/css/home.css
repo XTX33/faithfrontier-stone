@@ -1,98 +1,293 @@
-/* Homepage-specific styles moved out of markdown to prevent CSS bleed */
+/* ============================================================================
+   Faith Frontier Home Page Styles
+   Light mode variant of the global theme for the home page
+   ============================================================================ */
 
-.hero--home {
-  --home-card-bg: rgba(20, 30, 50, 0.92);
-  --home-shadow: 0 4px 32px rgba(15, 23, 42, 0.22);
-  --home-radius: 16px;
+/* Import the global theme first */
+@import url('theme.css');
+
+/* ===== HOME PAGE LIGHT MODE OVERRIDES ===== */
+
+.ff-home {
+  background: var(--stone-100);
+  color: var(--ink-900);
 }
 
-.hero--home .hero-grid {
-  grid-template-columns: 1.5fr minmax(340px, 1fr);
-  gap: var(--gutter, 1.5rem);
-  align-items: stretch;
-  align-content: start;
-  min-height: 60vh;
+.ff-home a {
+  color: var(--emerald-600);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
 }
 
-.hero--home .hero-main {
-  gap: 1.5rem;
+.ff-home a:hover,
+.ff-home a:focus {
+  text-decoration-thickness: 2px;
 }
 
-.hero--home .hero-side-panel {
-  background: var(--home-card-bg);
-  color: var(--color-text);
-  display: flex;
-  flex-direction: column;
-  gap: clamp(1rem, 2vw, 2rem);
-  align-items: flex-start;
-  border-radius: var(--home-radius);
-  box-shadow: var(--home-shadow);
-  padding: 2.5rem 2rem;
-  margin-top: 0;
-  min-width: 320px;
-  max-width: 480px;
+.ff-home .section {
+  padding-block: var(--section-pad-y);
 }
 
-.hero--home .hero-actions {
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1.5rem;
+.ff-home h1,
+.ff-home h2,
+.ff-home h3 {
+  color: var(--ink-900);
+  font-weight: var(--fw-extrabold);
+  margin: 0 0 0.35em;
+  letter-spacing: var(--ls-tight);
 }
 
-.hero--home .hero-actions .btn {
-  min-width: 140px;
+.ff-home h1 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  line-height: var(--lh-tight);
 }
 
-.hero--home .hero-highlights {
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: clamp(1rem, 2vw, 2rem);
-  margin-top: 1.5rem;
+.ff-home h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
 }
 
-.hero--home .hero-highlight {
-  background: rgba(15, 23, 42, 0.92);
-  color: var(--color-text);
-  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.18);
-  border: 1px solid rgba(212, 165, 116, 0.13);
-  border-radius: 12px;
-  padding: 1.25rem 1rem;
+.ff-home h3 {
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
 }
 
-.hero--home .hero-highlight__label {
-  color: var(--accent-brass);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.ff-home p,
+.ff-home li {
+  color: var(--ink-700);
+  font-size: 1.06rem;
 }
 
-.hero--home img {
+.ff-home img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
+/* Hero layout (home specific) */
+.ff-home .hero-grid {
+  display: grid;
+  grid-template-columns: 1.6fr minmax(360px, 480px);
+  gap: var(--gutter);
+  align-items: center;
+  align-content: center;
+  min-height: 70vh;
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
+}
+
+.ff-home .hero-main {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-lg);
+}
+
+.ff-home .hero-eyebrow {
+  color: var(--emerald-600);
+  font-size: 0.9rem;
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  margin: 0;
+  font-weight: var(--fw-extrabold);
+}
+
+.ff-home .hero-lead {
+  max-width: 68ch;
+  line-height: var(--lh-relaxed);
+  font-size: var(--text-lg);
+}
+
+/* Side panel (home specific) */
+.ff-home .hero-side-panel {
+  background: linear-gradient(135deg, rgba(220, 217, 210, 0.95), rgba(200, 197, 190, 0.92));
+  color: var(--ink-900);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  border: 2px solid var(--stone-200);
+  box-shadow: 0 10px 30px var(--shadow-soft);
+  padding: calc(var(--card-pad) + 6px) var(--card-pad);
+  min-width: 320px;
+  max-width: 520px;
+  border-radius: var(--radius-lg);
+}
+
+.ff-home .hero-brand-visual {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: 0.25rem 0 0.75rem;
+}
+
+.ff-home .hero-badge {
+  font-weight: var(--fw-black);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  color: var(--ink-900);
+  opacity: 0.9;
+  margin: 0;
+}
+
+.ff-home .hero-scripture {
+  width: 100%;
+  border-left: 4px solid var(--emerald-600);
+  padding: 0.75rem 0.85rem;
+  background: rgba(200, 197, 190, 0.55);
+  border-radius: var(--radius-md);
+}
+
+.ff-home .hero-scripture .dv-text {
+  display: block;
+  color: var(--ink-900);
+  font-weight: 650;
+}
+
+.ff-home .hero-scripture .dv-ref {
+  display: inline-block;
+  margin-top: 0.35rem;
+  color: var(--emerald-600);
+  font-weight: var(--fw-extrabold);
+}
+
+.ff-home .hero-scripture .dv-note {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--ink-700);
+  margin-top: 0.35rem;
+}
+
+.ff-home .hero-panel__stat {
+  width: 100%;
+  display: grid;
+  gap: 0.2rem;
+  padding-top: 0.2rem;
+}
+
+.ff-home .hero-panel__number {
+  font-weight: var(--fw-black);
+  color: var(--ink-900);
+}
+
+.ff-home .hero-panel__label {
+  color: var(--ink-700);
+}
+
+/* Highlights */
+.ff-home .hero-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(var(--space-md), 2.5vw, var(--space-2xl));
+  margin-top: var(--space-2xl);
+}
+
+.ff-home .hero-highlight {
+  background: white;
+  padding: calc(var(--card-pad) + 4px);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--stone-200);
+  box-shadow: 0 8px 24px rgba(120, 116, 108, 0.18);
+  min-height: 160px;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.ff-home .hero-highlight:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(120, 116, 108, 0.25);
+}
+
+.ff-home .hero-highlight__label {
+  color: var(--emerald-600);
+  font-size: 0.82rem;
+  font-weight: var(--fw-black);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+  display: inline-block;
+}
+
+/* Actions */
+.ff-home .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: var(--space-lg);
+  justify-content: center;
+}
+
+.ff-home .btn {
+  appearance: none;
+  cursor: pointer;
+  min-width: 150px;
+  padding: 0.75rem 1.15rem;
+  font-size: 1.02rem;
+  border-radius: var(--radius-sm);
+  font-weight: var(--fw-extrabold);
+  border: 1px solid transparent;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.ff-home .btn-main {
+  background: var(--emerald-600);
+  color: white;
+  box-shadow: 0 4px 16px rgba(16, 92, 74, 0.25);
+}
+
+.ff-home .btn-main:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(16, 92, 74, 0.35);
+  text-decoration: none;
+}
+
+.ff-home .btn-ghost {
+  background: transparent;
+  color: var(--emerald-600);
+  border-color: var(--emerald-600);
+  transition: all var(--transition-base);
+}
+
+.ff-home .btn-ghost:hover {
+  background: var(--emerald-600);
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(16, 92, 74, 0.25);
+}
+
+.ff-home .btn:focus-visible {
+  outline: 3px solid rgba(16, 92, 74, 0.35);
+  outline-offset: 2px;
+}
+
+/* Responsive */
 @media (max-width: 900px) {
-  .hero--home .hero-grid {
+  .ff-home .hero-grid {
     grid-template-columns: 1fr;
   }
-
-  .hero--home .hero-side-panel {
+  
+  .ff-home .hero-side-panel {
     order: 2;
     width: 100%;
     max-width: none;
     min-width: 0;
   }
-
-  .hero--home .hero-highlights {
-    grid-template-columns: 1fr;
+  
+  .ff-home .hero-actions .btn {
+    flex: 1 1 45%;
   }
-
-  .hero--home .hero-actions .btn {
-    flex: 1;
+  
+  .ff-home .hero-highlights {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero--home * {
+  .ff-home * {
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
   }

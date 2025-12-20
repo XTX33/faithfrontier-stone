@@ -26,6 +26,9 @@ jobs:
           ruby-version: '3.2'
           bundler-cache: true
 
+      - name: Install webrick
+        run: gem install webrick
+
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
 

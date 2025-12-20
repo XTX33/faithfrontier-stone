@@ -96,29 +96,34 @@ layout: default
   </section>
   {% endif %}
 
-
-  {% if page.assets_dir and page.documents and page.documents.size > 0 %}
-  <section class="case-files">
-    <h2>Documents</h2>
-    <ul>
-      {% for doc in page.documents %}
-      <li>
-        <a href="{{ page.assets_dir | append: doc.path }}" target="_blank" rel="noopener">
-          {{ doc.label }}
-        </a>
-        {% assign cs_slug = page.slug | default: slug %}
-        {% assign checksums = site.data.checksums[cs_slug] %}
-        {% if checksums and checksums[doc.path] %}
-        <span class="checksum"> · SHA256: {{ checksums[doc.path] }}</span>
-        {% endif %}
-        {% if doc.note %}
-        <span class="case-doc-note"> — {{ doc.note }}</span>
-        {% endif %}
-      </li>
-      {% endfor %}
-    </ul>
-  </section>
-  {% endif %}
+  {%- comment -%}
+    DOCUMENTS SECTION - Only show if no docket data exists
+    Docket data is superior (has dates) so we hide this if docket is present
+  {%- endcomment -%}
+  {% unless docket_data and docket_data.size > 0 %}
+    {% if page.assets_dir and page.documents and page.documents.size > 0 %}
+    <section class="case-files">
+      <h2>Documents</h2>
+      <ul>
+        {% for doc in page.documents %}
+        <li>
+          <a href="{{ page.assets_dir | append: doc.path }}" target="_blank" rel="noopener">
+            {{ doc.label }}
+          </a>
+          {% assign cs_slug = page.slug | default: slug %}
+          {% assign checksums = site.data.checksums[cs_slug] %}
+          {% if checksums and checksums[doc.path] %}
+          <span class="checksum"> · SHA256: {{ checksums[doc.path] }}</span>
+          {% endif %}
+          {% if doc.note %}
+          <span class="case-doc-note"> — {{ doc.note }}</span>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+  {% endunless %}
 
 
   {% if page.related_dockets and page.related_dockets.size > 0 %}

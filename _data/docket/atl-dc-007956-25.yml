@@ -14,7 +14,7 @@
   date: 2025-08-19
   type: Filing
   title: Complaint
-  file: /assets/cases/atl-dc-007956-25/docket/20250819-complaint-and-summons-by-njta.pdf
+  file: /assets/assets/cases/atl-dc-007956-25/docket/20250819-complaint-and-summons-by-njta.pdf
 
 - id: 2025-09-03-answer-first-appearance
   date: 2025-09-03
@@ -32,13 +32,13 @@
   date: 2025-10-08
   type: Motion
   title: Proposed Order on Counterclaim Relief
-  file: /assets/cases/atl-dc-007956-25/docket/20251008-proposed-order-granting-relief.pdf
+  file: /assets/assets/cases/atl-dc-007956-25/docket/20251008-proposed-order-granting-relief.pdf
 
 - id: 2025-10-27-court-order
   date: 2025-10-27
   type: Order
   title: Court Order — Default Vacated and Discovery Schedule
-  file: /assets/cases/atl-dc-007956-25/docket/20251027-court-order.pdf
+  file: /assets/assets/cases/atl-dc-007956-25/docket/20251027-court-order.pdf
 
 - id: 2025-10-27-discovery-requests
   date: 2025-10-27

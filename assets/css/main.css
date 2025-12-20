@@ -1,54 +1,18 @@
-:root {
-  --color-surface: var(--ff-surface, #0f172a);
-  --color-surface-alt: var(--ts-navy-soft, #0a1b32);
-  --color-text: var(--ff-ink, #f9fafb);
-  --color-muted: var(--ff-muted, #a8a29e);
-  --color-highlight: var(--ff-cream, #fef3c7);
-  --accent-emerald: var(--ts-emerald, #018a6a);
-  --accent-emerald-light: var(--ts-emerald-light, #24b58a);
-  --accent-brass: var(--ts-brass, #b88a39);
-  --accent-brass-muted: var(--ts-brass-muted, #a07a32);
-  /* compatibility aliases and sensible defaults */
-  --accent: var(--color-text);
-  --muted: var(--color-muted);
-  --card-bg: var(--color-surface-alt);
+/* ============================================================================
+   Faith Frontier Main Stylesheet
+   Legacy file - imports the new modular theme system
+   ============================================================================ */
 
-  /* layout tokens (provide sensible fallbacks if not declared globally) */
-  --gutter: 1.5rem;
-  --max-width: 1600px;
-  --container-pad: 1.5rem;
-  --radius-base: var(--radius-md, 16px);
-  --shadow-base: var(--shadow-mid, 0 16px 40px rgba(0, 0, 0, 0.35));
-  --space-section: var(--space-2xl, 3rem);
+/* Import the unified theme system */
+@import url('theme.css');
 
-  /* backward-compatible aliases for legacy tokens used throughout the stylesheet */
-}
-
-.hero-actions--centered {
-  justify-content: center;
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
-  gap: 1.25rem;
-}
-
-.btn-main {
-  background: linear-gradient(90deg, var(--accent-brass), var(--color-highlight));
-  color: #181818;
-  border: none;
-  font-weight: 700;
-  box-shadow: 0 2px 12px rgba(212, 165, 116, 0.12);
-  transition: background 0.2s, box-shadow 0.2s;
-}
-.btn-main:hover, .btn-main:focus {
-  background: linear-gradient(90deg, var(--color-highlight), var(--accent-brass));
-  box-shadow: 0 4px 18px rgba(212, 165, 116, 0.18);
-}
 /* ======================================
-   Faith Frontier – Components & Pages
-   (theme.css handles base + header/footer)
+   Page-specific & Legacy Styles
+   (Everything below is being preserved for backward compatibility)
 ====================================== */
 
-/* Maintenance banner */
+/* Maintenance banner (now also in _components.css) */
+
 .maintenance-banner {
   background: linear-gradient(135deg, rgba(212, 165, 116, 0.18) 0%, rgba(15, 118, 110, 0.3) 100%);
   color: var(--color-text);

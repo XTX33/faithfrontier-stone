@@ -13,15 +13,7 @@ show_breadcrumbs: true
     <p class="section-eyebrow">Live litigation</p>
     <h1 class="section-heading">Active Case Digest</h1>
     <p class="section-lead">
-      A daily-readable summary of every Faith Frontier case that is currently live in court. Each entry
-      surfaces the venue, fast facts, and most recent filings so supporters and counsel can see what
-      still requires prayer, oversight, or documents. Publication is for transparency and verification; the
-      court record controls.
-    </p>
-    <p>
-      This digest pulls from the Jekyll case collection (`_cases/*.md`). When a case is marked
-      <strong>status: active</strong>, its overview, documents, and latest steps appear below automatically.
-      These summaries are not legal advice and do not replace reading the underlying docket.
+      Essential highlights from active Faith Frontier cases. Click through for full docket records.
     </p>
   </div>
 </section>
@@ -39,42 +31,14 @@ show_breadcrumbs: true
             <p class="case-docket">{{ case.primary_docket | default: case.short_title }}</p>
             <h2><a href="{{ case.url | relative_url }}">{{ case.title }}</a></h2>
             <p class="case-meta">
-              {{ case.court }} • Filed {{ case.filed_date | date: "%Y-%m-%d" }}
+              {{ case.court }}{% if case.status %} • {{ case.status | capitalize }}{% endif %}
             </p>
           </header>
           {% if case.overview %}
-            <p class="case-overview">{{ case.overview }}</p>
-          {% endif %}
-          {% if case.documents and case.documents.size > 0 %}
-            {% assign last_doc = case.documents | last %}
-            {% assign doc_path = last_doc.path | default: '' %}
-            {% if doc_path != '' %}
-              {% assign first_char = doc_path | slice: 0, 1 %}
-              {% if doc_path contains '://' %}
-                {% assign doc_url = doc_path %}
-              {% elsif first_char == '/' %}
-                {% assign doc_url = doc_path %}
-              {% else %}
-                {% assign assets_dir = case.assets_dir | default: '' | append: '/' | replace: '//', '/' %}
-                {% if assets_dir == '' %}
-                  {% assign doc_url = doc_path %}
-                {% else %}
-                  {% assign doc_url = assets_dir | append: doc_path %}
-                {% endif %}
-              {% endif %}
-              <p class="case-latest">
-                <strong>Latest filing:</strong>
-                {% assign label = last_doc.label | default: last_doc.path | default: 'Document' %}
-                {% if doc_url contains '://' %}
-                  <a href="{{ doc_url }}" target="_blank" rel="noopener">{{ label }}</a>
-                {% else %}
-                  <a href="{{ doc_url | relative_url }}">{{ label }}</a>
-                {% endif %}
-              </p>
-            {% endif %}
+            <p class="case-overview">{{ case.overview | truncatewords: 30 }}</p>
           {% endif %}
           <footer>
-            <a class="btn btn-ghost" href="{{ case.url | relative_url }}">View full record</a>
+            <a class="btn btn-ghost btn--sm" href="{{ case.url | relative_url }}">Full docket →</a>
           </footer>
         </article>
         {% endfor %}
