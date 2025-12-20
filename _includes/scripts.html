@@ -12,6 +12,20 @@
 
 <script
   defer
+  type="module"
+  class="u-hidden-print"
+  src="{{ '/assets/js/contrast-utils.js' | relative_url }}?v={{ site.version | default: site.github.build_revision | default: '10' }}">
+</script>
+
+<script
+  defer
+  type="module"
+  class="u-hidden-print"
+  src="{{ '/assets/js/adaptive-contrast.js' | relative_url }}?v={{ site.version | default: site.github.build_revision | default: '10' }}">
+</script>
+
+<script
+  defer
   class="u-hidden-print"
   src="{{ '/assets/js/main.js' | relative_url }}?v={{ site.version | default: site.github.build_revision | default: '10' }}">
 </script>

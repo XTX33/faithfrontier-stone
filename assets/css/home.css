@@ -235,7 +235,7 @@
 
 .ff-home .btn-main {
   background: var(--emerald-600);
-  color: white;
+  color: var(--text-on-emerald);
   box-shadow: 0 4px 16px rgba(16, 92, 74, 0.25);
 }
 
@@ -254,7 +254,7 @@
 
 .ff-home .btn-ghost:hover {
   background: var(--emerald-600);
-  color: white;
+  color: var(--text-on-emerald);
   text-decoration: none;
   box-shadow: 0 4px 16px rgba(16, 92, 74, 0.25);
 }

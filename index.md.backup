@@ -9,6 +9,199 @@ stylesheet: /assets/css/home.css
 
 <!-- markdownlint-disable MD033 -->
 
+  .ff-home h1, .ff-home h2, .ff-home h3 {
+    color: var(--ink-900);
+    font-weight: 800;
+    margin: 0 0 0.35em;
+    letter-spacing: -0.01em;
+  }
+  .ff-home h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); line-height: 1.06; }
+  .ff-home h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); }
+  .ff-home h3 { font-size: clamp(1.15rem, 2vw, 1.35rem); }
+
+  .ff-home p, .ff-home li { color: var(--ink-700); font-size: 1.06rem; }
+  .ff-home img { max-width: 100%; height: auto; display: block; }
+
+  /* Hero layout */
+  .ff-home .hero-grid {
+    display: grid;
+    grid-template-columns: 1.6fr minmax(360px, 480px);
+    gap: var(--gutter);
+    align-items: center;
+    align-content: center;
+    min-height: 70vh;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .ff-home .hero-main {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .ff-home .hero-eyebrow {
+    color: var(--emerald-600);
+    font-size: 0.9rem;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: 800;
+  }
+
+  .ff-home .hero-lead { 
+    max-width: 68ch; 
+    line-height: 1.7;
+    font-size: 1.1rem;
+  }
+
+  /* Side panel */
+  .ff-home .hero-side-panel {
+    background: linear-gradient(135deg, rgba(220, 217, 210, 0.95), rgba(200, 197, 190, 0.92));
+    color: var(--ink-900);
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;2px 40px rgba(120, 116, 108, 0.35);
+    padding: calc(var(--card-pad) + 8px) var(--card-pad);
+    min-width: 340px;
+    max-width: 48olid var(--stone-200);
+    box-shadow: 0 10px 30px var(--shadow-soft);
+    padding: calc(var(--card-pad) + 6px) var(--card-pad);
+    min-width: 320px;
+    max-width: 520px;
+  }
+
+  .ff-home .hero-brand-visual {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding: 0.25rem 0 0.75rem;
+  }
+
+  .ff-home .hero-badge {
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.82rem;
+    color: var(--ink-900);
+    opacity: 0.9;
+    margin: 0;
+  }
+
+  .ff-home .hero-scripture {
+    width: 100%;
+    border-left: 4px solid var(--emerald-600);
+    padding: 0.75rem 0.85rem;
+    background: rgba(200, 197, 190, 0.55);
+    border-radius: 12px;
+  }
+  .ff-home .hero-scripture .dv-text { display: block; color: var(--ink-900); font-weight: 650; }
+  .ff-home .hero-scripture .dv-ref { display: inline-block; margin-top: 0.35rem; color: var(--emerald-600); font-weight: 800; }
+  .ff-home .hero-scripture .dv-note { display: block; font-size: 0.9rem; color: var(--ink-700); margin-top: 0.35rem; }
+
+  .ff-home .hero-panel__stat {
+    width: 100%;
+    display: grid;
+    gap: 0.2rem;
+    padding-top: 0.2rem;
+  }
+  .ff-home .hero-panel__number { font-weight: 900; color: var(--ink-900); }
+  .ff-home .hero-panel__label { color: var(--ink-700); }
+
+  /* Highlights */
+  .ff-home .hero-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(1.25rem, 2.5vw, 2.5rem);
+    margin-top: 2rem;
+  }
+
+  .ff-home .hero-highlight {
+    background: white;
+    padding: calc(var(--card-pad) + 4px);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--stone-200);
+    box-shadow: 0 8px 24px rgba(120, 116, 108, 0.18);
+    min-height: 160px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .ff-home .hero-highlight:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(120, 116, 108, 0.25);
+  }
+
+  .ff-home .hero-highlight__label {
+    color: var(--emerald-600);
+    font-size: 0.82rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.35rem;
+    display: inline-block;
+  }
+
+  /* Actions */
+  .ff-home .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+  }
+
+  .ff-home .btn {
+    appearance: none;
+    cursor: pointer;
+    min-width: 150px;
+    padding: 0.75rem 1.15rem;
+    font-size: 1.02rem;
+    border-radius: 10px;
+    font-weight: 850;
+    border: 1px solid transparent;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .ff-home .btn-main:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(16, 92, 74, 0.35);
+    text-decoration: none;
+  }
+
+  .ff-home .btn-ghost {
+    background: transparent;
+    color: var(--emerald-600);
+    border-color: var(--emerald-600);
+    transition: all 0.2s ease;
+  }
+  
+  .ff-home .btn-ghost:hover {
+    background: var(--emerald-600);
+    color: white;
+    text-decoration: nonedow-soft);
+  }
+
+  .ff-home .btn-ghost {
+    background: transparent;
+    color: var(--emerald-600);
+    border-color: var(--emerald-600);
+  }
+
+  .ff-home .btn:focus-visible {
+    outline: 3px solid rgba(16, 92, 74, 0.35);
+    outline-offset: 2px;
+  }
+
+<!-- markdownlint-disable MD033 -->
+
 <div class="ff-home">
   <section class="section hero hero--home hero-home--revival">
     <div class="container hero-grid">

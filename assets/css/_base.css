@@ -281,7 +281,7 @@ button {
   top: -100px;
   left: 0;
   background: var(--ff-primary);
-  color: white;
+  color: var(--text-on-emerald);
   padding: var(--space-sm) var(--space-md);
   text-decoration: none;
   z-index: var(--z-tooltip);
@@ -312,10 +312,10 @@ button {
 
 ::selection {
   background: var(--ff-primary);
-  color: white;
+  color: var(--text-on-emerald);
 }
 
 ::-moz-selection {
   background: var(--ff-primary);
-  color: white;
+  color: var(--text-on-emerald);
 }

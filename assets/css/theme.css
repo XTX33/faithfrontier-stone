@@ -8,6 +8,7 @@
 
 /* Import theme modules */
 @import url('_variables.css');
+@import url('adaptive-contrast.css');
 @import url('_base.css');
 @import url('_layout.css');
 @import url('_components.css');

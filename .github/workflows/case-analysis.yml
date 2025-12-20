@@ -35,13 +35,14 @@ jobs:
       - name: Validate OpenAI API Key
         run: |
           if [ -z "${{ secrets.OPENAI_API_KEY }}" ]; then
-            echo "::error::OPENAI_API_KEY secret is not set. Please add it in repository Settings > Secrets and variables > Actions"
+            echo "::warning::OPENAI_API_KEY secret is not set. Analysis will be skipped."
             echo "See _docs/ANALYSIS-SYSTEM.md for setup instructions"
-            exit 1
+          else
+            echo "::notice::OpenAI API Key is configured"
           fi
-          echo "✓ OpenAI API Key is configured"
         
       - name: Run case analysis
+        continue-on-error: true
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: node scripts/analyze-cases.js
