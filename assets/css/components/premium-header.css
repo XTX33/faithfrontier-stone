@@ -364,7 +364,7 @@
     padding: 1rem 1.25rem;
     font-size: 1.0625rem;
     border-radius: 12px;
-    color: var(--cream-text) !important;
+    color: rgba(249, 250, 251, 0.95) !important;
     display: block;
     width: 100%;
   }
