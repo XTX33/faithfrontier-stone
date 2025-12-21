@@ -7,6 +7,8 @@ authority_primary: "New Jersey Department of Transportation (NJDOT)"
 status: "Awaiting Response"
 opened: 2025-12-18
 last_updated: 2025-12-18
+related_cases:
+  - atl-dc-007956-25
 topics:
   - "Toll-related infrastructure"
   - "Camera systems and gantry-adjacent deployments"

@@ -42,6 +42,10 @@ This civil action seeks equitable relief and declaratory judgment following docu
 
 {% include case-analysis.html %}
 
+## Related OPRA Records
+
+{% include opra-by-case.html %}
+
 ## Notes
 
 - Use this section for additional notes or context.

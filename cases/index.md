@@ -193,6 +193,49 @@ Resources Include: _includes/case-resources.html
       This archive exists to build trust through transparency and to demonstrate that Faith Frontier operates with integrity, humility, and respect for lawful processes.
     </p>
   </section>
+
+  <!-- ==================== OPRA RECORDS INTEGRATION ==================== -->
+  <section style="margin: 4rem 0; padding: 2rem; background: linear-gradient(135deg, rgba(212, 165, 116, 0.05), rgba(212, 165, 116, 0.02)); border-radius: 12px; border: 1px solid rgba(212, 165, 116, 0.2);">
+    <h2 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--accent-brass, #d4a574);">
+      📋 Supporting OPRA Administrative Records
+    </h2>
+    <p style="line-height: 1.7; margin-bottom: 1.5rem; font-size: 0.9375rem;">
+      Many cases are supported by Open Public Records Act (OPRA) requests that document vendor relationships, 
+      policy frameworks, and operational oversight. These administrative records complement litigation by establishing 
+      factual foundations through official government documents.
+    </p>
+    
+    {% assign opra_count = site.opra | size %}
+    {% assign active_opra = site.opra | where: "status", "Active" | size %}
+    {% assign pending_opra = site.opra | where: "status", "Awaiting Response" | size %}
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+      <div style="text-align: center; padding: 1rem; background: rgba(212, 165, 116, 0.1); border-radius: 8px;">
+        <div style="font-size: 2rem; font-weight: bold; color: var(--accent-brass, #d4a574);">{{ opra_count }}</div>
+        <div style="font-size: 0.875rem; color: var(--color-text-muted, #b0aca5);">Total OPRA Records</div>
+      </div>
+      <div style="text-align: center; padding: 1rem; background: rgba(212, 165, 116, 0.1); border-radius: 8px;">
+        <div style="font-size: 2rem; font-weight: bold; color: var(--accent-brass, #d4a574);">{{ active_opra }}</div>
+        <div style="font-size: 0.875rem; color: var(--color-text-muted, #b0aca5);">Active Requests</div>
+      </div>
+      <div style="text-align: center; padding: 1rem; background: rgba(212, 165, 116, 0.1); border-radius: 8px;">
+        <div style="font-size: 2rem; font-weight: bold; color: var(--accent-brass, #d4a574);">{{ pending_opra }}</div>
+        <div style="font-size: 0.875rem; color: var(--color-text-muted, #b0aca5);">Pending Responses</div>
+      </div>
+    </div>
+    
+    <div style="text-align: center;">
+      <a href="/opra/" class="btn-cases btn-secondary" style="display: inline-block; padding: 0.75rem 1.5rem; background: var(--accent-brass, #d4a574); color: var(--color-bg, #1a1816); border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s;">
+        View All OPRA Records →
+      </a>
+    </div>
+    
+    <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(212, 165, 116, 0.2); font-size: 0.875rem; color: var(--color-text-muted, #b0aca5);">
+      <strong>What are OPRA records?</strong> OPRA (Open Public Records Act) allows citizens to request government documents. 
+      Faith Frontier uses OPRA to gather factual evidence about vendor contracts, policy decisions, and operational oversight—
+      creating transparent documentation that supports legal strategy and public accountability.
+    </div>
+  </section>
   
 </div>
 

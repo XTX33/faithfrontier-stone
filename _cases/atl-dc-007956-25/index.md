@@ -42,4 +42,10 @@ This matter documents toll-enforcement claims alongside counterclaims challengin
 - **8 Oct 2025:** Counterclaim and discovery packet delivered, outlining damages from State Contractor fraud.
 - **27 Oct 2025:** Court issued order on default/discovery; ongoing correspondence (Nov. letters) continues pressing for accessible hearings.
 
+## Related OPRA Records
+
+This case is supported by parallel OPRA requests documenting toll enforcement operations, vendor relationships, and data security practices:
+
+{% include opra-by-case.html %}
+
 {% include case-analysis.html %}

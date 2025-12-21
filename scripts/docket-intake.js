@@ -214,15 +214,22 @@ const ensurePdfHomesForDocket = (slug) => {
 };
 
 const main = () => {
+  console.log('='.repeat(60));
+  console.log('📥 DOCKET INTAKE - Starting automated PDF processing');
+  console.log('='.repeat(60));
+  
   const items = discoverPdfs();
   if (!items.length) { 
-    console.log('No PDFs to intake.'); 
+    console.log('✓ No PDFs to intake - inbox is empty'); 
     return; 
   }
 
+  console.log(`\n📋 Found ${items.length} PDF file(s) to process\n`);
   const changes = [];
   for (const {p, st} of items) {
     const base = path.basename(p);
+    console.log(`\n${'─'.repeat(60)}`);
+    console.log(`📄 Processing: ${base}`);
     // Try to match by known tokens in filename - support multiple patterns:
     // ATL-L-002794-25, ATL-22-002292, A-000313-25, 1:25-cv-15641-RMB-MJS, etc.
     // Patterns are ordered from most specific to least specific
@@ -247,7 +254,12 @@ const main = () => {
     if (mUnder) slug = mUnder[1];
 
     // If still unknown, park under 'unassigned'
-    slug = slug || 'unassigned';
+    if (!slug) {
+      console.log(`   ⚠️  No case match found - filing to "unassigned"`);
+      slug = 'unassigned';
+    } else if (token) {
+      console.log(`   ✓ Matched docket: ${token} → ${slug}`);
+    }
 
     const date = guessDate(base, st.mtimeMs);
     const type = guessType(base);
@@ -267,7 +279,11 @@ const main = () => {
       suffix++;
     }
 
+    console.log(`   📁 Destination: ${destPath.replace(/\\/g, '/')}`);
+    console.log(`   📝 Metadata: ${date} | ${type} | ${title}`);
+    
     fs.renameSync(p, destPath);
+    console.log(`   ✓ File moved successfully`);
 
     const { p: docketFile, list } = loadDocket(slug);
     const id = `${date}-${stub}`.slice(0,64);
@@ -284,6 +300,9 @@ const main = () => {
       });
       ensureDir(DOCKET_DIR);
       writeYml(docketFile, list.sort((a,b)=> (a.date<b.date?1:-1)));
+      console.log(`   ✓ Added to docket: ${docketFile}`);
+    } else {
+      console.log(`   ⚠️  Already in docket - skipped metadata update`);
     }
 
     // Make sure every docket entry has a real file behind it.
@@ -296,7 +315,25 @@ const main = () => {
   // Write a simple report
   ensureDir('reports');
   fs.writeFileSync('reports/docket-intake.json', JSON.stringify(changes, null, 2));
-  console.log(`Intake complete: ${changes.length} files processed.`);
+  
+  console.log('\n' + '='.repeat(60));
+  console.log(`✅ INTAKE COMPLETE: ${changes.length} file(s) processed`);
+  console.log('='.repeat(60));
+  
+  // Summary by case
+  const byCaseSlug = {};
+  changes.forEach(c => {
+    const slug = c.to.match(/cases[\/\\]([^\/\\]+)/)?.[1] || 'unknown';
+    byCaseSlug[slug] = (byCaseSlug[slug] || 0) + 1;
+  });
+  
+  console.log('\n📊 Files by case:');
+  Object.entries(byCaseSlug).sort((a,b) => b[1] - a[1]).forEach(([slug, count]) => {
+    console.log(`   ${slug.padEnd(30)} ${count} file(s)`);
+  });
+  
+  console.log(`\n📄 Full report: reports/docket-intake.json`);
+  console.log('\n💡 Next: Review changes and create pull request\n');
 };
 
 main();

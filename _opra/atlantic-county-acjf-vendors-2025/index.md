@@ -8,6 +8,9 @@ authority_parallel:
   - "Atlantic County (General)"
   - "Atlantic County Improvement Authority (ACIA)"
 status: "Active"
+related_cases:
+  - atl-l-003252-25
+  - atl-l-002869-25
 topics:
   - "Third-party vendors and contracts"
   - "Procurement and bidding"

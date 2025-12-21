@@ -7,6 +7,8 @@ authority_primary: "North Jersey Transportation Planning Authority (NJTPA)"
 status: "Awaiting Response"
 opened: 2025-12-18
 last_updated: 2025-12-18
+related_cases:
+  - atl-dc-007956-25
 topics:
   - "Toll infrastructure planning"
   - "Gantry deployment"

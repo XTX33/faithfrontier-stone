@@ -6,6 +6,8 @@ jurisdiction: "State of New Jersey"
 authority_primary: "Office of the Governor"
 status: "Awaiting Response"
 opened: 2025-12-18
+related_cases:
+  - atl-dc-007956-25
 topics:
   - "Toll enforcement policy"
   - "Vendor oversight"

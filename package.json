@@ -21,6 +21,8 @@
 
     "analyze": "node scripts/analyze-cases.js",
     "docket:intake": "node scripts/docket-intake.js",
+    "docket:validate": "node scripts/validate-docket-files.js",
+    "docket:batch": "node scripts/batch-upload-helper.js",
     "checksums": "node scripts/generate-checksums.js",
     "changelog:weekly": "node scripts/generate-weekly-changelog.js",
 

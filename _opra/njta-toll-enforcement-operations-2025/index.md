@@ -6,6 +6,8 @@ jurisdiction: "New Jersey"
 authority_primary: "New Jersey Turnpike Authority"
 status: "Awaiting Response"
 opened: 2025-12-18
+related_cases:
+  - atl-dc-007956-25
 topics:
   - "Automated toll enforcement"
   - "Vendor compensation"
