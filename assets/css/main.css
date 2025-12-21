@@ -30,6 +30,10 @@
 @import url('pages/case-analysis.css');
 @import url('pages/stewardship-resources.css');
 
+/* Enhancements - micro-animations & progressive disclosure */
+@import url('enhancements/micro-animations.css');
+@import url('enhancements/progressive-disclosure.css');
+
 /* Utilities */
 @import url('utilities/utilities.css');
 @import url('utilities/print.css');
