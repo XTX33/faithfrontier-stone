@@ -70,6 +70,9 @@
 <!-- Main stylesheet (imports theme.css) -->
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 
+<!-- Print styles -->
+<link rel="stylesheet" href="{{ '/assets/css/print.css' | relative_url }}" media="print">
+
 <!-- Case-only styles -->
 {% if page.layout == 'case-enhanced' or page.layout == 'case' %}
 <link rel="stylesheet" href="{{ '/assets/css/case-analysis.css' | relative_url }}">

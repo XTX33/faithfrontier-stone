@@ -3,7 +3,9 @@
   - theme-toggle.js: dark/light mode switcher
   - premium-header.js: premium header with scroll animations
   - page-transitions.js: smooth page transitions and scroll reveals
-  - main.js: site-wide behaviors (nav, small interactions)
+  - lazy-loading.js: image lazy loading with blur-up
+  - performance-monitor.js: Core Web Vitals tracking (debug mode)
+  - main.js: site-wide behaviors
   - page.scripts: optional array of additional script paths in front matter
 {%- endcomment -%}
 
@@ -23,6 +25,18 @@
   defer
   class="u-hidden-print"
   src="{{ '/assets/js/page-transitions.js' | relative_url }}?v={{ site.version | default: site.github.build_revision | default: '10' }}">
+</script>
+
+<script
+  defer
+  class="u-hidden-print"
+  src="{{ '/assets/js/lazy-loading.js' | relative_url }}?v={{ site.version | default: site.github.build_revision | default: '10' }}">
+</script>
+
+<script
+  defer
+  class="u-hidden-print"
+  src="{{ '/assets/js/performance-monitor.js' | relative_url }}?v={{ site.version | default: site.github.build_revision | default: '10' }}">
 </script>
 
 <script
