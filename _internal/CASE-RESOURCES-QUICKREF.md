@@ -138,7 +138,7 @@ Copy a folder section in `case-resources.html` and update:
 
 ### Styling
 
-All styles in `_includes/case-resources.html` under `<style>` tag:
+All styles in `_includes/case-resources.html` under ````html`n&lt;style&gt;`n```` tag:
 
 ```css
 .resource-folder {

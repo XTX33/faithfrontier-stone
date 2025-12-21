@@ -334,7 +334,7 @@ title: Implementation Checklist
 **Common Tasks:**
 - Creating new cases: Use `_cases/_TEMPLATE.md`
 - Updating case status: Edit front matter in case file
-- Adding docket entries: Update `_data/docket/<slug>.yml`
+- Adding docket entries: Update `_data/docket/`&lt;slug&gt;`.yml`
 - Migrating cases: Follow migration guide in `CASE-ARCHIVE-GUIDE.md`
 
 ---

@@ -63,8 +63,8 @@ node scripts/refactor-with-governance.js --interactive --section essays
 | Option | Description |
 |--------|-------------|
 | `--all` | Scan all content sections (essays, cases, trust, manifesto, pages, posts) |
-| `--section <name>` | Scan specific section (essays, cases, trust, manifesto, pages, posts) |
-| `--file <path>` | Scan single file |
+| `--section `&lt;name&gt;`` | Scan specific section (essays, cases, trust, manifesto, pages, posts) |
+| `--file `&lt;path&gt;`` | Scan single file |
 | `--audit-only` | Report issues without making changes |
 | `--dry-run` | Preview changes without writing to disk |
 | `--interactive` | Review and approve each change manually |

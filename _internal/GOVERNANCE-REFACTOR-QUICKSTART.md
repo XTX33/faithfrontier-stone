@@ -100,8 +100,8 @@ reports/governance-refactor/
 | Option | Description |
 |--------|-------------|
 | `--all` | Scan all content sections |
-| `--section <name>` | Scan specific section (essays, cases, trust, manifesto) |
-| `--file <path>` | Scan single file |
+| `--section `&lt;name&gt;`` | Scan specific section (essays, cases, trust, manifesto) |
+| `--file `&lt;path&gt;`` | Scan single file |
 | `--audit-only` | Report only, no changes |
 | `--dry-run` | Preview changes |
 | `--no-ai` | Rule-based only (no OpenAI) |

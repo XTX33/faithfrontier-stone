@@ -220,22 +220,22 @@ description: "Selected writings originally published at Tiller.Earth, preserved 
         <div class="archive-body">
           <div class="doc" id="faith-frontier-declaration" aria-label="Faith Frontier Declaration">
             <header style="text-align:center;margin-bottom:14px">
-              <h2 style="margin:0;letter-spacing:.06em;color:rgba(16,92,74,1);text-transform:uppercase;">
+              <h2 style="margin:0;letter-spacing:.06em;color:var(--emerald-700);text-transform:uppercase;">
                 Faith Frontier Declaration
               </h2>
-              <p style="margin:6px 0 0;color:rgba(58,56,52,1);font-style:italic">
+              <p style="margin:6px 0 0;color:var(--color-text-muted);font-style:italic">
                 A workman’s oath for home, land, and neighbor
               </p>
             </header>
 
-            <div style="font-size:1.05rem;line-height:1.8;margin-bottom:14px;color:rgba(28,27,25,1);text-align:center">
+            <div style="font-size:1.05rem;line-height:1.8;margin-bottom:14px;color:var(--color-bg);text-align:center">
               <strong>I will build with truth, not loans.</strong><br>
               <strong>I will honor labor, not leverage.</strong><br>
               <strong>I will defend the weak, not the brand.</strong><br>
               <strong>I will serve Christ, not Mammon.</strong>
             </div>
 
-            <ul style="list-style:square;margin:14px 18px;color:rgba(28,27,25,1)">
+            <ul style="list-style:square;margin:14px 18px;color:var(--color-bg)">
               <li><strong>Stewardship over ownership:</strong> land, tools, and trade held in trust, not in pride.</li>
               <li><strong>Covenant over contract:</strong> clear expectations—faith, work, integrity—kept without excuses.</li>
               <li><strong>Protection over profit:</strong> justice should shelter families, not monetize them.</li>
@@ -254,13 +254,13 @@ description: "Selected writings originally published at Tiller.Earth, preserved 
 
             <p><strong>If these are your values, you are my neighbor. Let’s build.</strong></p>
 
-            <footer style="margin-top:14px;color:rgba(58,56,52,1)">
-              — <strong>Devon Tyler Barber</strong> • <em>Tillerstead LLC · Faith Frontier</em><br>
+            <footer style="margin-top:14px;color:var(--color-text-muted)">
+              — <strong>Devon Tyler Barber • <em>Tillerstead LLC · Faith Frontier</em></strong><br>
               <small style="opacity:.9">Statement of values and intent based on lived experience and faith convictions.</small>
-            </footer>
-          </div>
-        </div>
-      </details>
+</footer>
+</div>
+</div>
+</details>
 
       <!-- 1) Reclaim Your God-Given Identity, Rights & Land (Reframed for integrity) -->
       <details class="archive-post">
@@ -384,7 +384,7 @@ description: "Selected writings originally published at Tiller.Earth, preserved 
               <li>Return to craft, community, and covenant service.</li>
             </ol>
 
-            <footer style="margin-top:18px;font-size:.95rem;color:rgba(58,56,52,1)">
+            <footer style="margin-top:18px;font-size:.95rem;color:var(--color-text-muted)">
               <p><strong>Archive note:</strong> Preserve freely with attribution. If you revise, keep the distinction between reflection and verifiable claims.</p>
             </footer>
           </div>

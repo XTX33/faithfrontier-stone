@@ -51,22 +51,22 @@ body_class: page-about
   <h2>What We Are Building</h2>
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
 
-    <article style="padding: 1.5rem; background: rgba(15, 23, 42, 0.6); border-radius: 8px; border: 1px solid rgba(212, 165, 116, 0.3); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);">
+    <article style="padding: 1.5rem; background: var(--navy-alpha-60); border-radius: 8px; border: 1px solid var(--brass-alpha-30); box-shadow: 0 2px 8px var(--shadow-alpha-20);">
       <h3 style="margin-top: 0; color: var(--ff-vintage-gold);">Education & Clarity</h3>
       <p style="margin-bottom: 0;">Practical explanations of New Jersey rights, timelines, and procedures that residents can bring to licensed counsel.</p>
     </article>
 
-    <article style="padding: 1.5rem; background: rgba(15, 23, 42, 0.6); border-radius: 8px; border: 1px solid rgba(212, 165, 116, 0.3); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);">
+    <article style="padding: 1.5rem; background: var(--navy-alpha-60); border-radius: 8px; border: 1px solid var(--brass-alpha-30); box-shadow: 0 2px 8px var(--shadow-alpha-20);">
       <h3 style="margin-top: 0; color: var(--ff-vintage-gold);">Documentation & Accountability</h3>
       <p style="margin-bottom: 0;">Transparent records that surface where systems fail neighbors and where reforms can make public service more just.</p>
     </article>
 
-    <article style="padding: 1.5rem; background: rgba(15, 23, 42, 0.6); border-radius: 8px; border: 1px solid rgba(212, 165, 116, 0.3); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);">
+    <article style="padding: 1.5rem; background: var(--navy-alpha-60); border-radius: 8px; border: 1px solid var(--brass-alpha-30); box-shadow: 0 2px 8px var(--shadow-alpha-20);">
       <h3 style="margin-top: 0; color: var(--ff-vintage-gold);">Sanctuary Projects</h3>
       <p style="margin-bottom: 0;">Initiatives that connect churches, community partners, and professionals to support housing stability, work access, and restorative care.</p>
     </article>
 
-    <article style="padding: 1.5rem; background: rgba(15, 23, 42, 0.6); border-radius: 8px; border: 1px solid rgba(212, 165, 116, 0.3); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);">
+    <article style="padding: 1.5rem; background: var(--navy-alpha-60); border-radius: 8px; border: 1px solid var(--brass-alpha-30); box-shadow: 0 2px 8px var(--shadow-alpha-20);">
       <h3 style="margin-top: 0; color: var(--ff-vintage-gold);">Covenantal Stewardship</h3>
       <p style="margin-bottom: 0;">Governance rooted in truth, equity, faith, stewardship, and public trust — ensuring every affidavit and commitment is handled with moral seriousness.</p>
     </article>
@@ -96,7 +96,7 @@ body_class: page-about
 
 </section>
 
-<section class="section-content" style="max-width: 60rem; margin: 3rem auto; padding: 2.5rem; background: linear-gradient(135deg, rgba(15, 118, 110, 0.12) 0%, rgba(212, 165, 116, 0.08) 100%); border-radius: 12px; border-left: 4px solid var(--ff-vintage-gold); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);">
+<section class="section-content" style="max-width: 60rem; margin: 3rem auto; padding: 2.5rem; background: linear-gradient(135deg, rgba(15, 118, 110, 0.12) 0%, rgba(212, 165, 116, 0.08) 100%); border-radius: 12px; border-left: 4px solid var(--ff-vintage-gold); box-shadow: 0 4px 16px var(--shadow-alpha-20);">
   <h2 style="margin-top: 0; color: var(--ff-cream);">For New Jersey Residents</h2>
   <p>
     This site is for you if you need clarity on how to navigate filings, hearings, public benefits, housing issues, or work

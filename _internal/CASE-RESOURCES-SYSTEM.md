@@ -387,7 +387,7 @@ Edit the SVG in case-resources.html:
 
 ### Styling Adjustments
 
-All styles are in the `<style>` block of case-resources.html:
+All styles are in the ````html`n&lt;style&gt;`n```` block of case-resources.html:
 
 ```css
 .resource-folder {

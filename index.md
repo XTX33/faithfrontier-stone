@@ -5,49 +5,30 @@ hide_hero: true
 show_breadcrumbs: false
 description: "Faith Frontier Ecclesiastical Trust builds a faith-rooted public trust for New Jersey residents, focusing on due process, equity, and restoration."
 stylesheet: /assets/css/home.css
+hero_eyebrow: "Faith Frontier Ecclesiastical Trust"
+hero_eyebrow_icon: true
+hero_title: "Faith-informed transparency for New Jersey neighbors"
+hero_summary: "A Christian-informed public trust that documents public records, teaches civic literacy, and stewards property initiatives with humility and accountability."
+hero_primary_url: "/stewardship-resources/"
+hero_primary_label: "Begin the Stewardship Journey"
+hero_secondary_url: "/cases/"
+hero_secondary_label: "Cases & Records"
+hero_highlights:
+  - label: "Due process clarity"
+    text: "Plain-language case journals help people follow the record, seek counsel, and rely on lawful procedures—without distortion or sensationalism."
+  - label: "Stewardship with boundaries"
+    text: "Housing and land efforts are pursued lawfully, respecting zoning, licensing, tax rules, and entity separateness."
+  - label: "Accountability"
+    text: "Transparent documentation and neutral summaries support dignity and fairness while inviting lawful oversight and correction."
+  - label: "Faith-shaped conscience"
+    text: "Christian principles—truth, humility, repentance, service—govern conduct. They do not replace courts, agencies, or statutes."
 ---
 
 <!-- markdownlint-disable MD033 -->
 
+{% include premium-hero.html %}
+
 <div class="ff-home">
-  <section class="section hero hero--home hero-home--revival">
-    <div class="container hero-grid">
-      <div class="hero-main">
-        <p class="hero-eyebrow">Faith Frontier Ecclesiastical Trust</p>
-        <h1>Faith-informed transparency for New Jersey neighbors</h1>
-
-        <p class="hero-lead">
-          Faith Frontier is a Christian-informed public trust that documents public records, teaches civic literacy,
-          and stewards property initiatives with humility and accountability. We operate within the U.S. Constitution
-          and New Jersey law, treating faith as a guide to conscience—not as extrajudicial authority—so residents can
-          see the record, verify facts, and engage officials with confidence.
-        </p>
-
-        <div class="hero-highlights">
-          <article class="hero-highlight">
-            <span class="hero-highlight__label">Due process clarity</span>
-            <p>Plain-language case journals help people follow the record, seek counsel, and rely on lawful procedures—without distortion or sensationalism.</p>
-          </article>
-
-          <article class="hero-highlight">
-            <span class="hero-highlight__label">Stewardship with boundaries</span>
-            <p>Housing and land efforts are pursued lawfully, respecting zoning, licensing, tax rules, and entity separateness. Stewardship means care with compliance.</p>
-          </article>
-
-          <article class="hero-highlight">
-            <span class="hero-highlight__label">Accountability</span>
-            <p>Transparent documentation and neutral summaries support dignity and fairness while inviting lawful oversight and correction when needed.</p>
-          </article>
-
-          <article class="hero-highlight">
-            <span class="hero-highlight__label">Faith-shaped conscience</span>
-            <p>Christian principles—truth, humility, repentance, service—govern conduct. They do not replace courts, agencies, statutes, or procedure.</p>
-          </article>
-        </div>
-
-        <div class="hero-actions hero-actions--centered">
-          <a class="btn btn-main" href="{{ '/stewardship/' | relative_url }}">Begin the Stewardship Journey</a>
-          <a class="btn btn-ghost" href="{{ '/cases/' | relative_url }}">Cases & Records</a>
           <a class="btn btn-ghost" href="{{ '/manifesto/' | relative_url }}">Read the Manifesto</a>
         </div>
       </div>

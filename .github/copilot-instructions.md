@@ -155,7 +155,7 @@ The built site will be in the `_site/` directory.
 - `_data/cases-map.yml` - Mapping of docket numbers to case slugs
 
 ### Assets
-- `cases/<slug>/filings/` - PDFs and documents for specific cases
+- `cases/`&lt;slug&gt;`/filings/` - PDFs and documents for specific cases
 - `assets/css/` - Stylesheets
 - `assets/js/` - JavaScript files
 - `assets/images/` - Image assets
@@ -187,7 +187,7 @@ The built site will be in the `_site/` directory.
 - **Blog posts:** `YYYY-MM-DD-title.md`
 - **Case slugs:** Use kebab-case (e.g., `street-crossing-pcr-appeal`)
 - **Docket PDFs:** `{DATE}_{TYPE}_{SHORT}.pdf` (e.g., `2025-11-12_Filing_Written-Appearance-ADA-MTD.pdf`)
-- **Docket data:** `_data/docket/<slug>.yml`
+- **Docket data:** `_data/docket/`&lt;slug&gt;`.yml`
 
 ### Git and Version Control
 - Never commit secrets or API keys
@@ -201,8 +201,8 @@ The docket system manages court filings and documents. See **DOCKET-SYSTEM.md** 
 
 **Key features:**
 - Automated PDF intake from `_inbox/` or uploaded files
-- Normalization and organization into `cases/<slug>/filings/`
-- Data-driven docket entries in `_data/docket/<slug>.yml`
+- Normalization and organization into `cases/`&lt;slug&gt;`/filings/`
+- Data-driven docket entries in `_data/docket/`&lt;slug&gt;`.yml`
 - Searchable case index at `/cases/`
 
 **To run docket intake:**
@@ -271,7 +271,7 @@ Check for broken links after making changes (if validation tools are available).
 - **Never delete case data** - Only add or update
 - Keep case front matter consistent with existing schema
 - Ensure docket numbers match entries in `_data/cases-map.yml`
-- PDFs should be in `cases/<slug>/filings/` directory
+- PDFs should be in `cases/`&lt;slug&gt;`/filings/` directory
 
 ### Working with Docket Data
 - YAML files in `_data/docket/` must be valid YAML

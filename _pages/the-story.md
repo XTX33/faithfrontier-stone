@@ -17,7 +17,7 @@ body_class: page-story
 
   <article style="line-height: 1.9; font-size: 1.05rem;">
     
-    <div style="padding: 2.5rem; background: linear-gradient(135deg, rgba(15, 118, 110, 0.12) 0%, rgba(212, 165, 116, 0.08) 100%); border-radius: 12px; border-left: 4px solid var(--ff-vintage-gold); margin-bottom: 3rem; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);">
+    <div style="padding: 2.5rem; background: linear-gradient(135deg, rgba(15, 118, 110, 0.12) 0%, rgba(212, 165, 116, 0.08) 100%); border-radius: 12px; border-left: 4px solid var(--ff-vintage-gold); margin-bottom: 3rem; box-shadow: 0 4px 16px var(--shadow-alpha-20);">
       <p style="font-size: 1.15rem; font-weight: 500; margin: 0; color: var(--ff-cream);">
         This is the story of how a dual-household childhood became a commitment to faithful stewardship
         under the law. It traces the path from unanswered questions to transparent recordkeeping so that
@@ -94,23 +94,23 @@ body_class: page-story
     <div style="padding: 2rem; background: rgba(176, 137, 104, 0.1); border-radius: 0.75rem; margin: 3rem 0; border: 1px solid var(--ff-vintage-gold);">
       <h3 style="margin-top: 0; color: var(--ff-vintage-gold);">The Principles That Guide Us</h3>
       <ul style="list-style: none; padding: 0; margin: 1rem 0 0 0;">
-        <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(212, 165, 116, 0.2);">
+        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--brass-alpha-20);">
           <strong>Evidence Before Assertion:</strong> Publish the record, cite the source, and separate faith commentary from
           legal claims.
         </li>
-        <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(212, 165, 116, 0.2);">
+        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--brass-alpha-20);">
           <strong>Conscience Within Law:</strong> Faith directs personal conduct; courts, statutes, and public agencies set the
           civic framework. We respect both and invite oversight.
         </li>
-        <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(212, 165, 116, 0.2);">
+        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--brass-alpha-20);">
           <strong>Transparency Over Suspicion:</strong> When something is alleged, show the document; when something is unclear,
           say so plainly and seek clarification.
         </li>
-        <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(212, 165, 116, 0.2);">
+        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--brass-alpha-20);">
           <strong>Local Stewardship:</strong> Rebuild community at human scale with lawful contracts, zoning compliance, and worker
           protections.
         </li>
-        <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(212, 165, 116, 0.2);">
+        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--brass-alpha-20);">
           <strong>Humility & Correction:</strong> Admit limits, publish errata, and welcome review from public agencies, neighbors,
           and the press.
         </li>
@@ -140,7 +140,7 @@ body_class: page-story
 
 </section>
 
-<section style="max-width: 60rem; margin: 4rem auto; padding: 3rem 2rem; text-align: center; background: linear-gradient(135deg, rgba(90, 122, 111, 0.15) 0%, rgba(212, 165, 116, 0.1) 100%); border-radius: 12px; border: 2px solid var(--ff-vintage-gold); box-shadow: 0 4px 20px rgba(212, 165, 116, 0.2);">
+<section style="max-width: 60rem; margin: 4rem auto; padding: 3rem 2rem; text-align: center; background: linear-gradient(135deg, rgba(90, 122, 111, 0.15) 0%, rgba(212, 165, 116, 0.1) 100%); border-radius: 12px; border: 2px solid var(--ff-vintage-gold); box-shadow: 0 4px 20px var(--brass-alpha-20);">
   <h2 style="margin-top: 0; color: var(--ff-cream);">Join the Mission</h2>
   <p style="font-size: 1.05rem; line-height: 1.7; color: var(--ff-cream);">
     Faith Frontier is not just Devon's story—it's a call to everyone who feels caught between systems, 

@@ -7,7 +7,7 @@ Save as: `.github/copilot-instructions/agent-faithfrontier-docket.yml`
 name: FaithFrontier Docket Intake Agent
 description: >
   Normalizes uploaded PDFs into correct case folders, renames to convention,
-  updates _data/docket/<slug>.yml, and opens PRs. If ambiguous, parks items in
+  updates _data/docket/`&lt;slug&gt;`.yml, and opens PRs. If ambiguous, parks items in
   an intake PR with a checklist.
 
 ---
@@ -18,30 +18,30 @@ description: >
    - `assets/uploads/**.pdf`
   - `cases/**` files not indexed in docket data
 2) Determine case `slug`:
-  - If file path already under `cases/<slug>/`, use that slug
+  - If file path already under `cases/`&lt;slug&gt;`/`, use that slug
    - Else try to match by `primary_docket` or any `dockets[]` in `_cases/*.md`
      using a canonical map `_data/cases-map.yml` (create/maintain it)
    - Else infer from filename tokens (e.g., A-000313-25, ATL-L-002794-25)
 3) Rename using canonical pattern:
    - `{DATE}_{TYPE}_{SHORT}.pdf`  e.g., `2025-11-12_Filing_Written-Appearance-ADA-MTD.pdf`
    - DATE pulled from filename or PDF metadata; fallback to commit date
-4) Move to: `cases/<slug>/filings/`
+4) Move to: `cases/`&lt;slug&gt;`/filings/`
 5) Update docket data:
-   - `_data/docket/<slug>.yml` append:
-     - `id:` `<DATE>-<kebab(short)>`
+   - `_data/docket/`&lt;slug&gt;`.yml` append:
+     - `id:` ``&lt;DATE&gt;`-<kebab(short)>`
      - `date:` `YYYY-MM-DD`
      - `type:` `Filing|Order|Notice|Brief|Exhibit|Other` (guess from keywords; default Filing)
      - `title:` human title from filename (spaces)
      - `file:` absolute path to the moved PDF
      - `notes:` (optional) inferred source (e.g., “NJMCDirect upload/email”)
 6) Open minimal PR per case:
-   - Title: `chore(docket): intake <n> PDFs for <slug>`
+   - Title: `chore(docket): intake `&lt;n&gt;` PDFs for `&lt;slug&gt;``
    - Body: table of renames, moved paths, new docket entries
    - If slug/DATE/type uncertain: mark entries with `TODO:` in PR body
 
 ## Commands
 - "Intake PDFs" → run full pipeline (discover→rename→move→update docket→PR)
-- "Reindex docket for <slug>" → rescan cases/<slug>/ and reconcile with docket file
+- "Reindex docket for `&lt;slug&gt;`" → rescan cases/`&lt;slug&gt;`/ and reconcile with docket file
 - "List orphans" → report PDFs not referenced in any docket
 - "Map docket A-000313-25 to slug street-crossing-pcr-appeal" → update `_data/cases-map.yml`
 
@@ -194,7 +194,7 @@ const main = () => {
     const token = (base.match(/([A-Z]{1,3}-[A-Z]-\d{6,}-\d{2})/) || base.match(/A-\d{6}-\d{2}/) || [])[0];
     let slug = token ? slugFromDocket(token) : null;
 
-    // If path already under cases/<slug>/..., respect it
+    // If path already under cases/`&lt;slug&gt;`/..., respect it
     const mUnder = p.match(/cases\/([a-z0-9-]+)\//i);
     if (mUnder) slug = mUnder[1];
 

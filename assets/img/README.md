@@ -7,7 +7,7 @@
 - `faithfrontier-logo.svg` - maintained as an alias of the dark crest for legacy references in `_config.yml` or partner embeds.
 - `faithfrontier-mark.svg` - icon-only Trinitarian crest. Transparent background works on both light and dark surfaces.
 
-Each SVG exposes `--logo-faith-color` and `--logo-frontier-color` custom properties on the `<svg>` root. Inline the markup if you need to override those values via CSS.
+Each SVG exposes `--logo-faith-color` and `--logo-frontier-color` custom properties on the ````html`n&lt;svg&gt;`n```` root. Inline the markup if you need to override those values via CSS.
 
 ## PNG fallback set
 

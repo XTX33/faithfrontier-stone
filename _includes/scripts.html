@@ -1,8 +1,15 @@
 {%- comment -%}
   Global and per-page scripts
+  - premium-header.js: premium header with scroll animations
   - main.js: site-wide behaviors (nav, small interactions)
   - page.scripts: optional array of additional script paths in front matter
 {%- endcomment -%}
+
+<script
+  defer
+  class="u-hidden-print"
+  src="{{ '/assets/js/premium-header.js' | relative_url }}?v={{ site.version | default: site.github.build_revision | default: '10' }}">
+</script>
 
 <script
   defer

@@ -1,34 +1,49 @@
-<header class="site-header" role="banner">
-  <div class="site-header-inner container">
-    <!-- Centered brand -->
-    <a class="ff-brand ff-brand--center" href="{{ '/' | relative_url }}" aria-label="Faith Frontier Ecclesiastical Trust home">
-      <img src="{{ '/assets/img/faithfrontier-mark.svg' | relative_url }}" alt="" width="36" height="36" class="ff-brand-mark" aria-hidden="true" />
-      <span class="ff-logo ff-logo--header ff-logo--dark ff-logo-inline">
-        {% include logo-faithfrontier-header.svg %}
-      </span>
+<header class="premium-header" role="banner">
+  <div class="premium-header__inner">
+    <!-- Center-aligned brand -->
+    <a class="premium-brand" href="{{ '/' | relative_url }}" aria-label="Faith Frontier Ecclesiastical Trust home">
+      <div class="premium-brand__logo">
+        <img src="{{ '/assets/img/faithfrontier-mark.svg' | relative_url }}" 
+             alt="" 
+             width="48" 
+             height="48" 
+             class="premium-brand__mark" 
+             aria-hidden="true" />
+        <span class="premium-brand__wordmark">
+          {% include logo-faithfrontier-header.svg %}
+        </span>
+      </div>
     </a>
 
     <!-- Mobile hamburger toggle -->
-    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-nav">
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
+    <button class="premium-nav-toggle" 
+            aria-label="Toggle navigation menu" 
+            aria-expanded="false" 
+            aria-controls="premium-nav">
+      <span class="premium-nav-toggle__bar"></span>
+      <span class="premium-nav-toggle__bar"></span>
+      <span class="premium-nav-toggle__bar"></span>
     </button>
 
-    <!-- Navigation drawer/menu -->
-    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-      <div class="nav-drawer-header">
-        <button class="nav-close" aria-label="Close navigation menu">&times;</button>
+    <!-- Navigation -->
+    <nav id="premium-nav" class="premium-nav" aria-label="Primary navigation">
+      <div class="premium-nav__header">
+        <button class="premium-nav__close" aria-label="Close navigation menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
       </div>
-      <ul class="nav-list">
-        <li><a href="{{ '/story/' | relative_url }}">Our Story</a></li>
-        <li><a href="{{ '/about/' | relative_url }}">About</a></li>
-        <li><a href="{{ '/manifesto/' | relative_url }}">Manifesto</a></li>
-        <li><a href="{{ '/tillerstead-sanctuary-vision/' | relative_url }}">Sanctuary</a></li>
-        <li><a href="{{ '/essays/' | relative_url }}">Essays</a></li>
-        <li><a href="{{ '/cases/' | relative_url }}">Cases</a></li>
-        <li><a href="{{ '/stewardship-resources/' | relative_url }}" class="nav-link--highlight">Stewardship Resources</a></li>
-        <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+      <ul class="premium-nav__list">
+        <li><a href="{{ '/story/' | relative_url }}" class="premium-nav__link">Our Story</a></li>
+        <li><a href="{{ '/about/' | relative_url }}" class="premium-nav__link">About</a></li>
+        <li><a href="{{ '/manifesto/' | relative_url }}" class="premium-nav__link">Manifesto</a></li>
+        <li><a href="{{ '/tillerstead-sanctuary-vision/' | relative_url }}" class="premium-nav__link">Sanctuary</a></li>
+        <li><a href="{{ '/essays/' | relative_url }}" class="premium-nav__link">Essays</a></li>
+        <li><a href="{{ '/cases/' | relative_url }}" class="premium-nav__link">Cases</a></li>
+        <li><a href="{{ '/stewardship-resources/' | relative_url }}" class="premium-nav__link premium-nav__link--highlight">Stewardship Resources</a></li>
+        <li><a href="{{ '/contact/' | relative_url }}" class="premium-nav__link">Contact</a></li>
       </ul>
     </nav>
   </div>

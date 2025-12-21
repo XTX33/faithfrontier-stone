@@ -28,7 +28,7 @@ tags:
 
 <section class="case-page">
   <article class="card proclamation-body">
-<meta charset="UTF-8"><meta charset="UTF-8"> <br>
+<meta charset="UTF-8"><br>
 <p><span class="meta__label">ISSUED ON:</span><span> DECEMBER</span><time> 28, 2020,</time></p>
 <p><br>Today is the 850th anniversary of the martyrdom of Saint Thomas Becket on December 29, 1170. Thomas Becket was a statesman, a scholar, a chancellor, a priest, an archbishop, and a lion of religious liberty.</p>
 <p> </p>

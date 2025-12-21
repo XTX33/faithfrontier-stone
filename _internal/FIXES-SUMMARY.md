@@ -99,7 +99,7 @@ This document summarizes all fixes applied to resolve duplicate cases, broken li
 When `scripts/analyze-cases.js` runs, it will:
 1. Read each case file and associated docket entries
 2. Generate two AI analyses using OpenAI's GPT models
-3. Save results to `_data/analysis/<slug>.yml`
+3. Save results to `_data/analysis/`&lt;slug&gt;`.yml`
 4. Jekyll will automatically display the analyses in the case pages
 
 ### 5. Broken PDFs Documented 📋

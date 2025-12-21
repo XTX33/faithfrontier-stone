@@ -25,7 +25,7 @@ Usage: {% include opra-quick-links.html topic="toll-enforcement" %}
   <h3 style="margin-top: 0; color: var(--accent-brass, #d4a574); font-size: 1.125rem; display: flex; align-items: center; gap: 0.5rem;">
     <span>📋</span>
     <span>Related OPRA Administrative Records</span>
-    <span style="background: rgba(212, 165, 116, 0.2); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.875rem; font-weight: normal;">{{ related_opra.size }}</span>
+    <span style="background: var(--brass-alpha-20); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.875rem; font-weight: normal;">{{ related_opra.size }}</span>
   </h3>
   
   <p style="margin-bottom: 1rem; font-size: 0.9375rem; color: var(--color-text-muted, #b0aca5);">
@@ -34,12 +34,12 @@ Usage: {% include opra-quick-links.html topic="toll-enforcement" %}
   
   <ul style="list-style: none; padding: 0; margin: 0;">
     {%- for record in related_opra -%}
-    <li style="margin-bottom: 0.75rem; padding: 0.75rem; background: rgba(0, 0, 0, 0.2); border-radius: 6px;">
+    <li style="margin-bottom: 0.75rem; padding: 0.75rem; background: var(--shadow-alpha-20); border-radius: 6px;">
       <a href="{{ record.url | relative_url }}" style="color: var(--accent-brass, #d4a574); text-decoration: none; font-weight: 600; display: block; margin-bottom: 0.25rem;">
         {{ record.title }}
       </a>
       <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; font-size: 0.875rem; color: var(--color-text-muted, #b0aca5);">
-        <span class="badge" style="background: {% if record.status == 'Active' %}rgba(76, 175, 80, 0.2); color: #4CAF50{% elsif record.status == 'Awaiting Response' %}rgba(255, 193, 7, 0.2); color: #FFC107{% else %}rgba(158, 158, 158, 0.2); color: #9E9E9E{% endif %}; padding: 0.25rem 0.5rem; border-radius: 4px; font-weight: 500;">
+        <span class="badge" style="background: {% if record.status == 'Active' %}var(--success-alpha-20); color: var(--success-green){% elsif record.status == 'Awaiting Response' %}var(--warning-alpha-20); color: var(--warning-yellow){% else %}var(--muted-alpha-20); color: var(--muted-gray){% endif %}; padding: 0.25rem 0.5rem; border-radius: 4px; font-weight: 500;">
           {{ record.status }}
         </span>
         {%- if record.authority_primary -%}
@@ -53,7 +53,7 @@ Usage: {% include opra-quick-links.html topic="toll-enforcement" %}
     {%- endfor -%}
   </ul>
   
-  <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(212, 165, 116, 0.2); text-align: center;">
+  <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--brass-alpha-20); text-align: center;">
     <a href="/opra/" style="color: var(--accent-brass, #d4a574); text-decoration: none; font-weight: 600; font-size: 0.9375rem;">
       View All OPRA Records →
     </a>

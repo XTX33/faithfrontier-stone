@@ -83,8 +83,8 @@ If your worker URL is different from `faithfrontier.org`, update the CORS origin
 1. User fills out the form at `/docket/submit/`
 2. JavaScript sends PDF + metadata to Cloudflare Worker
 3. Worker creates a new git branch
-4. Worker uploads PDF to `cases/<slug>/filings/`
-5. Worker updates `_data/docket/<slug>.yml` with new entry
+4. Worker uploads PDF to `cases/`&lt;slug&gt;`/filings/`
+5. Worker updates `_data/docket/`&lt;slug&gt;`.yml` with new entry
 6. Worker creates a Pull Request for review
 7. You review and merge the PR
 
@@ -99,8 +99,8 @@ If your worker URL is different from `faithfrontier.org`, update the CORS origin
 
 If you prefer not to use the worker, you can manually:
 
-1. Upload PDFs to the correct folder: `cases/<slug>/filings/`
-2. Edit `_data/docket/<slug>.yml` to add the entry
+1. Upload PDFs to the correct folder: `cases/`&lt;slug&gt;`/filings/`
+2. Edit `_data/docket/`&lt;slug&gt;`.yml` to add the entry
 3. Commit and push, or create a PR
 
 ## Troubleshooting
