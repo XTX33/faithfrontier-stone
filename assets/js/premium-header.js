@@ -1,34 +1,44 @@
 /**
  * PREMIUM HEADER INTERACTIONS
- * 
- * Handles scroll-triggered animations and mobile navigation
- * Optimized for performance with requestAnimationFrame
+ *
+ * Handles scroll-triggered animations and mobile navigation.
+ * Optimized for performance with requestAnimationFrame.
+ *
+ * Fixes / upgrades:
+ * - Null-safe guards (header/nav may not exist on every page)
+ * - Robust current-page highlighting (handles trailing slashes + relative URLs)
+ * - Smooth-scroll only for same-page anchors (won't break /opra/#section)
+ * - Mobile nav: ESC, overlay, focus management, body scroll lock, and cleanup
+ * - Avoids forcing focus on toggle when nav wasn't opened (e.g., desktop)
  */
 
-(function() {
+(function () {
   'use strict';
 
   // Configuration
   const SCROLL_THRESHOLD = 50;
   const SCROLL_CLASS = 'is-scrolled';
-  
+  const MOBILE_BREAKPOINT = 1024;
+
   // Elements
   const header = document.querySelector('.premium-header');
   const navToggle = document.querySelector('.premium-nav-toggle');
   const nav = document.querySelector('.premium-nav--mobile');
   const navClose = document.querySelector('.premium-nav__close');
   const navLinks = document.querySelectorAll('.premium-nav--mobile .premium-nav__link');
-  
+
   // State
   let lastScroll = 0;
   let ticking = false;
   let navOverlay = null;
+  let lastFocusedEl = null;
 
-  /**
-   * Handle scroll events with RAF optimization
-   */
+  // -------------------------
+  // Scroll handling (RAF)
+  // -------------------------
+
   function handleScroll() {
-    lastScroll = window.pageYOffset || document.documentElement.scrollTop;
+    lastScroll = window.pageYOffset || document.documentElement.scrollTop || 0;
 
     if (!ticking) {
       window.requestAnimationFrame(() => {
@@ -39,9 +49,6 @@
     }
   }
 
-  /**
-   * Update header state based on scroll position
-   */
   function updateHeaderState(scrollPos) {
     if (!header) return;
 
@@ -52,162 +59,178 @@
     }
   }
 
-  /**
-   * Create and append nav overlay
-   */
+  // -------------------------
+  // Mobile nav overlay
+  // -------------------------
+
   function createNavOverlay() {
-    if (!navOverlay) {
-      navOverlay = document.createElement('div');
-      navOverlay.className = 'premium-nav-overlay';
-      navOverlay.setAttribute('aria-hidden', 'true');
-      navOverlay.addEventListener('click', closeNav);
-      document.body.appendChild(navOverlay);
-    }
+    if (navOverlay) return navOverlay;
+
+    navOverlay = document.createElement('div');
+    navOverlay.className = 'premium-nav-overlay';
+    navOverlay.setAttribute('aria-hidden', 'true');
+    navOverlay.addEventListener('click', closeNav);
+    document.body.appendChild(navOverlay);
+
     return navOverlay;
   }
 
-  /**
-   * Open mobile navigation
-   */
+  // -------------------------
+  // Mobile nav open/close
+  // -------------------------
+
   function openNav() {
     if (!nav || !navToggle) return;
 
+    // Remember where focus was
+    lastFocusedEl = document.activeElement;
+
     const overlay = createNavOverlay();
-    
-    // Update ARIA states
+
     navToggle.setAttribute('aria-expanded', 'true');
     nav.setAttribute('aria-hidden', 'false');
-    
-    // Add classes
+
     nav.classList.add('is-open');
     overlay.classList.add('is-visible');
-    
-    // Prevent body scroll
+
+    // Prevent body scroll (simple + reliable)
     document.body.style.overflow = 'hidden';
-    
-    // Focus first link
+
+    // Focus first link for accessibility
     const firstLink = nav.querySelector('.premium-nav__link');
     if (firstLink) {
-      setTimeout(() => firstLink.focus(), 300);
+      window.setTimeout(() => firstLink.focus(), 200);
     }
   }
 
-  /**
-   * Close mobile navigation
-   */
   function closeNav() {
     if (!nav || !navToggle) return;
 
-    // Update ARIA states
+    // Only act if open
+    const wasOpen = nav.classList.contains('is-open');
+
     navToggle.setAttribute('aria-expanded', 'false');
     nav.setAttribute('aria-hidden', 'true');
-    
-    // Remove classes
+
     nav.classList.remove('is-open');
     if (navOverlay) {
       navOverlay.classList.remove('is-visible');
     }
-    
-    // Restore body scroll
+
     document.body.style.overflow = '';
-    
-    // Return focus to toggle
-    navToggle.focus();
+
+    // Return focus gracefully
+    if (wasOpen) {
+      if (lastFocusedEl && typeof lastFocusedEl.focus === 'function') {
+        lastFocusedEl.focus();
+      } else {
+        navToggle.focus();
+      }
+    }
   }
 
-  /**
-   * Toggle mobile navigation
-   */
   function toggleNav() {
     if (!nav) return;
-    
-    const isOpen = nav.classList.contains('is-open');
-    if (isOpen) {
+
+    if (nav.classList.contains('is-open')) {
       closeNav();
     } else {
       openNav();
     }
   }
 
-  /**
-   * Handle escape key to close nav
-   */
   function handleEscape(event) {
-    if (event.key === 'Escape' && nav && nav.classList.contains('is-open')) {
+    if (event.key !== 'Escape') return;
+    if (nav && nav.classList.contains('is-open')) {
       closeNav();
     }
   }
 
-  /**
-   * Close nav when clicking a link
-   */
   function handleNavLinkClick() {
-    if (window.innerWidth <= 1024) {
+    if (window.innerWidth <= MOBILE_BREAKPOINT) {
       closeNav();
     }
   }
 
-  /**
-   * Handle window resize
-   */
   function handleResize() {
-    if (window.innerWidth > 1024 && nav && nav.classList.contains('is-open')) {
+    if (window.innerWidth > MOBILE_BREAKPOINT && nav && nav.classList.contains('is-open')) {
       closeNav();
     }
   }
 
-  /**
-   * Initialize smooth scroll for anchor links
-   */
+  // -------------------------
+  // Smooth scroll (same-page only)
+  // -------------------------
+
   function initSmoothScroll() {
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
-    
-    anchorLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
+
+    anchorLinks.forEach((link) => {
+      link.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
-        
-        // Skip if it's just "#"
-        if (href === '#') return;
-        
+        if (!href || href === '#') return;
+
         const target = document.querySelector(href);
-        if (target) {
-          e.preventDefault();
-          
-          // Close mobile nav if open
-          if (nav && nav.classList.contains('is-open')) {
-            closeNav();
-          }
-          
-          // Calculate offset for fixed header
-          const headerHeight = header ? header.offsetHeight : 0;
-          const targetPosition = target.offsetTop - headerHeight - 20;
-          
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-          
-          // Update URL
-          history.pushState(null, '', href);
-          
-          // Focus target for accessibility
-          target.setAttribute('tabindex', '-1');
-          target.focus();
+        if (!target) return;
+
+        e.preventDefault();
+
+        // Close mobile nav if open
+        if (nav && nav.classList.contains('is-open')) {
+          closeNav();
+        }
+
+        const headerHeight = header ? header.offsetHeight : 0;
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth',
+        });
+
+        // Update URL hash without full jump
+        history.pushState(null, '', href);
+
+        // Accessibility: focus target
+        const prevTabIndex = target.getAttribute('tabindex');
+        target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+        if (prevTabIndex === null) {
           target.removeAttribute('tabindex');
+        } else {
+          target.setAttribute('tabindex', prevTabIndex);
         }
       });
     });
   }
 
-  /**
-   * Add active state to current page link
-   */
+  // -------------------------
+  // Current page highlighting
+  // -------------------------
+
+  function normalizePath(pathname) {
+    if (!pathname) return '/';
+    // Ensure leading slash
+    let p = pathname.startsWith('/') ? pathname : `/${pathname}`;
+    // Normalize trailing slash (except root)
+    if (p.length > 1 && p.endsWith('/')) p = p.slice(0, -1);
+    return p;
+  }
+
   function highlightCurrentPage() {
-    const currentPath = window.location.pathname;
-    
-    navLinks.forEach(link => {
-      const linkPath = new URL(link.href).pathname;
-      
+    if (!navLinks || navLinks.length === 0) return;
+
+    const currentPath = normalizePath(window.location.pathname);
+
+    navLinks.forEach((link) => {
+      // Some links may be relative; URL() needs a base.
+      let linkPath = '';
+      try {
+        linkPath = normalizePath(new URL(link.getAttribute('href'), window.location.origin).pathname);
+      } catch {
+        return;
+      }
+
       if (linkPath === currentPath) {
         link.classList.add('is-active');
         link.setAttribute('aria-current', 'page');
@@ -215,67 +238,51 @@
     });
   }
 
-  /**
-   * Initialize all header functionality
-   */
+  // -------------------------
+  // Init
+  // -------------------------
+
   function init() {
-    // Initial header state
-    updateHeaderState(window.pageYOffset || document.documentElement.scrollTop);
-    
-    // Scroll handling
+    // Scroll state
+    updateHeaderState(window.pageYOffset || document.documentElement.scrollTop || 0);
     window.addEventListener('scroll', handleScroll, { passive: true });
-    
-    // Mobile nav toggle
-    if (navToggle) {
-      navToggle.addEventListener('click', toggleNav);
-    }
-    
-    // Mobile nav close button
-    if (navClose) {
-      navClose.addEventListener('click', closeNav);
-    }
-    
-    // Nav link clicks
-    navLinks.forEach(link => {
+
+    // Mobile nav controls
+    if (navToggle) navToggle.addEventListener('click', toggleNav);
+    if (navClose) navClose.addEventListener('click', closeNav);
+
+    navLinks.forEach((link) => {
       link.addEventListener('click', handleNavLinkClick);
     });
-    
-    // Escape key handling
+
     document.addEventListener('keydown', handleEscape);
-    
-    // Window resize handling
+
+    // Resize (debounced)
     let resizeTimeout;
     window.addEventListener('resize', () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(handleResize, 150);
+      window.clearTimeout(resizeTimeout);
+      resizeTimeout = window.setTimeout(handleResize, 150);
     });
-    
-    // Initialize smooth scroll
+
     initSmoothScroll();
-    
-    // Highlight current page
     highlightCurrentPage();
-    
-    // Add loaded class for animations
-    setTimeout(() => {
-      if (header) {
-        header.classList.add('is-loaded');
-      }
+
+    // Loaded class for animations
+    window.setTimeout(() => {
+      if (header) header.classList.add('is-loaded');
     }, 100);
   }
 
-  // Initialize when DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
     init();
   }
 
-  // Cleanup on page unload
+  // Cleanup overlay
   window.addEventListener('beforeunload', () => {
     if (navOverlay && navOverlay.parentNode) {
       navOverlay.parentNode.removeChild(navOverlay);
     }
   });
-
 })();

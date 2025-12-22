@@ -1,5 +1,7 @@
 ---
 layout: record
+id: njdot-toll-infrastructure-camera-systems-2025
+slug: njdot-toll-infrastructure-camera-systems-2025
 title: "NJDOT — Toll-Related Infrastructure and Camera Systems (OPRA)"
 record_type: "OPRA Administrative Record"
 jurisdiction: "New Jersey"
@@ -7,16 +9,17 @@ authority_primary: "New Jersey Department of Transportation (NJDOT)"
 status: "Awaiting Response"
 opened: 2025-12-18
 last_updated: 2025-12-18
-opramachine_url: "https://opramachine.com/body/new_jersey_department_of_transportation"
-opramachine_user: "https://opramachine.com/user/x_devon_tyler_of_the_barber_mate"
+permalink: /opra/njdot-toll-infrastructure-camera-systems-2025/
 filed_by: "Mr. Barber"
+opramachine_body_url: "https://opramachine.com/body/new_jersey_department_of_transportation"
+opramachine_user: "https://opramachine.com/user/x_devon_tyler_of_the_barber_mate"
 related_cases:
   - atl-dc-007956-25
 topics:
   - "Toll-related infrastructure"
   - "Camera systems and gantry-adjacent deployments"
   - "Records, vendors, and ownership disclosures (as maintained by NJDOT)"
-public_visibility: "Public record thread; protected internal operations kept separate"
+public_visibility: "Public record thread (OPRAmachine); internal notes kept separate"
 ---
 
 ## Record purpose
@@ -44,13 +47,25 @@ This request is publicly tracked on OPRAmachine:
 ## Documents
 
 ### Requests filed
-- See: `/requests/`
 
-### Responses received
-- See: `/responses/`
+- Outgoing request letters, clarifications, fee waiver requests.
+- See: `requests/`
 
-### Administrative correspondence
-- See: `/correspondence/`
+### Agency correspondence
+
+- Acknowledgements, extensions, delivery issues, portal messages.
+- See: `correspondence/`
+
+### Agency responses
+
+- Determinations: grants/denials/partial grants, “no records,” fee estimates, redaction explanations.
+- See: `responses/`
+
+### Productions (records received)
+
+- Responsive records produced by the agency (PDF/CSV/XLSX/images/zips).
+- See: `productions/`
+
 
 ## Notes and analysis boundary
 

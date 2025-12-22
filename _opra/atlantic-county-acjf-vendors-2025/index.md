@@ -1,5 +1,7 @@
 ---
 layout: record
+id: atlantic-county-acjf-vendors-2025
+slug: atlantic-county-acjf-vendors-2025
 title: "Atlantic County Justice Facility — Vendors, Contracts, Oversight & Performance (OPRA)"
 record_type: "OPRA Administrative Record"
 jurisdiction: "New Jersey"
@@ -9,18 +11,25 @@ authority_parallel:
   - "Atlantic County Improvement Authority (ACIA)"
 status: "Active"
 opened: 2024-05-08
-opramachine_url: "https://opramachine.com/body/atlantic_county"
+last_updated: 2025-12-19
+permalink: /opra/atlantic-county-acjf-vendors-2025/
+
+opramachine_body_url: "https://opramachine.com/body/atlantic_county"
 opramachine_user: "https://opramachine.com/user/x_devon_tyler_of_the_barber_mate"
+
 related_cases:
   - atl-l-003252-25
   - atl-l-002869-25
+
 topics:
   - "Third-party vendors and contracts"
   - "Procurement and bidding"
   - "Oversight, audits, and performance"
   - "Facilities and systems modernization"
   - "Governance and sheriff presence"
-public_visibility: "Public record thread; protected internal operations kept separate"
+
+public_visibility: "Public record thread; protected internal operations and notes maintained separately"
+record_role: "Anchor OPRA record for Atlantic County detention-facility oversight"
 ---
 
 ## Record purpose
@@ -60,13 +69,24 @@ See the timeline below for filing dates, extensions, and productions as they occ
 ## Documents
 
 ### Requests filed
-- See: `/requests/`
 
-### Responses received
-- See: `/responses/`
+- Outgoing request letters, clarifications, fee waiver requests.
+- See: `requests/`
 
-### Administrative correspondence
-- See: `/correspondence/`
+### Agency correspondence
+
+- Acknowledgements, extensions, delivery issues, portal messages.
+- See: `correspondence/`
+
+### Agency responses
+
+- Determinations: grants/denials/partial grants, “no records,” fee estimates, redaction explanations.
+- See: `responses/`
+
+### Productions (records received)
+
+- Responsive records produced by the agency (PDF/CSV/XLSX/images/zips).
+- See: `productions/`
 
 ## Notes and analysis boundary
 

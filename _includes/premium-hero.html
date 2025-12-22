@@ -5,7 +5,10 @@
       {% if page.hero_eyebrow %}
       <div class="premium-hero__eyebrow">
         {% if page.hero_eyebrow_icon %}
-        <svg class="premium-hero__eyebrow-icon" viewBox="0 0 96 96" role="img" aria-labelledby="heroMarkTitle">
+        {%- assign mark_id = "heroMarkTitle-" | append: page.url | slugify -%}
+<svg ... aria-labelledby="{{ mark_id }}">
+  <title id="{{ mark_id }}">Faith Frontier</title>
+
           <title id="heroMarkTitle">Faith Frontier</title>
           <defs>
             <style>
