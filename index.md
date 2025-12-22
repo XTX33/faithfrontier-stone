@@ -21,7 +21,13 @@ hero_highlights:
   - label: "Transparent Accountability"
     text: "Every action is documented openly, inviting oversight and correction while honoring both faith principles and civic obligations."
 ---
-
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: ##13192d; /* testing */
+}
+</style>
 <!-- markdownlint-disable MD033 -->
 
 {% include premium-hero.html %}
