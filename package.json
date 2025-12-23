@@ -36,12 +36,30 @@
     "js-yaml": "^4.1.1",
     "multer": "^2.0.2",
     "openai": "^6.9.0",
-    "pdf-parse": "^2.4.5"
+    "pdf-parse": "^2.4.5",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "@playwright/test": "^1.57.0",
     "eslint": "^9.20.0",
     "globals": "^15.14.0",
     "prettier": "^3.4.2"
-  }
+  },
+  "description": "**Faith Frontier** is a Christian-informed public trust that documents legal matters, teaches civic responsibility, and stewards property initiatives with humility and accountability. The project serves the public under the U.S. Constitution and state law, and treats faith as a guide to conscience—not as extrajudicial authority.",
+  "main": "eslint.config.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XTX33/faithfrontier-stone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/XTX33/faithfrontier-stone/issues"
+  },
+  "homepage": "https://github.com/XTX33/faithfrontier-stone#readme"
 }

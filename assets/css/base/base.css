@@ -161,6 +161,10 @@ nav ol {
   padding: 0;
   margin: 0;
 }
+.nav-group:hover>.nav-sublist,
+.nav-group:focus-within>.nav-sublist {
+  display: block !important;
+}
 
 
 /* ===== IMAGES & MEDIA ===== */

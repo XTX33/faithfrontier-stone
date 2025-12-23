@@ -94,3 +94,18 @@
 <!-- Structured Data for SEO -->
 {% include structured-data.html %}
 
+{%- comment -%} Auto OG image for /health/* pages (slug-based, no front matter needed) {%- endcomment -%}
+{% if page.url and page.url contains '/health' %}
+  {% assign parts = page.url | split: '/' %}
+  {% assign health_slug = parts[2] | default: '' %}
+  {% if health_slug == '' %}
+    {% assign health_slug = 'health' %}
+  {% endif %}
+
+  {% assign og_svg = '/assets/img/og/health-' | append: health_slug | append: '.svg' %}
+
+  <meta property="og:image" content="{{ og_svg | absolute_url }}">
+  <meta property="og:image:type" content="image/svg+xml">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ og_svg | absolute_url }}">
+{% endif %}
