@@ -70,7 +70,7 @@ This page is a documentation index. It does not assert findings, legal conclusio
 
 ## Timeline
 
-{% include timeline.html source="opra/{{ page.slug }}/timeline.yml" %}
+{% include timeline.html source="opra/opra-template/timeline.yml" %}
 
 ## Documents
 
