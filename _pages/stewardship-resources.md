@@ -90,8 +90,8 @@ stylesheet: /assets/css/stewardship-resources.css
   <footer class="resources-footer container">
     <hr class="footer-divider" />
     
-    <p>{{ content.footer.amazon_disclosure }}</p>
-    <p>{{ content.footer.legal_status }}</p>
+    {{ content.footer.amazon_disclosure | markdownify }}
+    {{ content.footer.legal_status | markdownify }}
     <p><small><strong>Last Updated:</strong> {{ content.footer.last_updated }}</small></p>
   </footer>
 
