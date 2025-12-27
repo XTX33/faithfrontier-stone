@@ -2,7 +2,7 @@
 layout: essay
 title: "Stewardship Over Spectacle: When Poverty Is Hidden by the Money"
 author: Faith Frontier
-date: 2025-12-27
+date: 2025-12-25
 permalink: "/essays/stewardship-over-spectacle/"
 description: "Atlantic City generates significant tourism activity and contributes to New Jersey’s record $50.6 billion visitor spending in 2024, yet its resident poverty rate remains high. This article contrasts tourism revenue with structural economic outcomes, arguing for a shift from extraction economics to stewardship that prioritizes community well-being over visitor metrics."
 category: Stewardship & Civic Accountability
@@ -37,6 +37,7 @@ While exact percentages vary slightly by survey year and methodology (ACS 1-year
 > **Atlantic City’s poverty rate is materially higher than Pleasantville’s**, despite Atlantic City generating vastly more gross revenue through tourism and gaming.
 
 Both municipalities exceed:
+
 - The **New Jersey statewide poverty rate**
 - The **national U.S. poverty average**
 
@@ -51,6 +52,7 @@ Atlantic City, by contrast, is frequently treated as *economically successful* o
 Tourism and casino activity inflate economic indicators while **masking resident hardship**, allowing decision-makers to substitute **gross spending volume** for **human well-being**.
 
 This results in a paradox:
+
 - High poverty alongside high cash flow  
 - Housing insecurity next to subsidized luxury development  
 - Public services lagging while private investment is incentivized  
@@ -63,6 +65,7 @@ It is a failure of governance priorities.
 ## Extraction Economics vs. Stewardship Economics
 
 For decades, Atlantic City has been governed as an **economic extraction zone**:
+
 - Optimized for visitors, not residents  
 - Measured by occupancy and tax intake, not resident outcomes  
 - Redeveloped top-down rather than community-governed  
