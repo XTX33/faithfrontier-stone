@@ -10,7 +10,8 @@ vendor/
 _site/
 
 # Docket intake staging
-_inbox/
+_inbox/*.pdf
+_inbox/*/*.pdf
 reports/
 node_modules/
 *.bak
