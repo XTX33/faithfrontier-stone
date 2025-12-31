@@ -30,10 +30,16 @@ async function collectMarkdownFiles(dir) {
 }
 
 function stripCodeBlocks(content) {
-  return content
-    .replace(/```[\s\S]*?```/g, "")
-    .replace(/~~~[\s\S]*?~~~/g, "")
-    .replace(/<style[\s\S]*?>[\s\S]*?<\/style>/gi, "");
+  // Strip code blocks with exactly 4 backticks (nested code examples)
+  // Allow optional leading whitespace for indented blocks
+  let result = content.replace(/^[ \t]*````[^\n]*\n[\s\S]*?^[ \t]*````[ \t]*$/gm, "");
+  // Then strip regular 3-backtick code blocks (exactly 3, not more)
+  result = result.replace(/^[ \t]*```[^\n]*\n[\s\S]*?^[ \t]*```[ \t]*$/gm, "");
+  // Strip tilde code blocks  
+  result = result.replace(/^[ \t]*~~~[^\n]*\n[\s\S]*?^[ \t]*~~~[ \t]*$/gm, "");
+  // Strip HTML style tags
+  result = result.replace(/<style[\s\S]*?>[\s\S]*?<\/style>/gi, "");
+  return result;
 }
 
 function findMatches(content) {
