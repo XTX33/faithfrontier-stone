@@ -32,7 +32,7 @@ Scripture never presents demons as allies of God. Yet the 1599 Geneva Bible show
 - **Principalities and powers:** Spiritual rulers oppose the Church (Ephesians 6:12, GNV).
 - **Territorial resistance:** The “Prince of Persia” withstood an angelic messenger (Daniel 10:13, GNV).
 
-**Principle:** Demons serve Satan’s rebellion, not Christ’s agenda. Faith Frontier content should replace speculative “NWO” language with clear Geneva Bible categories: principalities, powers, deceits, and lawlessness.
+**Principle:** Demons serve Satan’s rebellion, not Christ’s agenda. Faith Frontier content should replace speculative “NWO” language with clear Geneva Bible categories.
 
 ## Question 3: Could fallen angels want to “get back to heaven”?
 
@@ -63,7 +63,7 @@ Scripture never presents demons as allies of God. Yet the 1599 Geneva Bible show
 
 **Mission Application:**
 
-- **Citation standard:** Default to 1599 Geneva Bible (BibleGateway GNV) in eschatology and law articles to keep language historically anchored and legally precise.
+- **Citation standard:** Default to 1599 Geneva Bible (BibleGateway GNV) in all matters to keep language historically anchored and legally precise.
 - **Reusable content:** Create shared includes for verse callouts and “sovereignty safeguards” checklists that appear in doctrinal essays, cases, and onboarding.
 - **Law-forward framing:** Tie every end-times teaching to the public goodness of God’s Law, helping readers see that lawful obedience now resists the deception of lawlessness later.
 - **Pastoral clarity:** Offer pastoral briefs that contrast divine sovereignty with demonic disorder, guiding churches and civic partners to act with courage, sobriety, and covenant faithfulness.
