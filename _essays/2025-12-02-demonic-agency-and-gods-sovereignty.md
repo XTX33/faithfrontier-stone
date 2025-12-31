@@ -4,12 +4,7 @@ title: "Demonic Agency and God’s Sovereignty in Christ’s Return (1599 Geneva
 date: 2025-12-02
 permalink: /essays/demonic-agency-gods-sovereignty/
 categories: [eschatology, spiritual-warfare, mission]
-tags:
-  - Geneva Bible
-  - demonic activity
-  - eschatology
-  - sovereignty
-  - biblical law
+tags: [doctrine]
 description: "A Faith Frontier thesis on how the 1599 Geneva Bible portrays demonic activity under God’s rule in end-times events, clarifying mission implications for biblical lawfulness."
 author: Faith Frontier Ecclesiastical Trust
 ---
