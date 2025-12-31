@@ -1,3 +1,7 @@
+---
+title: Content License
+---
+
 # Content License  
 Faith Frontier Ecclesiastical Trust
 
