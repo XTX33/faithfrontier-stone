@@ -93,10 +93,27 @@ const validateYaml = (filePath) => {
         entryValid = false;
       }
       
-      // Validate date format
-      if (entry.date && !/^\d{4}-\d{2}-\d{2}$/.test(entry.date)) {
-        log.error(`Entry ${entryNum} has invalid date format: ${entry.date} (should be YYYY-MM-DD)`);
-        entryValid = false;
+      // Validate date format (handle both Date objects and strings)
+      if (entry.date) {
+        let dateStr;
+        if (entry.date instanceof Date) {
+          // Check if Date object is valid
+          if (isNaN(entry.date.getTime())) {
+            log.error(`Entry ${entryNum} has invalid date: ${entry.date}`);
+            entryValid = false;
+          } else {
+            // Convert Date object to YYYY-MM-DD string using ISO format
+            dateStr = entry.date.toISOString().split('T')[0];
+          }
+        } else {
+          dateStr = entry.date;
+        }
+        
+        // Only validate format if we have a valid dateStr
+        if (dateStr && !/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
+          log.error(`Entry ${entryNum} has invalid date format: ${dateStr} (should be YYYY-MM-DD)`);
+          entryValid = false;
+        }
       }
       
       // Validate type
